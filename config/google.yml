@@ -6,17 +6,21 @@
 # e.g. ENV['GOOGLE_API_KEY'] || yml[:google_api_key]
 #
 defaults: &defaults
+  :google_account_id: 'UA-27614378-1'
+  :google_api_key: ''
+  
+dev_defaults: &defaults
   :google_account_id: ''
   :google_api_key: ''
 
 :development:
-  <<: *defaults
+  <<: *dev_defaults
 
 :test:
-  <<: *defaults
+  <<: *dev_defaults
 
 :staging:
-  <<: *defaults
+  <<: *dev_defaults
 
 :production:
   <<: *defaults
