@@ -1,0 +1,16 @@
+[master 7faba13] HTML5 boilerplate - 3.1
+ 22 files changed, 27 insertions(+), 9217 deletions(-)
+ create mode 100644 Rails
+ create mode 100644 app/assets/javascripts/modernizr+respond.js
+ rename {public => app/assets}/javascripts/plugins.js (100%)
+ rename {public/javascripts => app/assets/javascripts/tools}/modernizr.min.js (100%)
+ rename {public/javascripts => app/assets/javascripts/tools}/respond.min.js (100%)
+ rename app/{ => assets}/stylesheets/partials/_base.scss (100%)
+ rename app/{ => assets}/stylesheets/partials/_fonts.scss (100%)
+ rename app/{ => assets}/stylesheets/partials/_media.scss (100%)
+ rename app/{ => assets}/stylesheets/partials/_overrides.scss (100%)
+ rename app/{ => assets}/stylesheets/partials/_page.scss (100%)
+ rename app/{ => assets}/stylesheets/style.scss (100%)
+ delete mode 100644 public/javascripts/jquery.js
+ delete mode 100644 public/javascripts/jquery.min.js
+ delete mode 100644 public/javascripts/rails.js

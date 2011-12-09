@@ -1,4 +1,6 @@
 Squidtree::Application.routes.draw do
+  mount Kss::Engine => '/kss' if Rails.env.development?
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
