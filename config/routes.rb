@@ -1,4 +1,8 @@
 Squidtree::Application.routes.draw do
+  get "blog/index"
+
+  get "blog/view"
+
   mount Kss::Engine => '/kss' if Rails.env.development?
 
   # The priority is based upon order of creation:

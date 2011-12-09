@@ -55,8 +55,6 @@ GEM
     addressable (2.2.6)
     ansi (1.4.1)
     arel (2.2.1)
-    bourbon (1.2.0)
-      sass (>= 3.1)
     bson (1.5.1)
     bson_ext (1.5.1)
     builder (3.0.0)
@@ -214,10 +212,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon
   bson_ext
   capybara-webkit
   coffee-rails (~> 3.1.1)
+  compass (>= 0.12.alpha.1)
   cucumber
   haml
   html5-boilerplate!
