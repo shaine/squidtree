@@ -1,4 +1,12 @@
 Squidtree::Application.routes.draw do
+  get "portfolio/index"
+
+  get "portfolio/view"
+
+  get "pages/index"
+
+  get "pages/about"
+
   get "blog/index"
 
   get "blog/view"
