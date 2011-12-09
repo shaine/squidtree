@@ -40,6 +40,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'cucumber'
+  gem 'cucumber-rails'
   gem 'rspec'
   gem 'capybara-webkit'
 end
