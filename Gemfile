@@ -43,4 +43,5 @@ group :test do
   gem 'cucumber-rails'
   gem 'rspec'
   gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
