@@ -52,6 +52,45 @@ textarea { overflow: auto; }
 
 .visuallyhidden { @include visually-hidden; }
 
-.clearfix {
+.clearfix, .clear {
   @include micro-clearfix;
+}
+
+.default_text {
+  color: #808082 !important;
+  background-color: #414245;
+}
+
+.intro {
+	font-size: 14px;
+}
+
+.tentacle_separator {
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 30px;
+	
+	&:last-child, &.last-child {
+    padding-bottom: 11px;
+	}
+}
+
+.hr {
+	width: 550px;
+	height: 18px;
+	margin-left: -20px;
+	clear: both;
+	margin-bottom: 30px;
+	
+	.hr1 {
+  	background: transparent url(../images/template/hr1.gif) no-repeat;
+  }
+
+  .hr2 {
+  	background: transparent url(../images/template/hr2.gif) no-repeat;
+  }
+
+  .hr3 {
+  	background: transparent url(../images/template/hr3.gif) no-repeat;
+  }
 }

@@ -2,3 +2,13 @@
 // see http://compass-style.org/docs/reference/compass/css3/font_face/
 
 //@import "compass/css3/font-face"
+@font-face {
+    font-family: 'InstitutionRegular';
+    src: url('fonts/institution/institut-webfont.eot');
+    src: url('fonts/institution/institut-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/institution/institut-webfont.woff') format('woff'),
+         url('fonts/institution/institut-webfont.ttf') format('truetype'),
+         url('fonts/institution/institut-webfont.svg#InstitutionRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

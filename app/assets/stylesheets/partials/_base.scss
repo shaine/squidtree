@@ -1,23 +1,29 @@
 // This file must be imported before loading html5-boilerplate
 
-$base-font-family: unquote('sans-serif');  // default font-family
+$base-font-family: "Open Sans", Arial, unquote('sans-serif');  // default font-family
+$heading-font-family: InstitutionRegular, Arial, unquote('sans-serif');
 
-$base-font-size: 13px;  // default font-size for YUI fonts
+$base-font-size: 12px;  // default font-size for YUI fonts
 
-$base-line-height: 1.231;  // default line-height for YUI fonts
+$base-line-height: 14px;  // default line-height for YUI fonts
 
-$font-color: #444;
+$font-color: #fff;
 
-$link-color: #607890;
+$link-color: #9d9ea2;
 
-$link-hover-color: #036;
+$link-visited-color: $link-color;
 
-$link-active-color: #607890;
+$link-hover-color: #666;
 
-$link-visited-color: #607890;
+$link-active-color: $link-hover-color;
 
 $selected-font-color: #fff;  // color for selected text
 
-$selected-background-color: #ff5E99;  // bg-color for selected text
+$selected-background-color: #666;  // bg-color for selected text
 
 $list-left-margin: 2em;  // left margin for ul an ol
+
+$background-color: #2b2c30;
+
+$form-background-color: #414245;
+$form-border-color: #B6B6B6;
