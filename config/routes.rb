@@ -1,15 +1,10 @@
 Squidtree::Application.routes.draw do
-  get "portfolio/index"
-
-  get "portfolio/view"
-
-  get "pages/index"
-
-  get "pages/about"
-
-  get "blog/index"
-
-  get "blog/view"
+  match 'portfolio/' => 'portfolio#index'
+  match 'portfolio/:id' => 'portfolio#view'
+  match 'blog/' => 'blog#index'
+  match 'blog/:id' => 'blog#view'
+  match 'about/' => 'pages#about'
+  match 'contact/' => 'contacts#new'
 
   mount Kss::Engine => '/kss' if Rails.env.development?
 

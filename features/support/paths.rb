@@ -10,6 +10,14 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the blog/
+      '/blog/'
+    when /the portfolio page/
+      '/portfolio/'
+    when /the about page/
+      '/about/'
+    when /the contact page/
+      '/contact/'
     end
   end
 end
