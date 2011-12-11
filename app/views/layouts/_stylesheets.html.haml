@@ -4,3 +4,44 @@
 
 -# Append your own using content_for :stylesheets
 = yield :stylesheets
+
+:css
+  body {
+    background-color: #496aa9;
+  }
+  
+  .primary_bg_color {
+    background-color: #496aa9 !important;
+  }
+  
+  .primary_color, h2 {
+    color: #496aa9 !important;
+  }
+  
+  .secondary_bg_color {
+    background-color: #eeb74b !important;
+  }
+  
+  .secondary_color, h3 {
+    color: #eeb74b !important;
+  }
+  
+  a:hover, a:active {
+    color: #eeb74b;
+  }
+  
+  #s_nav a:active, #s_nav a:hover {
+  	color: #eeb74b;
+  }
+  
+  #site_search:focus {
+  	border-color: #eeb74b !important;
+  }
+  
+  article.comment a.comment_link:active, article.comment a.comment_link:hover {
+    color: #496aa9 !important;
+  }
+  
+  #months_callout:active, #months_callout:hover {
+  	color: #496aa9 !important;
+  }
