@@ -11,9 +11,12 @@ body, select, input, textarea {
   // font-family: Georgia, serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 h1 {
   padding: 0 0 30px;
-	background-color: $background-color;
 }
 
 aside h1, article h1 {
@@ -21,6 +24,7 @@ aside h1, article h1 {
 	font-family: $heading-font-family;
 	margin-top: -5px;
 	margin-bottom: 12px;
+	padding-bottom: 0;
 }
 
 footer aside h1 {
@@ -31,11 +35,11 @@ footer aside h1 {
 a {
   text-decoration: none;
   
-  &:active, &:visited {
+  &:link, &:visited {
     color: $link-color;
   }
   
-  &:hover {
+  &:active, &:hover {
     color: $link-hover-color;
   }
 }
@@ -70,7 +74,7 @@ textarea {
 }
 
 h1 time, time {
-	font-family: $heading-font-family;
+	font-family: $base-font-family;
   font-size: 10px;
   color: $link-color;
 }
@@ -84,6 +88,59 @@ input:invalid, textarea:invalid {
 }
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+//--------------------------------
+// Helpers
+//--------------------------------
+.ir { @include image-replacement; }
+
+.hidden { @include hidden; }
+
+.visuallyhidden { @include visually-hidden; }
+
+.clearfix, .clear {
+  @include micro-clearfix;
+}
+
+.default_text {
+  color: #808082 !important;
+  background-color: #414245;
+}
+
+.intro {
+	font-size: 13px;
+}
+
+.tentacle_separator {
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 30px;
+	
+	&:last-child, &.last-child {
+    padding-bottom: 11px;
+	}
+}
+
+.hr {
+	width: 550px;
+	height: 18px;
+	margin-left: -20px;
+	clear: both;
+	margin-bottom: 30px;
+	
+	&.hr1 {
+  	background: transparent image-url("template/hr1.gif") no-repeat;
+  }
+
+  &.hr2 {
+  	background: transparent image-url("template/hr2.gif") no-repeat;
+  }
+
+  &.hr3 {
+  	background: transparent image-url("template/hr3.gif") no-repeat;
+  }
+}
 
 
 //-----------------------------------
@@ -131,8 +188,9 @@ body {
     	font-family: InstitutionRegular;
     	font-size: 24px;
     	position: absolute;
-    	top: 67px;
-    	width: 758px;
+    	top: 92px;
+    	display: block;
+    	width: 100%;
     	
     	li {
       	display: inline;
@@ -163,7 +221,7 @@ body {
     }
     
     #lefter_inner {
-    	background: #2b2c30 url(../images/template/side_divider.gif) no-repeat right top;
+    	background: #2b2c30 image-url("template/side_divider.gif") no-repeat right top;
     	padding-left: 20px;
     	padding-right: 20px;
     	
@@ -171,7 +229,7 @@ body {
       	height: 24px;
       	
       	#search_button {
-        	background: #1d1d21 url(../images/template/magnify.gif) no-repeat center center;
+        	background: #1d1d21 image-url("template/magnify.gif") no-repeat center center;
         	width: 23px;
         	height: 23px;
         	display: inline-block;
@@ -198,7 +256,7 @@ body {
     }
     
     #lefter_bottom {
-    	background: transparent url(../images/template/sw_frame.png) no-repeat;
+    	background: transparent image-url("template/sw_frame.png") no-repeat;
     	width: 250px;
     	height: 38px;
     	margin-top: 0;
@@ -221,7 +279,11 @@ body {
       }
     }
   }
-
+  
+  h1#page_title {
+    background-color: $background-color;
+  }
+  
   #s_content {
   	min-height: 800px;
   	height: auto !important;
@@ -284,14 +346,14 @@ body {
     }
 
     .footer_hr {
-    	background: transparent url(../images/template/hr_footer.gif) no-repeat;
+    	background: transparent image-url("template/hr_footer.gif") no-repeat;
     	width: 195px;
     	height: 5px;
     	margin-bottom: 13px;
     }
 
     #ribbon {
-    	background: transparent url(../images/template/ribbon.png) no-repeat;
+    	background: transparent image-url("template/ribbon.png") no-repeat;
     	width: 84px;
     	height: 486px;
     	position: absolute;
@@ -309,7 +371,7 @@ body {
     }
 
     #footer_bottom {
-    	background: transparent url(../images/template/se_frame.png) no-repeat;
+    	background: transparent image-url("template/se_frame.png") no-repeat;
     	width: 550px;
     	height: 19px;
     }
@@ -363,7 +425,7 @@ article {
     section {
       color: #fff;
     	text-indent: 13px;
-    	background: transparent url(../images/template/quote.gif) no-repeat 0 1px;
+    	background: transparent image-url("template/quote.gif") no-repeat 0 1px;
     }
     
     .comment_user {
@@ -390,19 +452,19 @@ article {
 
 .post_user {
 	padding-left: 12px;
-	background: transparent url(../images/template/person.gif) no-repeat 0 2px;
+	background: transparent image-url("template/person.gif") no-repeat 0 2px;
 	margin-right: 10px;
 }
 
 .post_comments {
 	padding-left: 14px;
-	background: transparent url(../images/template/comment_left.gif) no-repeat 0 2px;
+	background: transparent image-url("template/comment_left.gif") no-repeat 0 2px;
 	margin-right: 10px;
 }
 
 .post_tags {
 	padding-left: 7px;
-	background: transparent url(../images/template/tag.gif) no-repeat 0 2px;
+	background: transparent image-url("template/tag.gif") no-repeat 0 2px;
 	margin-right: 10px;
 }
 

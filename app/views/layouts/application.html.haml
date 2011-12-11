@@ -6,14 +6,23 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   
-  %body{ :class => "#{controller.controller_name}" }
-    #container
-      %header#header
-        = render "layouts/header"
+  %body#s{ :class => "#{controller.controller_name}" }
+    #s_outer
+      #s_main
+        %header#s_header
+          = render "layouts/header"
         
-      #main{ :role => 'main' }
-        = render "layouts/flashes"
-        = yield
+        #s_inner{ :role => 'main' }
+          %h1#page_title
+            = image_tag("template/banner_blog.png", :alt => "Blog")
+          #s_lefter
+            #lefter_inner
+              = render "layouts/lefter"
+            #lefter_bottom
+            
+          #s_content
+            = render "layouts/flashes"
+            = yield
         
       %footer#s_footer
         = render "layouts/footer"

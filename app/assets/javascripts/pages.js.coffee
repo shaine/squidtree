@@ -32,7 +32,7 @@ $ ->
   $('.default_text').blur(->
     if !$(this).val()
       $(this)
-        .addClass 'default_text'
+        .addClass('default_text')
         .val $(this).data 'default-text'
   )
   
@@ -45,7 +45,7 @@ $ ->
   )
   
   $('.social').fadeTo(
-    'slow'
+    400
     .33
   )
 
@@ -56,4 +56,4 @@ fade_social = (icon, direction)->
     val = .33
 
   icon.clearQueue()
-  icon.fadeTo 'slow', val
+  icon.fadeTo 400, val

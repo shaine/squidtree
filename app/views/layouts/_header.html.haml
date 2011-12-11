@@ -1,0 +1,16 @@
+#logo_outer
+  %a{:href => "/"}
+    = image_tag("template/logo.png", :id=>"logo", :alt=>"Squidtree")
+  #logo_bg.primary_bg_color
+#s_top_links
+%nav#s_nav
+  %ul
+    %li.active
+      %a{:href => "/blog/"} Blog
+    %li
+      %a{:href => "/portfolio/"} Portfolio
+    %li#nav_spacer
+    %li
+      %a{:href => "/about/"} About
+    %li
+      %a{:href => "/contact/"} Contact
