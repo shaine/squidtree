@@ -11,6 +11,7 @@ class Post
   
   # Relationships.
   belongs_to :user
+  many :comments
   
   # Validations.
   validates_presence_of :title, :slug, :user_id
