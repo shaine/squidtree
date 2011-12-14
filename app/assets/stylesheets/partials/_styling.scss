@@ -1,4 +1,4 @@
-// Add the 'required' attribute on your
+å// Add the 'required' attribute on your
 // inputs if you want to use these
 input:valid, textarea:valid {}
 input:invalid, textarea:invalid {
@@ -29,10 +29,6 @@ input:invalid, textarea:invalid {
 
 .intro {
   font-size: 13px;
-}
-
-.tentacle_separator {
-  
 }
 
 .hr {
@@ -90,8 +86,13 @@ input:invalid, textarea:invalid {
   }
 }
 
-
+//
+// Articles of any sort
+//
 article {
+  //
+  // Posts
+  //
   &.post {
     margin-bottom: 30px;
     
@@ -100,15 +101,14 @@ article {
         color: #9d9ea2 !important;
       }
 
-      a:hover span, a:active span {
-        color: #fff !important;
-      }
-
-      a:hover time, a:active time {
-        color: #fff !important;
+      a:hover, a:active {
+        span, time {
+          color: #fff !important;
+        }
       }
     }
     
+    // Thumbnails
     img {
       float: left;
       margin: 0 10px 10px 0;
@@ -123,18 +123,11 @@ article {
       }
     }
   }
-
+  
+  //
+  // Comment
+  //
   &.comment {
-    margin-bottom: 13px;
-    
-    a.comment_link {
-      display: block;
-      
-      &:active section, &:hover section {
-        color: #9d9ea2;
-      }
-    }
-    
     section {
       color: #fff;
       text-indent: 13px;
@@ -148,39 +141,49 @@ article {
     .comment_title {
       font-style: italic;
     }
-  }
-  
-  &.post_comment {
-    margin-bottom: 30px;
+    
+    #s_footer & {
+      margin-bottom: 13px;
+      
+      a.comment_link {
+        display: block;
+
+        &:active section, &:hover section {
+          color: #9d9ea2;
+        }
+      }
+    }
   }
   
   time {
     font-size: 10px;
   }
-}
+  
+  .post_meta {
+    a:link, a:visited {
+      color: #9d9ea2;
+    }
+  }
 
-.post_meta a:link, .post_meta a:visited {
-  color: #9d9ea2;
-}
+  .post_user {
+    padding-left: 12px;
+    background: transparent image-url("template/person.gif") no-repeat 0 4px;
+    margin-right: 10px;
+  }
 
-.post_user {
-  padding-left: 12px;
-  background: transparent image-url("template/person.gif") no-repeat 0 2px;
-  margin-right: 10px;
-}
+  .post_comment_count {
+    padding-left: 14px;
+    background: transparent image-url("template/comment_left.gif") no-repeat 0 4px;
+    margin-right: 10px;
+  }
 
-.post_comments {
-  padding-left: 14px;
-  background: transparent image-url("template/comment_left.gif") no-repeat 0 2px;
-  margin-right: 10px;
-}
+  .post_tags {
+    padding-left: 7px;
+    background: transparent image-url("template/tag.gif") no-repeat 0 4px;
+    margin-right: 10px;
+  }
 
-.post_tags {
-  padding-left: 7px;
-  background: transparent image-url("template/tag.gif") no-repeat 0 2px;
-  margin-right: 10px;
-}
-
-footer.post_meta {
-  clear: both;
+  footer.post_meta {
+    clear: both;
+  }
 }
