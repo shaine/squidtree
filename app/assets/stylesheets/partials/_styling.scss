@@ -27,47 +27,33 @@ input:invalid, textarea:invalid {
   @include micro-clearfix;
 }
 
-// Text
-//
-// Styleguide 1.
-
-// Text Styles
-//
-// Styleguide 1.1.
-
-// Intro text at the top of an element or page
-//
-// Styleguide 1.1.1.
 .intro {
   font-size: 13px;
 }
 
-// Text Helpers
-//
-// Styleguide 1.2.
-
-// Separators
-//
-// Styleguide 1.2.1.
-
-// Style for large, line-free tentacle separators
-//
-// :last-child, .last-child - Less bottom padding for the last item
-// .hr1                     - First tentacle variation
-// .hr2                     - Second tentacle variation
-// .hr3                     - Third tentacle variation
-//
-// Styleguide 1.2.1.1
 .tentacle_separator {
   margin: 0 auto;
+  padding: 0;
   display: block;
   padding-bottom: 30px;
   
-  &.hr1 {}
+  &.hr1 {
+    background: transparent image-url("template/tentacle1.gif") no-repeat center 0;
+    height: 29px;
+    width: 50px;
+  }
   
-  &.hr2 {}
+  &.hr2 {
+    background: transparent image-url("template/tentacle2.gif") no-repeat center 0;
+    height: 33px;
+    width: 50px;
+  }
   
-  &.hr3 {}
+  &.hr3 {
+    background: transparent image-url("template/tentacle3.gif") no-repeat center 0;
+    height: 26px;
+    width: 50px;
+  }
   
   &:last-child, &.last-child {
     padding-bottom: 11px;
