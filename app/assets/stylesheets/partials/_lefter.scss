@@ -1,0 +1,82 @@
+// File for the left sidebar
+
+//
+// Structure
+//
+#s_lefter {
+	width: 250px;
+	float: left;
+	
+	a:link {
+  	color: #fff;
+  }
+  
+  a:visited {
+  	color: #9d9ea2;
+  }
+  
+  .section {
+  	margin-bottom: 30px;
+  }
+}
+
+#lefter_inner {
+	background: #2b2c30 image-url("template/side_divider.gif") no-repeat right top;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#lefter_bottom {
+	background: transparent image-url("template/sw_frame.png") no-repeat;
+	width: 250px;
+	height: 38px;
+	margin-top: 0;
+}
+
+//
+// Search
+//
+#sidebar_search {
+	height: 24px;
+}
+
+#search_button {
+	background: #1d1d21 image-url("template/magnify.gif") no-repeat center center;
+	width: 23px;
+	height: 23px;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+	z-index: 1;
+	position: relative;
+	border: 1px solid #1d1d21;
+}
+
+#site_search {
+	border: 1px solid #1d1d21;
+	background-color: #414245;
+	margin: 0;
+	padding: 0 0 0 4px;
+	height: 23px;
+	float: right;
+	width: 179px;
+	z-index: 5;
+	position: relative;
+	outline: none;
+}
+
+//
+// Links
+//
+#links {
+	margin: 0;
+	padding: 0;
+	
+	li {
+  	list-style: none;
+  }
+  
+  a:visited {
+  	color: #9d9ea2;
+  }
+}

@@ -1,0 +1,12 @@
+body {
+  background: $background-color image-url("template/bg.png");
+}
+
+#s_outer {
+	width: 800px;
+	margin: 0 auto;
+}
+
+@import "partials/header";
+
+@import "partials/lefter";

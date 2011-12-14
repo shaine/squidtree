@@ -1,0 +1,75 @@
+// Styles for HTML elements
+
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1 {
+  padding: 0 0 30px;
+}
+
+aside h1, article h1 {
+	font-size: 36px;
+	font-family: $heading-font-family;
+	margin-top: -5px;
+	margin-bottom: 12px;
+	padding-bottom: 0;
+}
+
+footer aside h1 {
+	font-size: 27px;
+	margin-top: -4px;
+}
+
+a {
+  text-decoration: none;
+  
+  &:link, &:visited {
+    color: $link-color;
+  }
+  
+  &:active, &:hover {
+    color: $link-hover-color;
+  }
+}
+
+strong, th {
+  font-weight: bold;
+}
+
+small {
+  // Use font-size mixin to convert to percentage for YUI
+  // http://developer.yahoo.com/yui/3/cssfonts/#fontsize
+  @include font-size(11px);  // approx 85% when base-font-size eq 13px
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+input[type=text], input[type=password] {
+  width: 200px;
+  border: 1px solid $form-border-color;
+  background-color: $form-background-color;
+  padding: 2px;
+  color: #fff;
+}
+
+textarea {
+  border: 1px solid $form-border-color;
+  background-color: $form-background-color;
+  width: 400px;
+  height: 100px;
+}
+
+h1 time, time {
+	font-family: $base-font-family;
+  font-size: 10px;
+  color: $link-color;
+}
