@@ -82,7 +82,7 @@ input:invalid, textarea:invalid {
     }
   }
   
-  #s_footer & {
+  &.tiny {
     background: transparent image-url("template/hr_footer.gif") no-repeat;
     width: 195px;
     height: 5px;
