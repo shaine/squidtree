@@ -84,9 +84,9 @@ input:invalid, textarea:invalid {
   
   &.tiny {
     background: transparent image-url("template/hr_footer.gif") no-repeat;
-    width: 195px;
     height: 5px;
-    margin-bottom: 13px;
+    margin: 0 auto 13px auto;
+    width: 195px;
   }
 }
 
