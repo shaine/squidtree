@@ -1,0 +1,90 @@
+//
+// Structure
+//
+#s_footer {
+  width: 550px;
+  clear: both;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-left: 250px;
+  position: relative;
+  
+  .social {
+    margin-right: 10px;
+  }
+
+  .footer_hr {
+    background: transparent image-url("template/hr_footer.gif") no-repeat;
+    width: 195px;
+    height: 5px;
+    margin-bottom: 13px;
+  }
+}
+
+#footer_inner {
+  padding: 20px;
+  padding-bottom: 0;
+  background-color: #2b2c30;
+}
+
+#footer_left {
+  float: left;
+  width: 203px;
+}
+
+#footer_right {
+  float: right;
+  width: 187px;
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 13px;
+    
+    li {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+      
+      a:link, a:visited {
+        color: #fff;
+      }
+    }
+  }
+}
+
+#footer_bottom {
+  background: transparent image-url("template/se_frame.png") no-repeat;
+  width: 550px;
+  height: 19px;
+}
+
+//
+// Styling
+//
+#months_callout:link, #months_callout:visited {
+  font-weight: bold;
+  color: #9d9ea2 !important;
+}
+
+//
+// Ribbon
+//
+#ribbon {
+  background: transparent image-url("template/ribbon.png") no-repeat;
+  width: 84px;
+  height: 486px;
+  position: absolute;
+  top: 7px;
+  left: 489px;
+  padding-bottom: 20px;
+}
+
+#ribbon_link {
+  position: absolute;
+  width: 80px;
+  height: 426px;
+  top: 0;
+  left: 4px;
+}
