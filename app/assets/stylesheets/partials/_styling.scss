@@ -32,51 +32,61 @@ input:invalid, textarea:invalid {
 }
 
 .tentacle_separator {
-  margin: 0 auto;
-  padding: 0;
-  display: block;
-  padding-bottom: 30px;
   
-  &.hr1 {
-    background: transparent image-url("template/tentacle1.gif") no-repeat center 0;
-    height: 29px;
-    width: 50px;
-  }
-  
-  &.hr2 {
-    background: transparent image-url("template/tentacle2.gif") no-repeat center 0;
-    height: 33px;
-    width: 50px;
-  }
-  
-  &.hr3 {
-    background: transparent image-url("template/tentacle3.gif") no-repeat center 0;
-    height: 26px;
-    width: 50px;
-  }
-  
-  &:last-child, &.last-child {
-    padding-bottom: 11px;
-  }
 }
 
 .hr {
-  width: 550px;
-  height: 18px;
-  margin-left: -20px;
   clear: both;
-  margin-bottom: 30px;
   
-  &.hr1 {
-    background: transparent image-url("template/hr1.gif") no-repeat;
-  }
+  &.big {
+    display: block;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+    width: 50px;
 
-  &.hr2 {
-    background: transparent image-url("template/hr2.gif") no-repeat;
-  }
+    &.hr1 {
+      background: transparent image-url("template/tentacle1.gif") no-repeat center 0;
+      height: 29px;
+    }
 
-  &.hr3 {
-    background: transparent image-url("template/hr3.gif") no-repeat;
+    &.hr2 {
+      background: transparent image-url("template/tentacle2.gif") no-repeat center 0;
+      height: 33px;
+    }
+
+    &.hr3 {
+      background: transparent image-url("template/tentacle3.gif") no-repeat center 0;
+      height: 26px;
+    }
+
+    &:last-child, &.last-child {
+      padding-bottom: 11px;
+    }
+  }
+  
+  &.small {
+    height: 18px;
+    margin: 0 0 30px -20px;
+    width: 550px;
+
+    &.hr1 {
+      background: transparent image-url("template/hr1.gif") no-repeat;
+    }
+
+    &.hr2 {
+      background: transparent image-url("template/hr2.gif") no-repeat;
+    }
+
+    &.hr3 {
+      background: transparent image-url("template/hr3.gif") no-repeat;
+    }
+  }
+  
+  #s_footer & {
+    background: transparent image-url("template/hr_footer.gif") no-repeat;
+    width: 195px;
+    height: 5px;
+    margin-bottom: 13px;
   }
 }
 
