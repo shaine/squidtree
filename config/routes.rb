@@ -6,7 +6,6 @@ Squidtree::Application.routes.draw do
   match 'about/' => 'pages#about'
   match 'contact/' => 'contacts#new'
 
-  mount Kss::Engine => '/kss' if Rails.env.development?
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
