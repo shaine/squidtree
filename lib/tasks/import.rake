@@ -1,5 +1,6 @@
 namespace :squidtree do
   task :import do
-    puts "Ready for the day!"
+    user = ArUser.find(1)
+    puts user.inspect
   end
 end
