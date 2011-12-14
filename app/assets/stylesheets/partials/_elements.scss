@@ -15,16 +15,16 @@ h1 {
 }
 
 aside h1, article h1 {
-	font-size: 36px;
-	font-family: $heading-font-family;
-	margin-top: -5px;
-	margin-bottom: 12px;
-	padding-bottom: 0;
+  font-size: 36px;
+  font-family: $heading-font-family;
+  margin-top: -5px;
+  margin-bottom: 12px;
+  padding-bottom: 0;
 }
 
 footer aside h1 {
-	font-size: 27px;
-	margin-top: -4px;
+  font-size: 27px;
+  margin-top: -4px;
 }
 
 a {
@@ -69,7 +69,7 @@ textarea {
 }
 
 h1 time, time {
-	font-family: $base-font-family;
+  font-family: $base-font-family;
   font-size: 10px;
   color: $link-color;
 }
