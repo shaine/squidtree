@@ -1,6 +1,10 @@
+require 'rake'
 namespace :squidtree do
-  task :import do
-    user = ArUser.find(1)
-    puts user.inspect
+  task :import  => :environment do
+    ArUser.find(:all).each do |ar_user|
+      user = User.new
+      
+      puts ar_user.first_name
+    end
   end
 end
