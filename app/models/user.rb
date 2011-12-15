@@ -14,7 +14,7 @@ class User
   many :posts
   
   # Validations.
-  validates_presence_of :first_name, :last_name#, :slug
+  validates_presence_of :first_name, :last_name, :slug
   
   sluggable :alias, :method => :to_url
   
