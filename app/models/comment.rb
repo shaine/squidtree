@@ -3,7 +3,7 @@ class Comment
 
   key :content, String
   key :user_id, ObjectId
-  timestamps!
+  key :created_at, Time
   
   # Relationships.
   belongs_to :user

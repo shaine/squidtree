@@ -4,6 +4,7 @@ class Post
   key :slug, String
   key :title, String
   key :content, String
+  key :tags, Array
   key :user_id, ObjectId
   timestamps!
   
