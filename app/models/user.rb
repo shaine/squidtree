@@ -16,24 +16,17 @@ class User
   # Validations.
   validates_presence_of :first_name, :last_name#, :slug
   
-  before_validation :slugify
+  sluggable :alias, :method => :to_url
   
   def to_param
     slug # or whatever you set :url_attribute to
   end
   
   def url
-    "/blog/users/" + (slug || '')
+    "/blog/users/#{slug}"
   end
   
   def name
     first_name + ' ' + last_name
-  end
-  
-  private
-  def slugify_on_create
-    if !persisted?
-      slug = (first_name + ' ' + last_name).parameterize
-    end
   end
 end

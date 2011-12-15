@@ -16,7 +16,7 @@ class Post
   # Validations.
   validates_presence_of :title, :slug, :user_id
   
-  sluggable :title, :scope => :account_id
+  sluggable :title, :method => :to_url
   
   def created_at_formatted
     created_at.strftime('%m.%d.%y')
