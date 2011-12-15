@@ -6,7 +6,6 @@ class User
   key :name, Hash
   key :email, String
   key :password, String
-  
   timestamps!
   
   # Relationships.

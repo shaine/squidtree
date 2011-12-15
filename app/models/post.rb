@@ -4,9 +4,7 @@ class Post
   key :slug, String
   key :title, String
   key :content, String
-  
-  # Note this: ids are of class ObjectId.
-  key :user_id,   ObjectId
+  key :user_id, ObjectId
   timestamps!
   
   # Relationships.
