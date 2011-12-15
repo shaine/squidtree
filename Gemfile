@@ -11,7 +11,7 @@ gem "haml"
 gem 'html5-boilerplate', :group => :production, :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
-gem 'stringex'
+gem 'mm-sluggable'
 
 # Gems used only for assets and not required
 # in production environments by default.

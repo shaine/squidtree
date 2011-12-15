@@ -1,15 +1,9 @@
 require 'rake'
 namespace :squidtree do
   task :import  => :environment do
-    Post.all.each do |item|
-      item.destroy
-    end
-    User.all.each do |item|
-      item.destroy
-    end
-    Link.all.each do |item|
-      item.destroy
-    end
+    Post.collection.remove
+    User.collection.remove
+    Link.collection.remove
     
     ArUser.find(:all).each do |ar_user|
       user = User.new
@@ -19,6 +13,8 @@ namespace :squidtree do
       user.alias = ar_user.username
       
       user.save
+      
+      puts user.slug
       
       ar_user.links.each do |ar_link|
         link = Link.new
@@ -51,11 +47,11 @@ namespace :squidtree do
           comment.user = user
           comment.created_at = ar_comment.created_at
           post.comments << comment
-          
-          puts comment.inspect
         end
         
         post.save
+        
+        puts post.slug
       end
     end
   end

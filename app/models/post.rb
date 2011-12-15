@@ -1,5 +1,6 @@
 class Post
   include MongoMapper::Document
+  plugin MongoMapper::Plugins::Sluggable
 
   key :slug, String
   key :title, String
@@ -14,4 +15,14 @@ class Post
   
   # Validations.
   validates_presence_of :title, :slug, :user_id
+  
+  sluggable :title, :scope => :account_id
+  
+  def created_at_formatted
+    created_at.strftime('%m.%d.%y')
+  end
+  
+  def url
+    "/blog/" + slug + "/"
+  end
 end
