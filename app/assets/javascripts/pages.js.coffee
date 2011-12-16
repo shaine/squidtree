@@ -3,8 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $(".hr:last-child").addClass 'last-child'
-  
   ###
    * DEFAULT TEXT
    *

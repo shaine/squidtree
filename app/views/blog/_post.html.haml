@@ -1,16 +1,16 @@
-:css
-  #post_#{post.slug} h1 a:link, #post_#{post.slug} h1 a:visited {
-    color: #369b55;
-  }
-
-  #post_#{post.slug} h1 a:hover, #post_#{post.slug} h1 a:active {
-    color: #c2552e !important;
-  }
-
-  #post_#{post.slug} a:hover, #post_#{post.slug} a:active {
-    color: #369b55;
-  }
 %article.post{:id=>"post_#{post.slug}"}
+  :css
+    #post_#{post.slug} h1 a:link, #post_#{post.slug} h1 a:visited {
+      color: #369b55;
+    }
+
+    #post_#{post.slug} h1 a:hover, #post_#{post.slug} h1 a:active {
+      color: #c2552e !important;
+    }
+
+    #post_#{post.slug} a:hover, #post_#{post.slug} a:active {
+      color: #369b55;
+    }
   %header
     %h1
       %a{:href => post.url}
@@ -26,4 +26,3 @@
       %a{:href => "/blog/tags/fun"} fun
       \ 
       %a{:href => "/blog/tags/life"} life
-.hr.small{:class=>"hr#{(post_counter % 3) + 1}"}

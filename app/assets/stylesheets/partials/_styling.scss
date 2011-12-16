@@ -58,29 +58,26 @@ input:invalid, textarea:invalid {
       height: 26px;
     }
 
-    &:last-child, &.last-child {
+    &:last-child {
       padding-bottom: 11px;
     }
   }
   
   &.small {
+    background: transparent image-url("template/hr1.gif") no-repeat;
     height: 18px;
     margin: 0 0 30px -20px;
     width: 550px;
 
-    &.hr1 {
-      background: transparent image-url("template/hr1.gif") no-repeat;
-    }
-
-    &.hr2 {
+    &:nth-child(6n+5) {
       background: transparent image-url("template/hr2.gif") no-repeat;
     }
 
-    &.hr3 {
+    &:nth-child(6n+1) {
       background: transparent image-url("template/hr3.gif") no-repeat;
     }
     
-    &:last-child, &.last-child {
+    &:last-child {
       display: none;
     }
   }
