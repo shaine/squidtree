@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $(".tentacle_separator:last-child").addClass 'last-child'
+  $(".hr:last-child").addClass 'last-child'
   
   ###
    * DEFAULT TEXT

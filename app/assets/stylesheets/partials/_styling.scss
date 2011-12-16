@@ -31,6 +31,9 @@ input:invalid, textarea:invalid {
   font-size: 13px;
 }
 
+//
+// HRs
+//
 .hr {
   clear: both;
   
@@ -75,6 +78,10 @@ input:invalid, textarea:invalid {
 
     &.hr3 {
       background: transparent image-url("template/hr3.gif") no-repeat;
+    }
+    
+    &:last-child, &.last-child {
+      display: none;
     }
   }
   
