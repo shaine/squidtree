@@ -1,16 +1,4 @@
-%article.post{:id=>"post_#{post.slug}"}
-  :css
-    #post_#{post.slug} h1 a:link, #post_#{post.slug} h1 a:visited {
-      color: #369b55;
-    }
-
-    #post_#{post.slug} h1 a:hover, #post_#{post.slug} h1 a:active {
-      color: #c2552e !important;
-    }
-
-    #post_#{post.slug} a:hover, #post_#{post.slug} a:active {
-      color: #369b55;
-    }
+%article.post{:id=>"post_#{post.id}", :class=>"day_#{post.day_of_year}"}
   %header
     %h1
       %a{:href => post.url}

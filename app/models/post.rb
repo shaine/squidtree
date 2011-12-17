@@ -1,5 +1,6 @@
 class Post
   include MongoMapper::Document
+  include Colorable
   plugin MongoMapper::Plugins::Sluggable
 
   key :slug, String
