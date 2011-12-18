@@ -1,5 +1,6 @@
 class Comment
   include MongoMapper::EmbeddedDocument
+  include Colorable
 
   key :content, String
   key :user_id, ObjectId
@@ -22,5 +23,9 @@ class Comment
         return comment
       end
     end
+  end
+  
+  def url
+    "/blog/" + post.slug + "/"
   end
 end

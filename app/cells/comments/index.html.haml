@@ -1,4 +1,15 @@
-%h1
-  Comments#index
-%p
-  Find me in app/cells/comments/index.html.haml
+- for comment in @comments
+  %article.comment{:class=>comment.color_class}
+    %a.comment_link{:href=>comment.url}
+      %time= comment.created_at_formatted
+
+      %section
+        = comment.content
+
+      %footer.comment_meta
+        %span.comment_user Jas'n Richards
+        , 
+        %span.comment_title
+          Day 2, 
+          %span attempt 6
+  .hr.tiny

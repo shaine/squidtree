@@ -11,6 +11,10 @@ module Colorable
   def color_class
     "day_#{day_of_year}"
   end
+  
+  def created_at_formatted
+    created_at.strftime('%m.%d.%y')
+  end
 end
 
 Time.send :include, Colorable

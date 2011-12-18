@@ -4,50 +4,8 @@
 #footer_inner
   %aside#footer_left
     %h1 Recent Comments
-    %article#comment_4712.comment.day_98
-      %a#comment_4712_link.comment_link{:href=>"/blog/#comment_4712"}
-        %time 04.08.09
-
-        %section
-          Uhmmm...
-
-        %footer.comment_meta
-          %span.comment_user Jas'n Richards
-          , 
-          %span.comment_title
-            Day 2, 
-            %span attempt 6
-    .hr.tiny
     
-    %article#comment_4711.comment.day_75
-      %a#comment_4711_link.comment_link{:href=>"/blog/#comment_4711"}
-        %time 03.16.09
-
-        %section
-          "dying"...
-
-        %footer.comment_meta
-          %span.comment_user Shaine Hatch
-          , 
-          %span.comment_title
-            Day 2, 
-            %span Random Browser Stats
-    .hr.tiny
-    
-    %article#comment_4710.comment.day_75
-      %a#comment_4710_link.comment_link{:href=>"/blog/#comment_4710"}
-        %time 03.16.09
-
-        %section
-          This just means Replex is dying... This just means Replex [...]
-
-        %footer.comment_meta
-          %span.comment_user Jas'n Richards
-          , 
-          %span.comment_title
-            Day 2, 
-            %span Random Browser Stats
-    .hr.tiny
+    = render_cell :comments, :index
 
   %aside#footer_right
     = render_cell :posts, :index

@@ -21,11 +21,7 @@ class Post
   
   sluggable :title, :method => :to_url
   
-  def created_at_formatted
-    created_at.strftime('%m.%d.%y')
-  end
-  
   def url
-    "/blog/" + slug + "/"
+    "/blog/#{slug}/##{id}"
   end
 end
