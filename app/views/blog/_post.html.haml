@@ -1,4 +1,4 @@
-%article.post{:id=>"post_#{post.id}", :class=>"day_#{post.day_of_year}"}
+%article.post{:id=>"post_#{post.id}", :class=>post.color_class}
   %header
     %h1
       %a{:href => post.url}

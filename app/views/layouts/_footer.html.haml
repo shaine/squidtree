@@ -5,7 +5,7 @@
   %aside#footer_left
     %h1 Recent Comments
 
-    %article#comment_4712.comment
+    %article#comment_4712.comment.day_98
       %a#comment_4712_link.comment_link{:href=>"/blog/#comment_4712"}
         %time 04.08.09
 
@@ -20,7 +20,7 @@
             %span attempt 6
     .hr.tiny
     
-    %article#comment_4711.comment
+    %article#comment_4711.comment.day_75
       %a#comment_4711_link.comment_link{:href=>"/blog/#comment_4711"}
         %time 03.16.09
 
@@ -35,7 +35,7 @@
             %span Random Browser Stats
     .hr.tiny
     
-    %article#comment_4710.comment
+    %article#comment_4710.comment.day_75
       %a#comment_4710_link.comment_link{:href=>"/blog/#comment_4710"}
         %time 03.16.09
 
@@ -53,30 +53,10 @@
   %aside#footer_right
     %h1 Archive
     %ul
-      %li
-        %a#april-2009{:href=>"/blog/april-2009/"} April 2009
-      %li
-        %a#march-2009{:href=>"/blog/march-2009/"} March 2009
-      %li
-        %a#february-2009{:href=>"/blog/february-2009/"} February 2009
-      %li
-        %a#january-2009{:href=>"/blog/january-2009/"} January 2009
-      %li
-        %a#december-2008{:href=>"/blog/december-2008/"} December 2008
-      %li
-        %a#november-2008{:href=>"/blog/november-2008/"} April 2008
-      %li
-        %a#october-2008{:href=>"/blog/october-2008/"} October 2008
-      %li
-        %a#september-2008{:href=>"/blog/september-2008/"} September 2008
-      %li
-        %a#august-2008{:href=>"/blog/august-2008/"} August 2008
-      %li
-        %a#july-2008{:href=>"/blog/july-2008/"} July 2008
-      %li
-        %a#june-2008{:href=>"/blog/june-2008/"} June 2008
-      %li
-        %a#may-2008{:href=>"/blog/may-2008/"} May 2008
+      - for month in @months
+        - month_f = month.strftime("%B %Y")
+        %li
+          %a{:href=>"/blog/#{month_f.to_url}/", :class => month.color_class, :id => month_f.to_url}= month_f
       %li
         %a#months_callout{:href=>"/blog/"} Older &raquo;
     

@@ -18,7 +18,15 @@
     
     a:hover, a:active {
       color: $primary_color !important;
+      
+      time {
+        color: $primary_color !important;
+      }
     }
+  }
+  
+  a.day_#{$day}:hover, a.day_#{$day}:active {
+    color: $primary_color !important;
   }
 }
 
