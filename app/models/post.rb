@@ -14,6 +14,8 @@ class Post
   belongs_to :user
   many :comments
   
+  many :site_activities, :as => :loggable
+  
   # Validations.
   validates_presence_of :title, :slug, :user_id
   
