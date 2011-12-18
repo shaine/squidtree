@@ -17,7 +17,7 @@ class Comment
   def self.find_by_id(id)
     post = Post.where("comments._id" => id).first
     
-    post.comments.each |comment| do
+    post.comments.each do |comment|
       if comment._id == id
         return comment
       end
