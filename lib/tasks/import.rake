@@ -23,6 +23,7 @@ namespace :squidtree do
         link.title = ar_link.title
         link.comment = ar_link.comment
         link.user = user
+        link.created_at = ar_link.created_at
         
         link.save
       end

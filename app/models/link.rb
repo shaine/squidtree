@@ -1,5 +1,6 @@
 class Link
   include MongoMapper::Document
+  include Colorable
 
   key :url, String
   key :title, String
