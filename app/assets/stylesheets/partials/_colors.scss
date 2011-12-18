@@ -1,7 +1,7 @@
-@mixin temporal-color($first_primary_color, $first_secondary_color, $last_primary_color, $last_secondary_color, $i, $last_day) {
+@mixin temporal-color($first_primary_color, $first_secondary_color, $last_primary_color, $last_secondary_color, $i, $first_day, $last_day) {
   $day: $i + 1;
   
-  $percent: $i / $last_day;
+  $percent: ($i - $first_day) / ($last_day - $first_day);
   $primary_color: ($first_primary_color * (1 - $percent)) + ($last_primary_color * $percent);
   $secondary_color: ($first_secondary_color * (1 - $percent)) + ($last_secondary_color * $percent);
   
@@ -46,15 +46,15 @@ $i: 0;
 @while $i < $winter_day {
   // Winter to Spring
 	@if $i <= $spring_day {
-		@include temporal-color($winter_color, $winter_secondary_color, $spring_color, $spring_secondary_color, $i, $spring_day)
+		@include temporal-color($winter_color, $winter_secondary_color, $spring_color, $spring_secondary_color, $i, 0, $spring_day)
 	}
 	// Summer to Winter
 	@else if $i <= $summer_day {
-		@include temporal-color($spring_color, $spring_secondary_color, $summer_color, $summer_secondary_color, $i, $summer_day)
+		@include temporal-color($spring_color, $spring_secondary_color, $summer_color, $summer_secondary_color, $i, $spring_day, $summer_day)
 	}
 	// Winter to Spring
 	@else {
-		@include temporal-color($summer_day, $summer_secondary_color, $winter_color, $winter_secondary_color, $i, $winter_day)
+		@include temporal-color($summer_color, $summer_secondary_color, $winter_color, $winter_secondary_color, $i, $summer_day, $winter_day)
 	}
   
   $i: $i + 1;
