@@ -1,7 +1,6 @@
 class SiteActivity
   include MongoMapper::Document
 
-  key :content, String
   key :user_id, ObjectId
   timestamps!
   

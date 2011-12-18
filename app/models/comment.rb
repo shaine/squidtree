@@ -13,4 +13,14 @@ class Comment
   
   # Validations.
   validates_presence_of :content, :user_id
+  
+  def self.find_by_id(id)
+    post = Post.where("comments._id" => id).first
+    
+    post.comments.each |comment| do
+      if comment._id == id
+        return comment
+      end
+    end
+  end
 end

@@ -4,6 +4,7 @@ namespace :squidtree do
     Post.collection.remove
     User.collection.remove
     Link.collection.remove
+    SiteActivity.collection.remove
     
     ArUser.find(:all).each do |ar_user|
       user = User.new
@@ -47,6 +48,11 @@ namespace :squidtree do
           comment.content = ar_comment.content
           comment.user = user
           comment.created_at = ar_comment.created_at
+          
+          site_activity = SiteActivity.new
+          site_activity.user = user
+          comment.site_activities << site_activity
+          
           post.comments << comment
         end
         
