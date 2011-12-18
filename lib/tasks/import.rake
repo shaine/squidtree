@@ -51,6 +51,7 @@ namespace :squidtree do
           
           site_activity = SiteActivity.new
           site_activity.user = user
+          site_activity.created_at = comment.created_at
           comment.site_activities << site_activity
           
           post.comments << comment
