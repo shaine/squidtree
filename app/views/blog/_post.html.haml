@@ -9,8 +9,4 @@
   %footer.post_meta
     %a.post_user{:href => post.user.url}= post.user.name
     %a.post_comment_count{:href => "#{post.url}#comments"} #{post.comments.length} comments
-    %span.post_tags
-      \ 
-      %a{:href => "/blog/tags/fun"} fun
-      \ 
-      %a{:href => "/blog/tags/life"} life
+    %span.post_tags= tag_list(post.tags, 50)
