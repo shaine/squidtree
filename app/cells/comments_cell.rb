@@ -1,11 +1,6 @@
 class CommentsCell < Cell::Rails
   def index
-    logs = SiteActivity.all(:limit=>3, :sort=>"created_at DESC")
-    @comments = []
-    
-    logs.each do |log|
-      @comments << log.loggable
-    end
+    @comment_logs = SiteActivity.all(:conditions=> {:loggable_type => 'Comment'}, :limit=>3, :sort=>"created_at DESC")
     
     render
   end

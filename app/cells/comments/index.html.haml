@@ -1,15 +1,14 @@
-- for comment in @comments
+- for log in @comment_logs
+  - comment = log.loggable
   %article.comment{:class=>comment.color_class}
     %a.comment_link{:href=>comment.url}
       %time= comment.created_at_formatted
 
       %section
-        = comment.content
+        = truncate(comment.content, :length => 70, :separator => ' ', :omission => ' [...]')
 
       %footer.comment_meta
-        %span.comment_user Jas'n Richards
-        , 
+        %span.comment_user #{log.user.name},
         %span.comment_title
-          Day 2, 
-          %span attempt 6
+          = strip_tags comment.post.title
   .hr.tiny

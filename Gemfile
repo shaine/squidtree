@@ -13,7 +13,6 @@ gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
 gem 'mm-sluggable'
 gem 'stringex'
-gem 'minitest'
 gem 'cells'
 
 # Gems used only for assets and not required
@@ -47,5 +46,5 @@ group :test do
   gem 'rspec'
   gem 'capybara-webkit'
   gem 'database_cleaner'
-  gem 'turn', '< 0.8.3'
+  gem 'turn', :require => false
 end

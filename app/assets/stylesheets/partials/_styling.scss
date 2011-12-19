@@ -87,6 +87,10 @@ input:invalid, textarea:invalid {
     height: 5px;
     margin: 0 auto 13px auto;
     width: 195px;
+    
+    &:last-child {
+      display: none;
+    }
   }
 }
 

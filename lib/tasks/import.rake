@@ -6,6 +6,8 @@ namespace :squidtree do
     Link.collection.remove
     SiteActivity.collection.remove
     
+    users = []
+    
     ArUser.find(:all).each do |ar_user|
       user = User.new
       
@@ -15,52 +17,54 @@ namespace :squidtree do
       
       user.save
       
+      users[ar_user.id] = user
+      
       puts user.slug
+    end
       
-      ar_user.links.each do |ar_link|
-        link = Link.new
-        
-        link.url = ar_link.url
-        link.title = ar_link.title
-        link.comment = ar_link.comment
-        link.user = user
-        link.created_at = ar_link.created_at
-        
-        link.save
+    ArLink.find(:all).each do |ar_link|
+      link = Link.new
+      
+      link.url = ar_link.url
+      link.title = ar_link.title
+      link.comment = ar_link.comment
+      link.user = users[ar_link.user_id]
+      link.created_at = ar_link.created_at
+      
+      link.save
+    end
+      
+    ArPost.find(:all).each do |ar_post|
+      post = Post.new
+      
+      post.slug = ar_post.url
+      post.title = ar_post.title
+      post.content = ar_post.content
+      post.user = users[ar_post.user_id]
+      post.created_at = ar_post.created_at
+      
+      ar_post.tags.each do |ar_tag|
+        post.tags << ar_tag.title
       end
       
-      ar_user.posts.each do |ar_post|
-        post = Post.new
-        
-        post.slug = ar_post.url
-        post.title = ar_post.title
-        post.content = ar_post.content
-        post.user = user
-        post.created_at = ar_post.created_at
-        
-        ar_post.tags.each do |ar_tag|
-          post.tags << ar_tag.title
-        end
-        
-        ar_post.comments.each do |ar_comment|
-          comment = Comment.new
+      ar_post.comments.each do |ar_comment|
+        comment = Comment.new
 
-          comment.content = ar_comment.content
-          comment.user = user
-          comment.created_at = ar_comment.created_at
-          
-          site_activity = SiteActivity.new
-          site_activity.user = user
-          site_activity.created_at = comment.created_at
-          comment.site_activities << site_activity
-          
-          post.comments << comment
-        end
+        comment.content = ar_comment.content
+        comment.user = users[ar_comment.user_id]
+        comment.created_at = ar_comment.created_at
         
-        post.save
+        site_activity = SiteActivity.new
+        site_activity.user = users[ar_comment.user_id]
+        site_activity.created_at = comment.created_at
+        comment.site_activities << site_activity
         
-        puts post.slug
+        post.comments << comment
       end
+      
+      post.save
+      
+      puts post.slug
     end
   end
 end
