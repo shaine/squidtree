@@ -39,7 +39,7 @@ namespace :squidtree do
       
       post.slug = ar_post.url
       post.title = ar_post.title
-      post.content = ar_post.content
+      post.content = ar_post.content.gsub("/images/posts", "/assets/posts").gsub("/images/smilies", "/assets/smilies")
       post.user = users[ar_post.user_id]
       post.created_at = ar_post.created_at
       
@@ -50,7 +50,7 @@ namespace :squidtree do
       ar_post.comments.each do |ar_comment|
         comment = Comment.new
 
-        comment.content = ar_comment.content
+        comment.content = ar_comment.content.gsub("/images/posts", "/assets/posts").gsub("/images/smilies", "/assets/smilies")
         comment.user = users[ar_comment.user_id]
         comment.created_at = ar_comment.created_at
         
