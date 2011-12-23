@@ -54,13 +54,13 @@
   .secondary_color, footer aside h1 {
     color: $secondary_color !important;
   }
-
-  a:hover, a:active {
+  
+  a:active, a:hover {
     color: $primary_color !important;
-  }
-
-  #s_nav a:active, #s_nav a:hover {
-    color: $secondary_color !important;
+    
+    #s_nav & {
+      color: $secondary_color !important;
+    }
   }
 
   input[type=text]:focus, input[type=password], textarea {

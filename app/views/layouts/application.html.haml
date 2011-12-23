@@ -6,7 +6,7 @@
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
   
-  %body#s{ :class => "#{controller.controller_name}" }
+  %body#s{ :class => "#{controller.controller_name} #{controller.action_name}" }
     #s_outer
       #s_main
         %header#s_header
@@ -14,7 +14,7 @@
         
         #s_inner{ :role => 'main' }
           %h1#page_title
-            = image_tag("template/banner_blog.png", :alt => "Blog")
+            %span= content_for(:page_title)
           #s_lefter
             #lefter_inner
               = render "layouts/lefter"

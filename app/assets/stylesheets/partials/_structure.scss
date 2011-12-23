@@ -24,7 +24,31 @@ body {
 }
 
 h1#page_title {
-  background-color: $background-color;
+  height: 85px;
+  
+  .index & {
+    background: $background-color image-url("template/banner_home.png") no-repeat;
+  }
+  
+  .about & {
+    background: $background-color image-url("template/banner_about.png") no-repeat;
+  }
+
+  .blog & {
+    background: $background-color image-url("template/banner_blog.png") no-repeat;
+  }
+  
+  .contacts & {
+    background: $background-color image-url("template/banner_contact.png") no-repeat;
+  }
+  
+  .portfolio & {
+    background: $background-color image-url("template/banner_portfolio.png") no-repeat;
+  }
+}
+
+h1#page_title span {
+  display: none;
 }
 
 //
