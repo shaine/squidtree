@@ -4,3 +4,34 @@
 
 -# Append your own using content_for :stylesheets
 = yield :stylesheets
+
+%style{:type=>"text/css"}
+  :sass
+    $day: #{@color_date}
+    $percent: percentage_from_day_of_year($day)
+    $primary_color: primary_color_from_day($day)
+    $secondary_color: secondary_color_from_day($day)
+
+    body
+      background-color: $primary_color
+
+    ::-moz-selection, ::selection
+      background: $secondary_color
+
+    .primary_bg_color
+      background-color: $primary_color !important
+
+    .primary_color, aside h1
+      color: $primary_color !important
+
+    .secondary_color, footer aside h1
+      color: $secondary_color !important
+
+    a:active, a:hover
+      color: $primary_color !important
+
+      #s_nav &
+        color: $secondary_color !important
+
+    input[type=text]:focus, input[type=password], textarea 
+      border-color: $secondary_color !important

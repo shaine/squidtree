@@ -1,4 +1,5 @@
 - title strip_tags "Blog - #{@post.title}"
 - page_title strip_tags "Blog - #{@post.title}"
+- @color_date = @post.day_of_year
 
 = render :partial => "post", :locals => { :post => @post }
