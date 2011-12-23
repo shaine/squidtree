@@ -8,7 +8,7 @@ gem 'rails', '3.1.1'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem "haml"
-gem 'html5-boilerplate', :group => :production, :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
+gem 'html5-boilerplate'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
 gem 'mm-sluggable'
