@@ -1,9 +1,9 @@
-@mixin temporal-color($first_primary_color, $first_secondary_color, $last_primary_color, $last_secondary_color, $i, $first_day, $last_day) {
-  $day: $i + 1;
+@mixin temporal-color($i) {
+  $percent: percentage_from_day_of_year($i);
+  $primary_color: primary_color_from_day($i);
+  $secondary_color: secondary_color_from_day($i);
   
-  $percent: ($i - $first_day) / ($last_day - $first_day);
-  $primary_color: ($first_primary_color * (1 - $percent)) + ($last_primary_color * $percent);
-  $secondary_color: ($first_secondary_color * (1 - $percent)) + ($last_secondary_color * $percent);
+  $day: $i + 1;
   
   .day_#{$day} {
     h1 {
@@ -30,32 +30,49 @@
   }
 }
 
-$winter_color: #3E68B4;
-$spring_color: #119E62;
-$summer_color: #E78F19;
+@mixin page-temporal-color() {
+  $percent: percentage_from_day_of_year();
+  $primary_color: primary_color_from_day();
+  $secondary_color: secondary_color_from_day();
+  
+  body {
+    background-color: $primary_color;
+  }
+  
+  ::-moz-selection, ::selection {
+    background: $secondary_color;
+  }
 
-$winter_secondary_color: #FFBE46;
-$spring_secondary_color: #E65319;
-$summer_secondary_color: #195F95;
+  .primary_bg_color {
+    background-color: $primary_color !important;
+  }
 
-$summer_day: 182;
-$winter_day: 366;
-$spring_day: 91;
+  .primary_color, aside h1 {
+    color: $primary_color !important;
+  }
+
+  .secondary_color, footer aside h1 {
+    color: $secondary_color !important;
+  }
+
+  a:hover, a:active {
+    color: $primary_color !important;
+  }
+
+  #s_nav a:active, #s_nav a:hover {
+    color: $secondary_color !important;
+  }
+
+  input[type=text]:focus, input[type=password], textarea {
+    border-color: $secondary_color !important;
+  }
+}
 
 $i: 0;
-@while $i < $winter_day {
-  // Winter to Spring
-	@if $i <= $spring_day {
-		@include temporal-color($winter_color, $winter_secondary_color, $spring_color, $spring_secondary_color, $i, 0, $spring_day)
-	}
-	// Summer to Winter
-	@else if $i <= $summer_day {
-		@include temporal-color($spring_color, $spring_secondary_color, $summer_color, $summer_secondary_color, $i, $spring_day, $summer_day)
-	}
-	// Winter to Spring
-	@else {
-		@include temporal-color($summer_color, $summer_secondary_color, $winter_color, $winter_secondary_color, $i, $summer_day, $winter_day)
-	}
+@while $i < 366 {
+  @include temporal-color($i);
   
   $i: $i + 1;
 }
+
+@include page-temporal-color()

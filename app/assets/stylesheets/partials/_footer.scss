@@ -47,8 +47,10 @@
       padding-left: 0;
       margin-left: 0;
       
-      a:link, a:visited {
-        color: #fff;
+      a.white {
+        &:link, &:visited {
+          color: #fff;
+        }
       }
     }
   }
@@ -65,7 +67,6 @@
 //
 #months_callout:link, #months_callout:visited {
   font-weight: bold;
-  color: #9d9ea2 !important;
 }
 
 //

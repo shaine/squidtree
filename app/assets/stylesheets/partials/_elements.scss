@@ -55,10 +55,13 @@ p {
 
 input[type=text], input[type=password] {
   width: 200px;
-  border: 1px solid $form-border-color;
-  background-color: $form-background-color;
-  padding: 2px;
   color: #fff;
+  border: 1px solid #1d1d21;
+  background-color: $form-background-color;
+  margin: 0;
+  padding: 0 0 0 4px;
+  height: 23px;
+  outline: none;
 }
 
 textarea {

@@ -3,6 +3,6 @@
   - for month in @months
     - month_f = month.strftime("%B %Y")
     %li
-      %a{:href=>"/blog/#{month_f.to_url}/", :class => month.color_class, :id => month_f.to_url}= month_f
+      %a{:href=>"/blog/#{month_f.to_url}/", :class => "#{month.color_class} white", :id => month_f.to_url}= month_f
   %li
     %a#months_callout{:href=>"/blog/"} Older &raquo;
