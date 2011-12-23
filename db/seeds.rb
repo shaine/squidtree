@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#result = %x[mongorestore --db squidtree_production --drop -h staff.mongohq.com:10054 -u squidtree -p squids4me ./db/dump/squidtree_development]
