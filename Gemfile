@@ -41,9 +41,8 @@ gem 'mysql2'
 
 group :test do
   # Pretty printed test output
-  gem "cucumber-rails", ">= 1.2.0"
-  gem "rspec-rails", ">= 2.8.0.rc1"
+  gem "cucumber-rails", ">= 1.2.1"
+  gem "rspec-rails", ">= 2.8.0.rc2"
   gem "capybara", ">= 1.1.2"
-  gem 'capybara-webkit'
-  gem "database_cleaner", ">= 0.7.0"
+  gem 'database_cleaner'
 end
