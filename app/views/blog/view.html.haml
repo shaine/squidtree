@@ -1,0 +1,4 @@
+- title strip_tags "Blog - #{@post.title}"
+- page_title strip_tags "Blog - #{@post.title}"
+
+= render :partial => "post", :locals => { :post => @post }

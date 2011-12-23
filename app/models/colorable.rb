@@ -1,11 +1,7 @@
 module Colorable
   def day_of_year
     format = '%-j'
-    if self.respond_to? 'created_at'
-      self.created_at.strftime format
-    else
-      strftime format
-    end
+    self.colorable_date.strftime format
   end
   
   def color_class
@@ -15,7 +11,19 @@ module Colorable
   def created_at_formatted
     created_at.strftime('%m.%d.%y')
   end
+  
+  def colorable_date
+    if self.respond_to? 'created_at'
+      self.created_at
+    elsif self.respond_to? 'strftime'
+      self
+    else
+      Time.new
+    end
+  end
 end
+
+Time.send :include, Colorable
 
 module Sass::Script::Functions
   WINTER_COLOR = Sass::Script::Color.new(:red=>0x3e, :green=>0x68, :blue=>0xb4)
@@ -96,5 +104,3 @@ module Sass::Script::Functions
     end
   end
 end
-
-Time.send :include, Colorable

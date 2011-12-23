@@ -4,6 +4,8 @@ class BlogController < ApplicationController
   end
 
   def view
+    puts :id
+    @post = Post.first(:slug=>params[:id])
   end
 
 end
