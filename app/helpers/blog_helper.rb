@@ -3,7 +3,7 @@ module BlogHelper
     tag_list_string = ""
     tags.each do |tag|
       if !length || strip_tags(tag_list_string + " #{tags}").strip.length < length
-        tag_list_string += "&nbsp; <a href=\"/blog/tags/#{URI.escape(tag.to_url)}\">#{tag}</a>"
+        tag_list_string += "&nbsp; <a href=\"/blog/tags/#{URI.escape(tag.to_url)}/\">#{tag}</a>"
       end
     end
     

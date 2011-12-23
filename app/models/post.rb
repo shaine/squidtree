@@ -22,6 +22,6 @@ class Post
   sluggable :title, :method => :to_url
   
   def url
-    "/blog/#{slug}/##{id}"
+    "/blog/#{slug}/"
   end
 end

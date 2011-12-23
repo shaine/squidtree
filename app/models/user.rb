@@ -23,7 +23,7 @@ class User
   end
   
   def url
-    "/blog/users/#{slug}"
+    "/users/#{slug}/"
   end
   
   def name

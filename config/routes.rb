@@ -1,4 +1,8 @@
 Squidtree::Application.routes.draw do
+  get "tags/view"
+
+  get "users/view"
+
   match 'portfolio/' => 'portfolio#index'
   match 'portfolio/:id' => 'portfolio#view'
   match 'blog/' => 'blog#index'
