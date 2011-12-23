@@ -5,7 +5,7 @@
     -# To render a different stylesheet partial inside the head (i.e. for admin layout)
     -# just copy _stylesheets.html.haml, and point to that partial instead.
     = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
-  
+    
   %body#s{ :class => "#{controller.controller_name} #{controller.action_name}" }
     #s_outer
       #s_main

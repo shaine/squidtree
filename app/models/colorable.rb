@@ -1,11 +1,10 @@
 module Colorable
   def day_of_year
-    format = '%-j'
-    self.colorable_date.strftime format
+    Colorable.format_date(colorable_date).to_i
   end
   
   def color_class
-    "day_#{day_of_year}"
+    Colorable.color_class(day_of_year)
   end
   
   def created_at_formatted
@@ -18,8 +17,29 @@ module Colorable
     elsif self.respond_to? 'strftime'
       self
     else
-      Time.new
+      Colorable.default_date
     end
+  end
+  
+  def self.day_of_year
+    Colorable.default_date.day_of_year
+  end
+  
+  def self.color_class(day=nil)
+    day ||= Colorable.day_of_year
+    
+    "day_#{day}"
+  end
+  
+  def self.format_date(date)
+    format = '%-j'
+    date.strftime format
+  end
+  
+  private
+  
+  def self.default_date
+    Time.new
   end
 end
 
@@ -40,8 +60,8 @@ module Sass::Script::Functions
   FIRST_DAY = Sass::Script::Number.new(0)
   
   def day_if_nil(day)
-    if day.nil?
-      Sass::Script::Number.new(15)
+    if day.nil? || day.value == ""
+      Sass::Script::Number.new(Colorable.day_of_year)
     else
       day
     end

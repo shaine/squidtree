@@ -30,10 +30,10 @@
   }
 }
 
-@mixin page-temporal-color() {
-  $percent: percentage_from_day_of_year();
-  $primary_color: primary_color_from_day();
-  $secondary_color: secondary_color_from_day();
+@mixin page-temporal-color($day: "") {
+  $percent: percentage_from_day_of_year($day);
+  $primary_color: primary_color_from_day($day);
+  $secondary_color: secondary_color_from_day($day);
   
   body {
     background-color: $primary_color;
@@ -68,11 +68,11 @@
   }
 }
 
+@include page-temporal-color();
+
 $i: 0;
 @while $i < 366 {
   @include temporal-color($i);
   
   $i: $i + 1;
 }
-
-@include page-temporal-color()
