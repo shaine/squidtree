@@ -8,7 +8,6 @@ gem 'rails', '3.1.1'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem "haml"
-gem 'html5-boilerplate', :group => :production, :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
 gem 'mm-sluggable'
@@ -22,6 +21,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
   gem "compass", ">= 0.12.alpha.1"
+  gem 'html5-boilerplate', :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 end
 
 gem 'jquery-rails'

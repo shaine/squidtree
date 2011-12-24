@@ -4,7 +4,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "rails/test_unit/railtie"
-require 'rails/all'
+#require 'rails/all'
+require "sass-rails"
 # Uncomment for asset pipelining in Rails 3.1
 require "sprockets/railtie"
 
@@ -47,6 +48,9 @@ module Squidtree
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.sass.load_paths ||= []
+    config.sass.load_paths << "#{Rails.root}/app/assets/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
