@@ -24,8 +24,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mysql2'
 
+group :development do
+  gem 'heroku'
+  gem 'mysql2'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
