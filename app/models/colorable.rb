@@ -104,6 +104,7 @@ module Sass::Script::Functions
       mix(WINTER_COLOR, SUMMER_COLOR, $percent)
     end
   end
+  declare :primary_color_from_day, :args => [:number]
   
   def secondary_color_from_day(day=nil)
     day = day_if_nil(day)
@@ -123,4 +124,5 @@ module Sass::Script::Functions
       mix(WINTER_SECONDARY_COLOR, SUMMER_SECONDARY_COLOR, $percent)
     end
   end
+  declare :secondary_color_from_day, :args => [:number]
 end

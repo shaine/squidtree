@@ -14,13 +14,6 @@ GIT
       omniauth (~> 1.0)
       rack-openid (~> 1.3.1)
 
-GIT
-  remote: git://github.com/sporkd/compass-html5-boilerplate.git
-  revision: 089ce4db61c2cb4e66638cd2c65f02002d5cfbb5
-  specs:
-    html5-boilerplate (1.0.0)
-      compass (>= 0.11.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -227,7 +220,6 @@ DEPENDENCIES
   cucumber-rails (>= 1.2.1)
   database_cleaner
   haml
-  html5-boilerplate!
   jquery-rails
   mm-sluggable
   mongo_mapper
