@@ -7,10 +7,8 @@
 
 // Or, you can pick and choose only the sections
 // you want by using the these includes
-@import "html5_boilerplate/reset";
-@import "html5_boilerplate/fonts";
-@import "html5_boilerplate/styles";
-@import "html5_boilerplate/helpers";
+@import "html5-boilerplate/html5-boilerplate";
+@include html5-boilerplate;
 
 // Or, you can import the "overrides" partial if
 // you want more control over individual mixins
