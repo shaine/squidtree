@@ -1,7 +1,7 @@
 Before do
-  DatabaseCleaner.start
+  #DatabaseCleaner.start
 end
 
 After do |scenario|
-  DatabaseCleaner.clean
+  #DatabaseCleaner.clean
 end
