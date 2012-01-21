@@ -9,6 +9,7 @@ Feature: Site Navigation
   Scenario: I visit the blog
     When I go to the blog
     Then I should be on the blog
+    And show me the page
     And I should see 10 posts
     And I should see 20 discoveries
     And I should see 3 recent comments
