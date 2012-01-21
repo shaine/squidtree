@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -24,7 +24,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'mysql2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,4 +43,5 @@ group :test do
   gem "rspec-rails", ">= 2.8.0.rc2"
   gem "capybara", ">= 1.1.2"
   gem 'database_cleaner'
+  gem "launchy"
 end
