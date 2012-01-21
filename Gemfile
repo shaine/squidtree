@@ -44,4 +44,5 @@ group :test do
   gem "capybara", ">= 1.1.2"
   gem 'database_cleaner'
   gem "launchy"
+  gem 'simplecov', :require => false, :group => :test
 end
