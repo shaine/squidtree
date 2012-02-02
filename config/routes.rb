@@ -3,10 +3,9 @@ Squidtree::Application.routes.draw do
 
   get "users/view"
 
-  match 'portfolio/' => 'portfolio#index'
-  match 'portfolio/:id' => 'portfolio#view'
-  match 'blog/' => 'blog#index'
-  match 'blog/:id' => 'blog#view'
+  resources :blog, :controller=>"blog"
+  resources :portfolio, :controller=>"portfolio"
+
   match 'about/' => 'pages#about'
   match 'contact/' => 'contacts#new'
 
