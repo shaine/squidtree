@@ -1,9 +1,11 @@
 Squidtree::Application.routes.draw do
+  resources :posts
+
   get "tags/view"
 
   get "users/view"
 
-  resources :blog, :controller=>"blog"
+  resources :blog, :controller=>"posts"
   resources :portfolio, :controller=>"portfolio"
 
   match 'about/' => 'pages#about'
