@@ -1,4 +1,4 @@
-module BlogHelper
+module PostsHelper
   def tag_list(tags, length = 0)
     tag_list_string = ""
     extra_tag_list_string = ""

@@ -14,6 +14,7 @@ gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
 gem 'mm-sluggable'
 gem 'stringex'
 gem 'cells'
+gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
