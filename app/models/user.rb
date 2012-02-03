@@ -16,7 +16,7 @@ class User
   # Validations.
   validates_presence_of :first_name, :last_name, :slug
   
-  sluggable :alias, :method => :to_url
+  sluggable :alias, :method => :to_url, :index => false
   
   def to_param
     slug # or whatever you set :url_attribute to

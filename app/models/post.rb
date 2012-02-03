@@ -19,7 +19,7 @@ class Post
   # Validations.
   validates_presence_of :title, :slug, :user_id
   
-  sluggable :title, :method => :to_url
+  sluggable :title, :method => :to_url, :index => false
   
   def url
     "/blog/#{slug}/"
