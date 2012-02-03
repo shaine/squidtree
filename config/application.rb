@@ -56,6 +56,11 @@ module Squidtree
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.generators do |g| 
+      g.template_engine :haml 
+      g.orm :mongo_mapper
+    end
+
     require "#{Rails.root}/lib/assets/colorable.rb"
   end
 end
