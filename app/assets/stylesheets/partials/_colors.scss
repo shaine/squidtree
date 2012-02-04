@@ -6,6 +6,10 @@
   $day: $i + 1;
   
   .day_#{$day} {
+    ::-moz-selection, ::selection {
+      background: $secondary_color;
+    }
+
     h1 {
       a:link, a:visited {
         color: $primary_color;
@@ -31,7 +35,7 @@
 }
 
 $i: 0;
-@while $i < 366 {
+@while $i <= 366 {
   @include temporal-color($i);
   
   $i: $i + 1;
