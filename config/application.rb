@@ -61,6 +61,8 @@ module Squidtree
       g.orm :mongo_mapper
     end
 
+    config.action_controller.default_url_options = { :trailing_slash => true }    
+
     require "#{Rails.root}/lib/assets/colorable.rb"
   end
 end

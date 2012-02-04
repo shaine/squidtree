@@ -1,6 +1,4 @@
 Squidtree::Application.routes.draw do
-  resources :posts
-
   get "tags/view"
 
   get "users/view"

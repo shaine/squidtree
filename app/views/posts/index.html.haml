@@ -2,3 +2,6 @@
 - page_title "Blog"
 
 = render :partial => "post", :collection => @posts, :spacer_template => "post_separator"
+
+= will_paginate @posts, :inner_window => 3
+
