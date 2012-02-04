@@ -34,10 +34,6 @@ h1#page_title {
     background: $background-color image-url("template/banner_about.png") no-repeat;
   }
 
-  .blog & {
-    background: $background-color image-url("template/banner_blog.png") no-repeat;
-  }
-  
   .contacts & {
     background: $background-color image-url("template/banner_contact.png") no-repeat;
   }

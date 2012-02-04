@@ -1,4 +1,8 @@
 .posts {
+  h1#page_title {
+    background: $background-color image-url("template/banner_blog.png") no-repeat;
+  }
+
   &.show{
     .hr.small {
       display: block;
