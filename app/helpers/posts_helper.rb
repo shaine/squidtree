@@ -5,11 +5,13 @@ module PostsHelper
     tags.each do |tag|
       tag_string = "&nbsp; <a href=\"/blog/tags/#{URI.escape(tag.to_url)}/\">#{tag}</a>"
       
-      if !length || strip_tags(tag_list_string + " #{tags}").strip.length < length
+      if length <= 0 || strip_tags(tag_list_string + " #{tag}").strip.length < length
         tag_list_string += tag_string
       else
         extra_tag_list_string += tag_string
       end
+
+      puts tag_list_string
     end
     
     if extra_tag_list_string.length > 0
