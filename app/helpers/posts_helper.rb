@@ -21,4 +21,15 @@ module PostsHelper
     extra_tag_list_string.html_safe
     tag_list_string.html_safe
   end
+
+  def comment_verb
+    [
+      'says',
+      'comments',
+      'thinks',
+      'believes',
+      'lies',
+      'bores'
+    ].sample
+  end
 end

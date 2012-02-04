@@ -5,4 +5,8 @@
 = render :partial => "post", :locals => { :post => @post }
 = render :partial => "post_separator"
 
+#comments
+  %h2 #{pluralize @post.comments.length, "Comment"}
+
+  = render :partial => "comment", :collection => @post.comments, :spacer_template => "comment_separator"
 
