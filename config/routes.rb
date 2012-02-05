@@ -4,6 +4,10 @@ Squidtree::Application.routes.draw do
   get "users/view"
 
   resources :blog, :controller=>"posts"
+  match '/feed' => 'posts#feed',
+      :as => :feed,
+      :defaults => { :format => 'atom' }
+
   resources :portfolio, :controller=>"portfolio"
 
   match 'about/' => 'pages#about'
