@@ -21,6 +21,22 @@
   font-size: 13px;
 }
 
+#flash {
+  p {
+    margin-bottom: 0;
+  }
+
+  .message {
+    margin-bottom: 30px;
+    padding: 20px;
+
+    &.notice {
+      background-color: #414245;
+      border: 1px solid $light-grey;
+    }
+  }
+}
+
 //
 // HRs
 //

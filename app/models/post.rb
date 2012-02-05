@@ -24,4 +24,8 @@ class Post
   def url
     "/blog/#{slug}/"
   end
+
+  def is_old?
+    self.created_at.strftime("%Y").to_i < 2010
+  end
 end

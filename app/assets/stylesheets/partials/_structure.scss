@@ -25,6 +25,8 @@ body {
 
 h1#page_title {
   height: 85px;
+  z-index: 10;
+  position: relative;
   
   .index & {
     background: $background-color image-url("template/banner_home.png") no-repeat;
