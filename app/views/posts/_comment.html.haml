@@ -1,7 +1,8 @@
-%aside.comment{:id=>comment.id, :class=>comment.color_class}
+- comment_id = "comment_#{comment_counter + 1}"
+%aside.comment{:id=>comment_id, :class=>comment.color_class}
   %header
-    %h1 #{comment.user.name} #{comment_verb comment.id.to_s.hex.to_i}
-  %section
+    %a{:href=>"##{comment_id}"} #{comment.user.name} #{comment_verb comment.id.to_s.hex.to_i}
+  .content
     = simple_format comment.content
   %footer
     = comment.created_at_formatted true

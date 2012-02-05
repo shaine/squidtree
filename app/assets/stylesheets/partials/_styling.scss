@@ -71,6 +71,13 @@
       display: none;
     }
   }
+
+  &.comment {
+    background: transparent image-url("template/hr_comment.gif") no-repeat;
+    height: 5px;
+    margin: 18px 0 15px 0;
+    width: 528px;
+  }
   
   &.tiny {
     background: transparent image-url("template/hr_footer.gif") no-repeat;
