@@ -53,5 +53,24 @@
       }
     }
   }
+
+  #comments {
+    margin-bottom: 30px;
+
+    .comment {
+      header {
+        font-weight: bold;
+      }
+
+      .content :last-child {
+        margin-bottom: 0;
+      }
+
+      footer {
+        color: $link-color;
+        font-size: 10px;
+      }
+    }
+  }
 }
 
