@@ -1,3 +1,7 @@
-%aside.comment{}
+%aside.comment{:id=>comment.id, :class=>comment.color_class}
   %header
     %h1 #{comment.user.name} #{comment_verb comment.id.to_s.hex.to_i}
+  %section
+    = simple_format comment.content
+  %footer
+    = comment.created_at_formatted true
