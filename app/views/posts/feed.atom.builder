@@ -10,7 +10,8 @@ atom_feed :language => 'en-US' do |feed|
       entry.content item.content, :type => 'html'
 
       # the strftime is needed to work with Google Reader.
-      # entry.updated(item.updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
+      updated_at = item.is_old?? item.created_at : item.updated_at
+      entry.updated(updated_at.strftime("%Y-%m-%dT%H:%M:%SZ")) 
 
       entry.author do |author|
         author.name item.user.name rescue "Unknown"
