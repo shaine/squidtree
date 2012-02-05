@@ -1,0 +1,8 @@
+development:
+  uri: "mongodb://localhost:27017/squidtree_development"
+
+test:
+  uri: "mongodb://localhost:27017/squidtree_test"
+
+production:
+  uri: "<%= ENV['MONGO_URI'] %>"
