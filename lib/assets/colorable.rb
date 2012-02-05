@@ -7,8 +7,12 @@ module Colorable
     Colorable.color_class(day_of_year)
   end
   
-  def created_at_formatted
-    created_at.strftime('%m.%d.%y')
+  def created_at_formatted(show_time=false)
+    base_date = '%m.%d.%y'
+    if show_time
+      base_date += " %I:%M%p"
+    end
+    date = created_at.strftime(base_date).sub("AM", "a").sub("PM", "p")
   end
   
   def colorable_date
