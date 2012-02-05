@@ -22,14 +22,34 @@ module PostsHelper
     tag_list_string.html_safe
   end
 
-  def comment_verb
+  def comment_verb(seed)
     [
       'says',
       'comments',
       'thinks',
       'believes',
       'lies',
-      'bores'
-    ].sample
+      'relates',
+      'adds',
+      'affirms',
+      'alleges',
+      'announces',
+      'asserts',
+      'claims',
+      'conjectures',
+      'discloses',
+      'implies',
+      'mentions',
+      'pronounces',
+      'remarks',
+      'responds',
+      'reveals',
+      'states',
+      'suggests',
+      'insists',
+      'argues',
+      'protests',
+      'swears'
+    ].sample(:random => Random.new(seed))
   end
 end
