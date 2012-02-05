@@ -1,5 +1,8 @@
 // This file must be imported before loading html5-boilerplate
 
+$medium-grey: #666;
+$light-grey: #9d9ea2;
+
 $base-font-family: "Open Sans", Arial, unquote('sans-serif');  // default font-family
 $heading-font-family: InstitutionRegular, Arial, unquote('sans-serif');
 
@@ -9,17 +12,17 @@ $base-line-height: normal;  // default line-height for YUI fonts
 
 $font-color: #fff;
 
-$link-color: #9d9ea2;
+$link-color: $light-grey;
 
 $link-visited-color: $link-color;
 
-$link-hover-color: #666;
+$link-hover-color: $medium-grey;
 
 $link-active-color: $link-hover-color;
 
 $selected-font-color: #fff;  // color for selected text
 
-$selected-background-color: #666;  // bg-color for selected text
+$selected-background-color: $medium-grey;  // bg-color for selected text
 
 $list-left-margin: 2em;  // left margin for ul an ol
 

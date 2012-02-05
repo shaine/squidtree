@@ -3,6 +3,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
+    if @posts.first.is_old?
+      flash[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +17,10 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.first(:slug=>params[:id])
+
+    if @post.is_old?
+      flash[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -78,6 +85,24 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :ok }
+    end
+  end
+
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Squidtree"
+
+    # the news items
+    @posts = Post.paginate :per_page => 10, :order => 'created_at DESC'
+
+    # this will be our Feed's update timestamp
+    @updated = @posts.first.updated_at unless @posts.empty?
+
+    respond_to do |format|
+      format.atom { render :layout => false }
+
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 end
