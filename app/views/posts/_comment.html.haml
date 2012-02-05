@@ -1,4 +1,3 @@
 %aside.comment{}
   %header
-    %h1 #{comment.user.name} #{comment_verb}
-      
+    %h1 #{comment.user.name} #{comment_verb comment.id.to_s.hex.to_i}
