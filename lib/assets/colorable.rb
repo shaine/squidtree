@@ -48,6 +48,22 @@ module Colorable
 end
 
 Time.send :include, Colorable
+Date.send :include, Colorable
+
+class Date
+  def all_months_until to
+    from = self
+    from, to = to, from if from > to
+    m = Date.new from.year, from.month
+    result = []
+    while m <= to
+      result << m
+      m >>= 1
+    end
+
+    result
+  end
+end
 
 module Sass::Script::Functions
   WINTER_COLOR = Sass::Script::Color.new(:red=>0x3e, :green=>0x68, :blue=>0xb4)

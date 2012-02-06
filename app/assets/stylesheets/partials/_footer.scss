@@ -65,8 +65,13 @@
 //
 // Styling
 //
-#months_callout:link, #months_callout:visited {
-  font-weight: bold;
+#months_list {
+  height: 221px;
+  overflow: hidden;
+
+  #months_callout {
+    font-weight: bold;
+  }
 }
 
 //

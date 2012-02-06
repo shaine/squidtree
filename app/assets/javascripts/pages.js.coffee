@@ -47,6 +47,14 @@ $ ->
     .33
   )
 
+  $("#months_list li:gt(11)").hide()
+  $("#months_callout").show()
+  $("#months_callout").click ->
+    $(this).siblings().show()
+    $(this).hide()
+    $(this).closest('ul').css "overflow", "auto"
+    return false
+
 fade_social = (icon, direction)->
   if direction == 'in'
     val = 1
