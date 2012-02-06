@@ -1,19 +1,16 @@
 class PostsCell < Cell::Rails
-
   def index
-    @months = []
-    i = 0
-    while @months.length < 12
-      date = Time.now.months_ago(i)
-      first = date.at_beginning_of_month
-      last = date.at_end_of_month
-      if Post.all(:created_at.gte => first, :created_at.lt => last).count > 0
-        @months << first
-      end
-      i += 1
-    end
+    @months = Post.first(:sort=>"created_at ASC").created_at.to_date.all_months_until Post.first(:sort=>"created_at DESC").created_at.to_date
+    @months.find_all{|item|
+      count = Post.count(
+        :created_at => {
+          '$lt' => (item >> 1).midnight,
+          '$gt' => item.midnight
+        }
+      )
+    }
+    @months.reverse!
     
     render
   end
-
 end

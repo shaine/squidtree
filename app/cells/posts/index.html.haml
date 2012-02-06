@@ -1,8 +1,11 @@
 %h1 Archive
-%ul
+%ul#months_list
   - for month in @months
     - month_f = month.strftime("%B %Y")
     %li
-      %a{:href=>"/blog/#{month_f.to_url}/", :class => "#{month.color_class} white", :id => month_f.to_url}= month_f
-  %li
-    %a#months_callout{:href=>"/blog/"} Older &raquo;
+      = link_to month_f,
+        blog_index_path(:month=>month_f.to_url),
+        :class => "#{month.color_class} white",
+        :id => month_f.to_url
+  %li#months_callout
+    %a{:href=>"#"} Older &raquo;

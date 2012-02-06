@@ -1,7 +1,7 @@
 - for log in @comment_logs
   - comment = log.loggable
   %article.comment{:class=>comment.color_class}
-    %a.comment_link{:href=>"#{comment.url}"}
+    %a.comment_link{:href=>"#{comment.url}#comments"}
       %time= comment.created_at_formatted
 
       %section

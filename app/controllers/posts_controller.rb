@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
     if @posts.first.is_old?
-      flash[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+      flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
     end
 
     respond_to do |format|
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.first(:slug=>params[:id])
 
     if @post.is_old?
-      flash[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+      flash.now[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
     end
 
     respond_to do |format|
