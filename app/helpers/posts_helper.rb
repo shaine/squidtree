@@ -10,8 +10,6 @@ module PostsHelper
       else
         extra_tag_list_string += tag_string
       end
-
-      puts tag_list_string
     end
     
     if extra_tag_list_string.length > 0
