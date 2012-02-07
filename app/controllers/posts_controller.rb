@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    take_color = false
-
     options = {
       :page => params[:page], 
       :per_page => 10, 
@@ -23,9 +21,7 @@ class PostsController < ApplicationController
     @posts = Post.paginate(options)
 
     if @posts.length
-      if take_color
-        @color_date = @posts.first.day_of_year
-      end
+      @color_date = @posts.first.day_of_year
 
       if @posts.first.is_old?
         flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
