@@ -2,14 +2,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    take_color = false
+
     options = {
       :page => params[:page], 
       :per_page => 10, 
-      :order => 'created_at DESC',
+      :order => 'created_at DESC'
     }
 
     unless params[:month].nil?
       month = Date.parse params[:month]
+      take_color = true
 
       options[:created_at] = {
         '$lt' => (month >> 1).midnight,
@@ -19,8 +22,14 @@ class PostsController < ApplicationController
 
     @posts = Post.paginate(options)
 
-    if @posts.first.is_old?
-      flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+    if @posts.length
+      if take_color
+        @color_date = @posts.first.day_of_year
+      end
+
+      if @posts.first.is_old?
+        flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
+      end      
     end
 
     respond_to do |format|
@@ -37,6 +46,8 @@ class PostsController < ApplicationController
     if @post.is_old?
       flash.now[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
     end
+
+    @color_date = @post.day_of_year
 
     respond_to do |format|
       format.html # show.html.erb
