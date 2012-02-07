@@ -2,23 +2,22 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    created_at = {}
+    options = {
+      :page => params[:page], 
+      :per_page => 10, 
+      :order => 'created_at DESC',
+    }
 
-    unless params[:month].empty?
+    unless params[:month].nil?
       month = Date.parse params[:month]
 
-      created_at = {
+      options[:created_at] = {
         '$lt' => (month >> 1).midnight,
         '$gt' => month.midnight
       }
     end
 
-    @posts = Post.paginate(
-      :page => params[:page], 
-      :per_page => 10, 
-      :order => 'created_at DESC',
-      :created_at => created_at
-    )
+    @posts = Post.paginate(options)
 
     if @posts.first.is_old?
       flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
