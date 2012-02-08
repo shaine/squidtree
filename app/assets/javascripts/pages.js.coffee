@@ -55,6 +55,13 @@ $ ->
     $(this).closest('ul').css "overflow", "auto"
     return false
 
+  window.onscroll = ->
+    posX = (if (document.documentElement.scrollLeft) then document.documentElement.scrollLeft else window.pageXOffset)
+    posY = (if (document.documentElement.scrollTop) then document.documentElement.scrollTop else window.pageYOffset)
+    ground = document.getElementById("s")
+    groundparallax = calcParallax(100, 5, posY)
+    ground.style.backgroundPosition = "0 " + groundparallax + "px"
+
 fade_social = (icon, direction)->
   if direction == 'in'
     val = 1
@@ -63,3 +70,6 @@ fade_social = (icon, direction)->
 
   icon.clearQueue()
   icon.fadeTo 400, val
+
+calcParallax = (tileheight, speedratio, scrollposition) ->
+  (tileheight) - (Math.floor(scrollposition / speedratio) % (tileheight + 1))
