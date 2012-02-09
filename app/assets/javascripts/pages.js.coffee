@@ -37,6 +37,12 @@ $ ->
   # Add in the default value on load (if applicable)
   $('.default_text').trigger 'blur'
   
+  outer_title = $("#outer_title")
+  if outer_title.length
+    left = outer_title.width() / 2
+    left = Math.floor left
+    left = parseInt(outer_title.css("left").replace("px", "")) - left
+
   $('.social').hover(
     -> fade_social $(this), 'in'
     -> fade_social $(this), 'out'
@@ -59,8 +65,11 @@ $ ->
     posX = (if (document.documentElement.scrollLeft) then document.documentElement.scrollLeft else window.pageXOffset)
     posY = (if (document.documentElement.scrollTop) then document.documentElement.scrollTop else window.pageYOffset)
     ground = document.getElementById("s")
-    groundparallax = calcParallax(100, 5, posY)
+    title = document.getElementById("outer_title")
+    groundparallax = calcParallax(300, 5, posY)
+    titleparallax = 713 + (Math.floor(posY / 4))
     ground.style.backgroundPosition = "0 " + groundparallax + "px"
+    title.style.top = titleparallax + "px"
 
 fade_social = (icon, direction)->
   if direction == 'in'
