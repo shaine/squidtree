@@ -37,12 +37,6 @@ $ ->
   # Add in the default value on load (if applicable)
   $('.default_text').trigger 'blur'
   
-  outer_title = $("#outer_title")
-  if outer_title.length
-    left = outer_title.width() / 2
-    left = Math.floor left
-    left = parseInt(outer_title.css("left").replace("px", "")) - left
-
   $('.social').hover(
     -> fade_social $(this), 'in'
     -> fade_social $(this), 'out'
@@ -67,7 +61,7 @@ $ ->
     ground = document.getElementById("s")
     title = document.getElementById("outer_title")
     groundparallax = calcParallax(300, 4, posY)
-    titleparallax = 713 + (Math.floor(posY / 2))
+    titleparallax = 714 - (Math.floor(posY / 3))
     ground.style.backgroundPosition = "0 " + groundparallax + "px"
     title.style.top = titleparallax + "px"
 
