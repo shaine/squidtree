@@ -7,7 +7,8 @@
     
   %body#s{ :class => "#{controller.controller_name} #{controller.action_name}" }
     #s_outer
-      %h1#outer_title May 2009
+      - unless params[:month].nil?
+        %h1#outer_title= params[:month]
 
       #s_main
         %header#s_header
