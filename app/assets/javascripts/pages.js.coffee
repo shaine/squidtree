@@ -66,7 +66,7 @@ $ ->
     ground = document.getElementById("s")
     title = document.getElementById("outer_title")
     groundparallax = calcParallax(300, 4, posY)
-    titleparallax = 714 - (Math.floor(posY / 3))
+    titleparallax = 714 - (Math.floor(posY / 2))
     ground.style.backgroundPosition = "0 " + groundparallax + "px"
     title.style.top = titleparallax + "px"
 
