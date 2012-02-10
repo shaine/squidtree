@@ -17,12 +17,12 @@ class PostsController < ApplicationController
         '$gt' => month.midnight
       }
     elsif !params[:tag].nil?
-      options[:tags] = params[:tag]
+      options[:tags] = params[:tag].titleize.downcase
     end
 
     @posts = Post.paginate(options)
 
-    if @posts.length
+    if @posts.length > 0
       @color_date = @posts.first.day_of_year
 
       if @posts.first.is_old?
