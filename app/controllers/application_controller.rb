@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def find_outer_title
     if !params[:month].nil?
       @outer_title = params[:month]
+    elsif !params[:tag].nil?
+      @outer_title = params[:tag]
     end
   end
 end
