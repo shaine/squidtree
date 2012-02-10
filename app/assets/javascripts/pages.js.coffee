@@ -54,6 +54,11 @@ $ ->
     $(this).hide()
     $(this).closest('ul').css "overflow", "auto"
     return false
+  
+  positionHeading()
+
+  $(window).resize ->
+    positionHeading()
 
   window.onscroll = ->
     posX = (if (document.documentElement.scrollLeft) then document.documentElement.scrollLeft else window.pageXOffset)
@@ -76,3 +81,10 @@ fade_social = (icon, direction)->
 
 calcParallax = (tileheight, speedratio, scrollposition) ->
   (tileheight) - (Math.floor(scrollposition / speedratio) % (tileheight + 1))
+
+positionHeading = ->
+  width = $("#s_outer").width()
+  outer_width = $("body").width()
+  margin = ((outer_width - width) / 2)
+  margin = margin - 534 
+  $("#outer_title").css("right", margin+"px")
