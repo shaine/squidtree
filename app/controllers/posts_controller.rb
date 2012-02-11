@@ -17,7 +17,7 @@ class PostsController < ApplicationController
         '$gt' => month.midnight
       }
     elsif !params[:tag].nil?
-      options[:tags] = params[:tag].titleize.downcase
+      options[:tags] = params[:tag].downcase
     end
 
     @posts = Post.paginate(options)
