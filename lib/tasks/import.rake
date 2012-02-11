@@ -1,5 +1,6 @@
 require 'rake'
 namespace :squidtree do
+  desc "Import Squidtree from MySQL database to MongoDB"
   task :import  => :environment do
     Post.collection.remove
     User.collection.remove
