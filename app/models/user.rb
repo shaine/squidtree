@@ -22,11 +22,11 @@ class User
     slug # or whatever you set :url_attribute to
   end
   
-  def url
-    "/users/#{slug}/"
-  end
-  
   def name
     first_name + ' ' + last_name
+  end
+
+  def to_param
+    self.slug
   end
 end
