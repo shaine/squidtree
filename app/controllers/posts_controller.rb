@@ -6,6 +6,7 @@ class PostsController < ApplicationController
       :page => params[:page], 
       :per_page => 10, 
       :order => 'created_at DESC'
+      
     }
 
     if params[:month]
@@ -20,6 +21,12 @@ class PostsController < ApplicationController
       options[:tags] = params[:tag].downcase
     elsif params[:user]
       options[:user_id] = User.find_by_slug(params[:user]).id
+    elsif params[:search]
+      regex = Regexp.new(Regexp.escape(params[:search]), Regexp::IGNORECASE)
+      options["$or"] = [
+        {:content => regex},
+        {:title => regex}
+      ]
     end
 
     @posts = Post.paginate(options)
