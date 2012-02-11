@@ -21,11 +21,11 @@ class Post
   
   sluggable :title, :method => :to_url, :index => false
   
-  def url
-    "/blog/#{slug}/"
-  end
-
   def is_old?
     self.created_at.strftime("%Y").to_i < 2010
+  end
+
+  def to_param
+    self.slug
   end
 end

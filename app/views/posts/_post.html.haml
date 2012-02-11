@@ -1,13 +1,13 @@
 %article.post{:id=>"post_#{post.id}", :class=>post.color_class}
   %header
     %h1
-      %a{:href => post.url}
+      %a{:href => blog_path(post)}
         != post.title
         %time= post.created_at_formatted params[:action] == 'show'
   %section
     != post.content
   %footer.post_meta
     %a.post_user{:href => post.user.url}= post.user.name
-    %a.post_comment_count{:href => "#{post.url}#comments"} #{post.comments.length} comments
+    %a.post_comment_count{:href => "#{blog_path(post)}#comments"} #{pluralize post.comments.length, "comment"}
     - if post.tags.length > 0
       %span.post_tags= tag_list(post.tags, 70)
