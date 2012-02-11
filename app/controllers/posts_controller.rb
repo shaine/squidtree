@@ -10,19 +10,34 @@ class PostsController < ApplicationController
     }
 
     if params[:month]
-      month = Date.parse params[:month]
-      take_color = true
+      month_param = params[:month]
+
+      month = Date.parse month_param
+
+      @outer_title = month_param
 
       options[:created_at] = {
         '$lt' => (month >> 1).midnight,
         '$gt' => month.midnight
       }
     elsif params[:tag]
-      options[:tags] = params[:tag].downcase
+      tag = params[:tag].downcase
+
+      @outer_title = tag
+
+      options[:tags] = tag
     elsif params[:user]
-      options[:user_id] = User.find_by_slug(params[:user]).id
+      user = User.find_by_slug(params[:user])
+
+      @outer_title = user.name
+
+      options[:user_id] = user.id
     elsif params[:search]
-      regex = Regexp.new(Regexp.escape(params[:search]), Regexp::IGNORECASE)
+      search = params[:search]
+
+      @outer_title = search
+
+      regex = Regexp.new(Regexp.escape(search), Regexp::IGNORECASE)
       options["$or"] = [
         {:content => regex},
         {:title => regex}
