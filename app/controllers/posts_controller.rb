@@ -8,7 +8,7 @@ class PostsController < ApplicationController
       :order => 'created_at DESC'
     }
 
-    if !params[:month].nil?
+    if params[:month]
       month = Date.parse params[:month]
       take_color = true
 
@@ -16,8 +16,10 @@ class PostsController < ApplicationController
         '$lt' => (month >> 1).midnight,
         '$gt' => month.midnight
       }
-    elsif !params[:tag].nil?
+    elsif params[:tag]
       options[:tags] = params[:tag].downcase
+    elsif params[:user]
+      options[:user_id] = User.find(:slug=>params[:user]).id
     end
 
     @posts = Post.paginate(options)
