@@ -7,9 +7,10 @@
 
 %aside.section
   %h1 Search
-  %p#sidebar_search
-    %a#search_button{:href => "#"}
-    %input#site_search.default_text{"data-default-text" => "Search the blog", :type => "text"}>
+  %form{:method=> "get"}
+    %p#sidebar_search
+      %a#search_button{:href => "#"}
+      %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
 
 .hr.big.hr2
 
