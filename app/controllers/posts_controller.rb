@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     elsif params[:tag]
       options[:tags] = params[:tag].downcase
     elsif params[:user]
-      options[:user_id] = User.find(:slug=>params[:user]).id
+      options[:user_id] = User.find_by_slug(params[:user]).id
     end
 
     @posts = Post.paginate(options)
