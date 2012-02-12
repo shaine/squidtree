@@ -7,3 +7,4 @@
 //= require plugins
 //= require jquery_ujs
 //= require pages
+//= require_tree ./plugins
