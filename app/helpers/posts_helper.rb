@@ -3,17 +3,17 @@ module PostsHelper
     tag_list_string = ""
     extra_tag_list_string = ""
     tags.each do |tag|
-      tag_string = "&nbsp; " + link_to(tag, blog_index_path(:tag=>tag))
-      
       if length <= 0 || strip_tags(tag_list_string + " #{tag}").strip.length < length
+        tag_string = "&nbsp; " + link_to(tag, blog_index_path(:tag=>tag))
         tag_list_string += tag_string
       else
+        tag_string = link_to(tag, blog_index_path(:tag=>tag)) + "<br>".html_safe
         extra_tag_list_string += tag_string
       end
     end
     
-    if extra_tag_list_string.length > 0
-      
+    unless extra_tag_list_string.empty?
+      tag_list_string += " <span title=\"#{CGI::escapeHTML(extra_tag_list_string)}\">...</span>".html_safe
     end
     
     extra_tag_list_string.html_safe
