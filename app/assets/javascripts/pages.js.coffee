@@ -39,7 +39,13 @@ $ ->
     groundparallax = calcParallax(300, 4, posY)
     titleparallax = 714 - (Math.floor(posY / 2))
     ground.style.backgroundPosition = "0 " + groundparallax + "px"
-    title.style.top = titleparallax + "px"
+    if title
+      title.style.top = titleparallax + "px"
+
+  $("[title]").tipsy
+    html: true
+    fade: true
+    delayOut: 1500
 
 fade_social = (icon, direction)->
   if direction == 'in'
