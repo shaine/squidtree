@@ -1,2 +1,0 @@
-class DiscoveriesController < ApplicationController
-end
