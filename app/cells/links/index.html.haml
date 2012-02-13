@@ -3,4 +3,6 @@
   %ul#links
     - for link in @links
       %li
-        %a#discovery_884{:href => link.url, :target => "_blank", :class => link.color_class}= link.title
+        %a{:href => link.url, :target => "_blank", :class => link.color_class}= link.title
+    %li#links_callout
+      %a{:href=>"#"}Older »

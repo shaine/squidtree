@@ -1,0 +1,23 @@
+%h1 Listing links
+
+%table
+  %tr
+    %th Title
+    %th Url
+    %th Comment
+    %th
+    %th
+    %th
+
+  - @links.each do |link|
+    %tr
+      %td= link.title
+      %td= link.url
+      %td= link.comment
+      %td= link_to 'Show', link
+      %td= link_to 'Edit', edit_link_path(link)
+      %td= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Link', new_link_path

@@ -9,7 +9,7 @@
   padding-left: 250px;
   position: relative;
   z-index: 10;
-  
+
   .social {
     margin-right: 10px;
   }
@@ -36,18 +36,18 @@
 #footer_right {
   float: right;
   width: 187px;
-  
+
   ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
     margin-bottom: 13px;
-    
+
     li {
       list-style: none;
       padding-left: 0;
       margin-left: 0;
-      
+
       a.white {
         &:link, &:visited {
           color: #fff;

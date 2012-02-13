@@ -6,15 +6,15 @@
 #s_lefter {
   width: 250px;
   float: left;
-  
+
   a:link {
     color: #fff;
   }
-  
+
   a:visited {
     color: #9d9ea2;
   }
-  
+
   .section {
     margin-bottom: 30px;
   }
@@ -63,14 +63,32 @@
 // Links
 //
 #links {
+  height: 374px;
   margin: 0;
+  overflow: hidden;
   padding: 0;
-  
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.5);
+  }
+
   li {
     list-style: none;
   }
-  
+
   a:visited {
     color: #9d9ea2;
+  }
+
+  #links_callout {
+    font-weight: bold;
+
+    a {
+      color: $link-color;
+    }
   }
 }

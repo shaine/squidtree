@@ -15,9 +15,9 @@ body {
 }
 
 #s_content {
-  min-height: 860px;
+  min-height: 880px;
   height: auto !important;
-  height: 860px;
+  height: 880px;
   float: right;
   background-color: #2b2c30;
   padding-left: 20px;
@@ -31,11 +31,11 @@ h1#page_title {
   height: 85px;
   z-index: 10;
   position: relative;
-  
+
   .index & {
     background: $background-color image-url("template/banner_home.png") no-repeat;
   }
-  
+
   .about & {
     background: $background-color image-url("template/banner_about.png") no-repeat;
   }
@@ -43,7 +43,7 @@ h1#page_title {
   .contacts & {
     background: $background-color image-url("template/banner_contact.png") no-repeat;
   }
-  
+
   .portfolio & {
     background: $background-color image-url("template/banner_portfolio.png") no-repeat;
   }

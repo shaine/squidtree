@@ -7,12 +7,12 @@ $ ->
     $(this).closest("form").submit()
 
     false
-  
+
   $('.social').hover(
     -> fade_social $(this), 'in'
     -> fade_social $(this), 'out'
   )
-  
+
   $('.social').fadeTo(
     400
     .33
@@ -24,8 +24,17 @@ $ ->
     $(this).siblings().show()
     $(this).hide()
     $(this).closest('ul').css "overflow", "auto"
-    return false
-  
+
+    false
+
+  $("#links_callout").click ->
+    more_link = $(this)
+    $(this).closest('ul').css "overflow", "auto"
+    $(this).siblings().each ->
+      more_link.before $(this).clone()
+
+    false
+
   positionHeading()
 
   $(window).resize ->
@@ -63,5 +72,5 @@ positionHeading = ->
   width = $("#s_outer").width()
   outer_width = $("body").width()
   margin = ((outer_width - width) / 2)
-  margin = margin - 534 
+  margin = margin - 534
   $("#outer_title").css("right", margin+"px")
