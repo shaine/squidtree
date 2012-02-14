@@ -33,8 +33,9 @@ $ ->
     ul.data "page", ul.data("page") + 1
     $.getJSON ul.data("action"),
       page: ul.data("page"),
-      ->
-        alert("test")
+      (data) ->
+        $(data).each (index, val) ->
+          console.log val
 
     false
 
