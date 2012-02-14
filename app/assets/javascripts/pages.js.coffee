@@ -28,10 +28,13 @@ $ ->
     false
 
   $("#links_callout").click ->
-    more_link = $(this)
-    $(this).closest('ul').css "overflow", "auto"
-    $(this).siblings().each ->
-      more_link.before $(this).clone()
+    ul = $(this).closest("ul")
+    ul.css "overflow", "auto"
+    ul.data "page", ul.data("page") + 1
+    $.getJSON ul.data("action"),
+      page: ul.data("page"),
+      ->
+        alert("test")
 
     false
 
@@ -51,10 +54,15 @@ $ ->
     if title
       title.style.top = titleparallax + "px"
 
-  $("[title]").tipsy
+  $(".post_tags [title]").tipsy
     html: true
     fade: true
     delayOut: 1500
+
+  $("[title]").tipsy
+    html: true
+    fade: true
+    gravity: "w"
 
 fade_social = (icon, direction)->
   if direction == 'in'
