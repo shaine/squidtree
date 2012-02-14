@@ -1,6 +1,6 @@
 %aside.section
   %h1 Discoveries
-  %ul#links{:data=>{:page=>1, :action=>links_path(:format=>'json')}}
+  %ul#links{:data=>{:page=>1, :query=>@query, :action=>links_path(:format=>'json')}}
     - for link in @links
       - title = link.user.name
       - title = "#{link.comment}<br>#{title}" unless link.comment.empty?

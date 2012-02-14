@@ -28,14 +28,16 @@ $ ->
     false
 
   $("#links_callout").click ->
-    ul = $(this).closest("ul")
+    callout = $(this)
+    ul = callout.closest("ul")
     ul.css "overflow", "auto"
     ul.data "page", ul.data("page") + 1
     $.getJSON ul.data("action"),
-      page: ul.data("page"),
+      page: ul.data("page")+'?'+ul.data("query"),
       (data) ->
         $(data).each (index, val) ->
-          console.log val
+          link = $('<li><a href="'+val.url+'" target="_blank" class="'+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
+          callout.before link
 
     false
 

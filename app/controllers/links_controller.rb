@@ -36,7 +36,15 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @links, :include => {:user => {:methods => :name, :only => [:name]}}}
+      format.json { render json: @links,
+        :methods => :color_class,
+        :include => {
+          :user => {
+            :methods => :name,
+            :only => :name
+          }
+        }
+      }
     end
   end
 
