@@ -2,7 +2,37 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    options = {
+      :page => params[:page],
+      :per_page => 10,
+      :order => 'created_at DESC'
+    }
+
+    if params[:month]
+      month_param = params[:month]
+
+      month = Date.parse month_param
+
+      options[:created_at] = {
+        '$lt' => (month >> 1).midnight,
+        '$gt' => month.midnight
+      }
+    elsif params[:user]
+      user = User.find_by_slug(params[:user])
+
+      options[:user_id] = user.id
+    elsif params[:search]
+      search = params[:search]
+
+      regex = Regexp.new(Regexp.escape(search), Regexp::IGNORECASE)
+      options["$or"] = [
+        {:comment => regex},
+        {:url => regex},
+        {:title => regex}
+      ]
+    end
+
+    @links = Link.paginate(options)
 
     respond_to do |format|
       format.html # index.html.erb
