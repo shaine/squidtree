@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   def index
     options = {
       :page => params[:page],
-      :per_page => 10,
+      :per_page => 20,
       :order => 'created_at DESC'
     }
 
