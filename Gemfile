@@ -28,6 +28,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 
 gem "heroku", :group=>"development"
+gem "thin", :group=>"development"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
