@@ -3,6 +3,7 @@ class User
   plugin MongoMapper::Plugins::Sluggable
 
   key :slug, String
+  key :uid, String
   key :first_name, String
   key :last_name, String
   key :alias, String
