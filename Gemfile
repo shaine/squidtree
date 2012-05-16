@@ -7,7 +7,7 @@ gem 'rails', '3.1.3'
 
 gem 'mongo_mapper'
 gem 'bson_ext'
-gem "haml"
+gem 'haml'
 #gem 'html5-boilerplate', :group => :production, :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
@@ -27,8 +27,8 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 
-gem "heroku", :group=>"development"
-gem "thin", :group=>"development"
+gem 'heroku', :group=>'development'
+gem 'thin', :group=>'development'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,10 +44,10 @@ gem "thin", :group=>"development"
 
 group :test do
   # Pretty printed test output
-  gem "cucumber-rails", ">= 1.2.1"
-  gem "rspec-rails", ">= 2.8.0.rc2"
-  gem "capybara", ">= 1.1.2"
+  gem 'cucumber-rails', '>= 1.2.1'
+  gem 'rspec-rails', '>= 2.8.0.rc2'
+  gem 'capybara', '>= 1.1.2'
   gem 'database_cleaner'
-  gem "launchy"
+  gem 'launchy'
   gem 'simplecov', :require => false
 end
