@@ -6,6 +6,7 @@ class User
   key :uid, String
   key :first_name, String
   key :last_name, String
+  key :email, String
   key :alias, String
   timestamps!
 
@@ -15,7 +16,7 @@ class User
   many :posts
 
   # Validations.
-  validates_presence_of :first_name, :last_name, :slug
+  validates_presence_of :first_name, :last_name, :email, :slug
 
   sluggable :alias, :method => :to_url, :index => false
 
