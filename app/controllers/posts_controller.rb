@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource :except => [:index, :show]
+
   # GET /posts
   # GET /posts.json
   def index
     options = {
-      :page => params[:page], 
-      :per_page => 10, 
+      :page => params[:page],
+      :per_page => 10,
       :order => 'created_at DESC'
-      
     }
 
     if params[:month]
@@ -51,7 +52,7 @@ class PostsController < ApplicationController
 
       if @posts.first.is_old?
         flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
-      end      
+      end
     end
 
     respond_to do |format|
