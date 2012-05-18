@@ -5,18 +5,19 @@ class SessionsController < ApplicationController
   def create
     auth_hash = request.env['omniauth.auth']
 
-    @user = User.find_by_uid(auth_hash["uid"])
-    if @user
-      render :text => "Welcome back #{@user.name}! You have already signed up."
-    else
-      @user = User.new :first_name => auth_hash["info"]["first_name"], :last_name => auth_hash["info"]["last_name"], :email => auth_hash["info"]["email"], :uid => auth_hash["uid"]
-      @user.alias = @user.name
-
-      render :text => "Hi #{@user.name}! You've signed up."
+    user = User.find_by_uid(auth_hash["uid"])
+    if !user
+      user = User.new :first_name => auth_hash["info"]["first_name"], :last_name => auth_hash["info"]["last_name"], :email => auth_hash["info"]["email"], :uid => auth_hash["uid"]
+      user.alias = user.name
     end
 
-    puts auth_hash
-    session[:user_id] = @user.id
+    session[:user_id] = user.id
+
+    def some_method
+      redirect_to :back
+    rescue ActionController::RedirectBackError
+      redirect_to root_path
+    end
   end
 
   def failure
