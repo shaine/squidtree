@@ -1,14 +1,19 @@
-Feature: Authorization System
-  In Order to interact with the website
-  I Should be able to login
-  As a Facebook user
+@javascript
+Feature: Login
+  In order to be a user,
+  I should be able to login.
 
-  @omniauth_test_success
-  Scenario: A user successfully signs in with Facebook
-    When I go to the login page
-    Then I should see "Login successful."
+  Background:
+    Given I am signed in with provider "Facebook"
+    And I go to the logout page
+    And I am on the homepage
+    And I should see the login link
 
-  @omniauth_test_failure
-  Scenario: A user unsuccessfully signs in with Facebook
-    When I go to the login page
-    Then I should see "Failed."
+  Scenario: I login
+    When I click on the login link
+    Then I should see the logout link
+
+  Scenario: I logout
+    Given I click on the login link
+    When I click on the logout link
+    Then I should see the login link
