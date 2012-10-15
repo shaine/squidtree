@@ -1,29 +1,26 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'mongo_mapper'
+gem 'cancan'
+gem 'cells'
 gem 'bson_ext'
 gem 'haml'
 #gem 'html5-boilerplate', :group => :production, :git => 'git://github.com/sporkd/compass-html5-boilerplate.git'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-openid', :git => 'git://github.com/intridea/omniauth-openid.git'
 gem 'mm-sluggable'
-gem 'stringex'
-gem 'cells'
-gem 'will_paginate', '~> 3.0'
+gem 'mongo_mapper'
 gem 'omniauth-facebook'
-gem 'cancan'
+gem 'stringex'
+gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'coffee-rails'
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
