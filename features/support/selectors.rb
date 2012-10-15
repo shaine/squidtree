@@ -10,8 +10,8 @@ module HtmlSelectorsHelpers
       "#links li"
     when /recent comments/
       "article.comment"
-    when /the jumpstart message/
-      ".jumpstart-message"
+    when /the View More Discoveries link/
+      "#links_callout"
     when /(?:the |an )?(un)?advise button/
       ".#{$1}advise"
     when /streamed decisions?/

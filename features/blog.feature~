@@ -14,9 +14,9 @@ Feature: Blog
 
   @wip @javascript
   Scenario: I view more discoveries
-    When I follow the View More Discoveries link
+    When I click the View More Discoveries link
     Then I should see 41 discoveries
-    When I follow the View More Discoveries link
+    When I click the View More Discoveries link
     Then I should see 61 discoveries
-    When I follow the View More Discoveries link
+    When I click the View More Discoveries link
     Then I should see 81 discoveries
