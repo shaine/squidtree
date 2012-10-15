@@ -11,9 +11,9 @@
 -# fall back to local jQuery if necessary
 :javascript
   window.jQuery || document.write("#{escape_javascript(javascript_include_tag('jquery'))}")
-  
+
 = javascript_include_tag 'application'
-    
+
 -#  Append your own using content_for :javascripts
 = yield :javascripts
 
