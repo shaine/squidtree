@@ -37,11 +37,11 @@ h2 {
 
 a {
   text-decoration: none;
-  
+
   &:link, &:visited {
     color: $link-color;
   }
-  
+
   &:active, &:hover {
     color: $link-hover-color;
   }
@@ -70,6 +70,19 @@ input[type=text], input[type=password] {
   padding: 0 0 0 4px;
   height: 23px;
   outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+}
+:-moz-placeholder {
+  color: #999;
+}
+:-ms-input-placeholder {
+  color: #999;
+}
+.placeholder {
+  color: #999 !important;
 }
 
 textarea {
