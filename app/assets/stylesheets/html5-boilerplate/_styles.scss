@@ -41,10 +41,10 @@ $list-left-margin: 1.8em !default;
 }
 
 // set sub, sup without affecting line-height: gist.github.com/413930
-@mixin sub{ 
+@mixin sub{
   font-size: 75%; line-height: 0; position: relative; bottom: -0.25em;
 }
-@mixin sup{ 
+@mixin sup{
   font-size: 75%; line-height: 0; position: relative; top: -0.5em;
 }
 
@@ -78,11 +78,11 @@ $list-left-margin: 1.8em !default;
   // 3) Set font-size to match <body>'s, and font-family to sans-serif
   // 4) Align to baseline
   button, input, select, textarea { width: auto; overflow: visible; margin: 0; font-size: 100%; font-family: sans-serif; vertical-align: baseline; }
-  
+
   // 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
   // 2) Align to text-top
   textarea { overflow: auto; vertical-align: text-top; }
-  
+
   // Remove extra padding and inner border in Firefox
   input::-moz-focus-inner,
   button::-moz-focus-inner { border: 0; padding: 0; }
@@ -93,7 +93,7 @@ $list-left-margin: 1.8em !default;
 }
 
 // These selection declarations have to be separate.
-// No text-shadow: twitter.com/miketaylr/status/12228805301 
+// No text-shadow: twitter.com/miketaylr/status/12228805301
 // Also: hot pink!
 @mixin selected-text {
   ::-moz-selection{ background:$selected-background-color; color: $selected-font-color; text-shadow: none; }
@@ -105,7 +105,7 @@ $list-left-margin: 1.8em !default;
   a:link { -webkit-tap-highlight-color: $selected-background-color; }
 }
 
-// 1) Always force a scrollbar in non-IE 
+// 1) Always force a scrollbar in non-IE
 // 2) Remove iOS text size adjust without disabling user zoom:
 //    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
 @mixin force-scrollbar {
@@ -113,7 +113,7 @@ $list-left-margin: 1.8em !default;
 }
 
 @mixin ie-hacks {
-  // Bicubic resizing for non-native sized IMG: 
+  // Bicubic resizing for non-native sized IMG:
   // code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
   .ie7 img { -ms-interpolation-mode: bicubic; }
 

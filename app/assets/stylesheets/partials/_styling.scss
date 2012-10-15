@@ -19,6 +19,11 @@
 
 .intro {
   font-size: 13px;
+
+  .login_link {
+    float: right;
+    margin-right: 9px;
+  }
 }
 
 #flash {
@@ -42,7 +47,7 @@
 //
 .hr {
   clear: both;
-  
+
   &.big {
     display: block;
     margin: 0 auto;
@@ -68,7 +73,7 @@
       padding-bottom: 11px;
     }
   }
-  
+
   &.small {
     background: transparent image-url("template/hr1.gif") no-repeat;
     height: 18px;
@@ -82,7 +87,7 @@
     &:nth-child(6n+1) {
       background: transparent image-url("template/hr3.gif") no-repeat;
     }
-    
+
     &:last-child {
       display: none;
     }
@@ -94,13 +99,13 @@
     margin: 18px 0 15px 0;
     width: 528px;
   }
-  
+
   &.tiny {
     background: transparent image-url("template/hr_footer.gif") no-repeat;
     height: 5px;
     margin: 0 auto 13px auto;
     width: 195px;
-    
+
     &:last-child {
       display: none;
     }
@@ -116,7 +121,7 @@ article {
   //
   &.post {
     margin-bottom: 30px;
-    
+
     h1 {
       a:link span, a:visited span, span {
         color: #9d9ea2 !important;
@@ -128,7 +133,7 @@ article {
         }
       }
     }
-    
+
     // Thumbnails
     img {
       clear: left;
@@ -136,7 +141,7 @@ article {
       margin: 0 10px 10px 0;
       padding: 3px;
       border: 1px solid #9d9ea2;
-      
+
       &.clean {
         float: none;
         margin: 0 5px;
@@ -145,7 +150,7 @@ article {
       }
     }
   }
-  
+
   //
   // Comment
   //
@@ -155,18 +160,18 @@ article {
       text-indent: 13px;
       background: transparent image-url("template/quote.gif") no-repeat 0 1px;
     }
-    
+
     .comment_user {
       font-weight: bold;
     }
-    
+
     .comment_title {
       font-style: italic;
     }
-    
+
     #s_footer & {
       margin-bottom: 13px;
-      
+
       a.comment_link {
         display: block;
 
@@ -178,18 +183,18 @@ article {
       }
     }
   }
-  
+
   time {
     font-size: 10px;
   }
-  
+
   footer.post_meta {
     clear: both;
-    
+
     a:link, a:visited {
       color: #9d9ea2;
     }
-    
+
     .post_user {
       padding-left: 12px;
       background: transparent image-url("template/person.gif") no-repeat 0 4px;

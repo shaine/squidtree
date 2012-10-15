@@ -62,7 +62,5 @@ module Squidtree
     end
 
     config.action_controller.default_url_options = { :trailing_slash => true }
-
-    require "#{Rails.root}/lib/assets/colorable.rb"
   end
 end
