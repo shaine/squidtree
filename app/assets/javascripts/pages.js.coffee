@@ -51,8 +51,8 @@ $ ->
     posY = (if (document.documentElement.scrollTop) then document.documentElement.scrollTop else window.pageYOffset)
     ground = document.getElementById("s")
     title = document.getElementById("outer_title")
-    groundparallax = calcParallax(300, 4, posY)
-    titleparallax = 714 - (Math.floor(posY / 2))
+    groundparallax = calcParallax(300, 6, posY)
+    titleparallax = 714 - (Math.floor(posY / 4))
     ground.style.backgroundPosition = "0 " + groundparallax + "px"
     if title
       title.style.top = titleparallax + "px"
