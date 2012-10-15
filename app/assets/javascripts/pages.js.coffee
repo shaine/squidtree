@@ -38,6 +38,10 @@ $ ->
         $(data).each (index, val) ->
           link = $('<li><a href="'+val.url+'" target="_blank" class="'+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
           callout.before link
+          $("a", link).tipsy
+            html: true
+            fade: true
+            gravity: "w"
 
     false
 
