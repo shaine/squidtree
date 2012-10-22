@@ -26,7 +26,7 @@
 
     .secondary_color, footer aside h1
       color: $secondary_color !important
-    
+
     h2
       color: $secondary_color !important
 
@@ -36,5 +36,9 @@
       #s_nav &
         color: $secondary_color !important
 
-    input[type=text]:focus, input[type=password], textarea 
+    input[type=text]:focus, input[type=password], textarea
       border-color: $secondary_color !important
+
+    #flash .message.notice
+      background-color: mix($secondary_color, #2B2C30, 20%)
+      border: 1px solid $secondary_color !important
