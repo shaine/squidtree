@@ -3,6 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  # Wait until logo has loaded before showing its BG color
+  $("#logo img").one("load", ->
+    $(".primary_bg_color").show()
+  ).each ->
+    $(this).load() if @complete
+
   $("#search_button").click ->
     $(this).closest("form").submit()
 
