@@ -21,11 +21,12 @@
 }
 
 #logo_bg {
-  width: 106px;
+  display: none;
   height: 145px;
+  left: 1px;
   position: absolute;
   top: 1px;
-  left: 1px;
+  width: 106px;
   z-index: 1;
 }
 
@@ -36,17 +37,17 @@
   top: 92px;
   display: block;
   width: 100%;
-  
+
   li {
     display: inline;
     margin-left: 19px;
     margin-right: 19px;
-    
+
     &#nav_spacer {
       margin-right: 160px;
     }
   }
-  
+
   a:link, a:visited {
     color: #fff;
   }
