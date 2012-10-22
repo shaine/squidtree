@@ -3,7 +3,7 @@
   %ul#links{:data=>{:page=>1, :query=>@query, :action=>links_path(:format=>'json')}}
     - for link in @links
       - title = link.user.name
-      - title = "#{link.comment}<br>#{title}" unless link.comment.empty?
+      - title = "#{title}<br>#{link.comment}" unless link.comment.empty?
       %li
         %a{:href => link.url, :target => "_blank", :class => link.color_class, :title => title}= link.title
     %li#links_callout
