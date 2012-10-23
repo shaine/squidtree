@@ -1,8 +1,9 @@
+@import "compass/css3/border-radius";
+
 .default_text {
   color: #808082 !important;
   background-color: #414245;
 }
-
 
 //
 // Helpers
@@ -31,7 +32,6 @@
     padding: 20px 20px 20px 50px;
 
     &.notice {
-      @import "compass/css3/border-radius";
       background-color: #414245;
       background-image: image-url("icon/warning.gif");
       background-position-x: 20px;
