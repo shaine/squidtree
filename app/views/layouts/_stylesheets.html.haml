@@ -18,8 +18,12 @@
     ::-moz-selection, ::selection
       background: $secondary_color
 
-    .primary_bg_color
-      background-color: $primary_color !important
+    #logo_outer
+      .primary_bg_color
+        background-color: $primary_color !important
+
+      &:hover .primary_bg_color
+        background-color: saturate($primary_color, 15%) !important
 
     .primary_color, aside h1
       color: $primary_color !important
