@@ -35,7 +35,7 @@
       background-color: #414245;
       background-image: image-url("icon/warning.gif");
       background-position-x: 20px;
-      @include border-bottom-radius(10px);
+      @include border-bottom-radius(4px);
       background-position-y: center;
       background-repeat: no-repeat;
       border: 1px solid $light-grey;
