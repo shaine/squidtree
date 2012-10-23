@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.0'
 # in production environments by default.
 group :assets do
   gem 'coffee-rails'
+  gem 'compass-rails'
   gem 'sass-rails'
   gem 'uglifier'
 end
@@ -28,18 +29,6 @@ gem 'haml-rails'
 
 gem 'heroku', :group=>'development'
 gem 'thin', :group=>'development'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
