@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   def init
     @color_date = Colorable.day_of_year
 
+    @user = current_user
+
     @search = params["search"]
   end
 end
