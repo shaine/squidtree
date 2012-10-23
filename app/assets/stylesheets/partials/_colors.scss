@@ -2,9 +2,9 @@
   $percent: percentage_from_day_of_year($i);
   $primary_color: primary_color_from_day($i);
   $secondary_color: secondary_color_from_day($i);
-  
+
   $day: $i + 1;
-  
+
   .day_#{$day} {
     ::-moz-selection, ::selection {
       background: $secondary_color;
@@ -14,7 +14,7 @@
       a:link, a:visited {
         color: $primary_color;
       }
-      
+
       a:hover, a:active {
         color: $secondary_color !important;
       }
@@ -22,13 +22,13 @@
 
     a:hover, a:active {
       color: $primary_color !important;
-      
+
       time {
         color: $primary_color !important;
       }
     }
   }
-  
+
   a.day_#{$day}:hover, a.day_#{$day}:active {
     color: $primary_color !important;
   }
@@ -37,6 +37,6 @@
 $i: 0;
 @while $i <= 366 {
   @include temporal-color($i);
-  
+
   $i: $i + 1;
 }
