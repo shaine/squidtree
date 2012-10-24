@@ -52,7 +52,7 @@ class PostsController < ApplicationController
     if @posts.length > 0
       @color_date = @posts.first.day_of_year
 
-      if @posts.first.is_old?
+      if @posts.first.is_old? and flash[:notice].nil?
         flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
       end
     end
