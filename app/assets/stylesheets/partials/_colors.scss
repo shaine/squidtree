@@ -27,6 +27,10 @@
         color: $primary_color !important;
       }
     }
+
+    blockquote {
+      border-left-color: $primary_color !important;
+    }
   }
 
   a.day_#{$day}:hover, a.day_#{$day}:active {
