@@ -4,11 +4,16 @@
       %a{:href => blog_path(post)}
         != post.title
         %time= post.created_at_formatted params[:action] == 'show'
-  - if can? :read, post
-    %section
+  %section
+    - if can? :read, post
       != post.content
-    %footer.post_meta
-      = link_to post.user.name, blog_index_path(:user=>post.user), :class=>"post_user"
-      = link_to pluralize(post.comments.length, "comment"), blog_path(post, :anchor=>"comments"), :class=>"post_comment_count"
-      - if post.tags.length > 0
-        %span.post_tags= tag_list(post.tags, 70)
+
+      %footer.post_meta
+        = link_to post.user.name, blog_index_path(:user=>post.user), :class=>"post_user"
+        = link_to pluralize(post.comments.length, "comment"), blog_path(post, :anchor=>"comments"), :class=>"post_comment_count"
+        - if post.tags.length > 0
+          %span.post_tags= tag_list(post.tags, 70)
+    - else
+      %p
+        Old content is locked.
+        %a{:href => "#"} Request access to old content
