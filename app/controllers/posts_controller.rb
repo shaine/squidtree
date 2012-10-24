@@ -52,7 +52,9 @@ class PostsController < ApplicationController
     if @posts.length > 0
       @color_date = @posts.first.day_of_year
 
-      if @posts.first.is_old? and flash[:notice].nil?
+      if @posts.first.is_old? and
+      flash[:notice].nil? and
+      can? :read, @posts.first
         flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
       end
     end
@@ -71,7 +73,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.first(:slug=>params[:id])
 
-    if @post.is_old?
+    if @post.is_old? and
+    flash[:notice].nil? and
+    can? :read, @post
       flash.now[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
     end
 
