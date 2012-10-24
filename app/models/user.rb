@@ -8,6 +8,8 @@ class User
   key :last_name, String
   key :email, String
   key :alias, String
+  key :role, String, :default => "reader"
+  key :old_post_whitelisted, Boolean, :default => false
   timestamps!
 
   # Relationships.
@@ -25,10 +27,18 @@ class User
   end
 
   def name
-    first_name + ' ' + last_name
+    self.first_name + " " + self.last_name
   end
 
   def to_param
     self.slug
+  end
+
+  def admin?
+    ["admin"].include? self.role
+  end
+
+  def editor?
+    ["editor", "admin"].include? self.role
   end
 end
