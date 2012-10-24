@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
-    def some_method
+    begin
       redirect_to :back
     rescue ActionController::RedirectBackError
       redirect_to root_path
@@ -26,6 +26,10 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    render :text => "You've logged out!"
+    begin
+      redirect_to :back
+    rescue ActionController::RedirectBackError
+      redirect_to root_path
+    end
   end
 end
