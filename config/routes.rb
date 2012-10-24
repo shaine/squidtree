@@ -1,7 +1,7 @@
 Squidtree::Application.routes.draw do
   match '/login' => redirect("/auth/facebook")
   match '/auth/:provider/callback', :to => 'sessions#create'
-  match '/auth/failure', :to => 'sessions#failure'
+  get '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
 
   resources :links
