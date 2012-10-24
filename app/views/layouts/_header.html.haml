@@ -6,10 +6,13 @@
 #s_top_links
   - if @user
     %a.login_link{:href => "/logout"}
+      %i.icon-facebook-sign
       =@user.name
-      [logout]
+      [ logout ]
   - else
-    %a.login_link{:href => "/login"} login
+    %a.login_link{:href => "/login"}
+      %i.icon-facebook-sign
+      login
 
 %nav#s_nav
   %ul
