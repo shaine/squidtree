@@ -64,9 +64,17 @@
   a:link, a:visited {
     color: #fff !important;
     @include opacity(.6);
+
+    i {
+      font-size: 11px;
+    }
   }
 
   a:active, a:hover {
     @include opacity(1);
+
+    i {
+      @include opacity(.99);
+    }
   }
 }
