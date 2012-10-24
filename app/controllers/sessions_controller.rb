@@ -13,23 +13,18 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
-    begin
-      redirect_to :back
-    rescue ActionController::RedirectBackError
-      redirect_to root_path
-    end
+    back_or_home
   end
 
   def failure
-    render :text => "Sorry, but you didn't allow access to our app!"
+    flash[:notice] = "Login canceled."
+    back_or_home
   end
 
   def destroy
     session[:user_id] = nil
-    begin
-      redirect_to :back
-    rescue ActionController::RedirectBackError
-      redirect_to root_path
-    end
+    flash[:notice] = "You've been logged out."
+
+    back_or_home
   end
 end
