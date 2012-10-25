@@ -72,6 +72,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.first(:slug=>params[:id])
+    @comment = Comment.new
 
     if @post.is_old? and
     flash[:notice].nil? and
