@@ -78,7 +78,7 @@
   &.small {
     background: transparent image-url("template/hr1.gif") no-repeat;
     height: 18px;
-    margin: 0 0 30px -20px;
+    margin: 30px 0 30px -20px;
     width: 550px;
 
     &:nth-child(6n+5) {
@@ -121,8 +121,6 @@ article {
   // Posts
   //
   &.post {
-    margin-bottom: 30px;
-
     h1 {
       a:link span, a:visited span, span {
         color: #9d9ea2 !important;
