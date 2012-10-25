@@ -40,14 +40,20 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(params[:comment])
+    @comment.user = current_user
+    @comment.created_at = Time.current
+    if @post
+      @post.comments << @comment
+    end
 
     respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+      if @post && @post.save
+        format.html { redirect_to blog_path(@post, anchor: @comment.anchor), notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to blog_path(@post), notice: 'Comment failed to save.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
