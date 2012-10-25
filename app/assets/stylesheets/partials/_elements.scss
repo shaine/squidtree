@@ -81,10 +81,10 @@ blockquote {
   }
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea {
   width: 200px;
-  color: #fff;
-  border: 1px solid #1d1d21;
+  color: $font-color;
+  border: 1px solid $form-border-color;
   background-color: $form-background-color;
   margin: 0;
   padding: 0 0 0 4px;
@@ -106,10 +106,13 @@ input[type=text], input[type=password] {
 }
 
 textarea {
-  border: 1px solid $form-border-color;
-  background-color: $form-background-color;
-  width: 400px;
   height: 100px;
+  resize: vertical;
+  width: 100%;
+}
+
+input[type=submit], button {
+  color: initial;
 }
 
 h1 time, time {
