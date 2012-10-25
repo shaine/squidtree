@@ -6,6 +6,8 @@ class Comment
   key :user_id, ObjectId
   key :created_at, Time
 
+  attr_protected :user_id
+
   # Relationships.
   belongs_to :user
   embedded_in :post
@@ -27,5 +29,13 @@ class Comment
 
   def url
     "/blog/" + post.slug + "/"
+  end
+
+  def anchor
+    "comment_" + self.index.+(1).to_s
+  end
+
+  def index
+    self.post.comments.index self
   end
 end
