@@ -18,7 +18,7 @@ gem "will_paginate", "~> 3.0"
 group :assets do
   gem "coffee-rails"
   gem "compass-rails"
-  gem "sassy-buttons"
+  gem "sassy-buttons", :git => "git://github.com/shaine/Sassy-Buttons.git"
   gem "sass-rails"
   gem "uglifier"
 end
