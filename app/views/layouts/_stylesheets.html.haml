@@ -43,6 +43,10 @@
     input[type=text]:focus, textarea:focus
       border-color: $secondary_color !important
 
+    input[type=submit], button
+      &:hover
+        border-color: $primary_color !important
+
     #flash .message.notice
       background-color: mix($secondary_color, #2B2C30, 20%)
       border: 1px solid $secondary_color !important

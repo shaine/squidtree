@@ -5,10 +5,10 @@
 = render :partial => "post_separator"
 
 #comments
-  - if can? :read, @post
+  - if (can? :read, @post) && @post.comments.length > 0
     %h2 #{pluralize @post.comments.length, "Comment"}
     = render :partial => "comments/comment", :collection => @post.comments, :spacer_template => "comments/comment_separator"
-  - if can? :create, Comment
     = render :partial => "post_separator"
+  - if can? :create, Comment
     = render "comments/form", :comment => @comment, :post => @post
 
