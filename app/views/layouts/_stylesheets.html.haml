@@ -10,7 +10,7 @@
     $day: #{@color_date}
     $percent: percentage_from_day_of_year($day)
     $primary_color: primary_color_from_day($day)
-    $secondary_color: secondary_color_from_day($day)
+    $secondary_color: invert($primary_color)
 
     body
       background-color: $primary_color

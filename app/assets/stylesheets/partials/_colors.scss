@@ -1,7 +1,7 @@
 @mixin temporal-color($i) {
   $percent: percentage_from_day_of_year($i);
   $primary_color: primary_color_from_day($i);
-  $secondary_color: secondary_color_from_day($i);
+  $secondary_color: invert($primary_color);
 
   $day: $i + 1;
 
