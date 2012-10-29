@@ -30,12 +30,12 @@ class Ability
       can :manage, :all
     elsif user.editor? || user.old_post_whitelisted
       can :read, Post
+      can :read, Link
       can :create, Comment
     else
-      can :read, Post, :is_old? => false
-      if user.persisted?
-        can :create, Comment
-      end
+      can :read, Post
+      can :read, Link
+      can :create, Comment
     end
   end
 end
