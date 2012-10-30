@@ -17,14 +17,23 @@ class Comment
   # Validations.
   validates_presence_of :content, :user_id
 
-  def self.find_by_id(id)
-    post = Post.where("comments._id" => id).first
-
-    post.comments.each do |comment|
-      if comment._id == id
-        return comment
-      end
+  def self.find(id)
+    unless id.instance_of?(BSON::ObjectId)
+      id = BSON::ObjectId.from_string(id)
     end
+
+    post = Post.first("comments._id" => id)
+    unless post.nil?
+      post.comments.detect do |comment|
+        comment._id == id
+      end
+    else
+      nil
+    end
+  end
+
+  class << self
+    alias :find_by_id :find
   end
 
   def url
