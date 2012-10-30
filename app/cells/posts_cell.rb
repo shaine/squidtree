@@ -10,7 +10,7 @@ class PostsCell < Cell::Rails
       )
     }
     @months.reverse!
-    
+
     render
   end
 end
