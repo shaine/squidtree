@@ -28,13 +28,10 @@ body {
 }
 
 h1#page_title {
+  background: $background-color image-url("template/banner_home.png") no-repeat;
   height: 85px;
-  z-index: 10;
   position: relative;
-
-  .index & {
-    background: $background-color image-url("template/banner_home.png") no-repeat;
-  }
+  z-index: 10;
 
   .about & {
     background: $background-color image-url("template/banner_about.png") no-repeat;
@@ -46,6 +43,10 @@ h1#page_title {
 
   .portfolio & {
     background: $background-color image-url("template/banner_portfolio.png") no-repeat;
+  }
+
+  .posts &, .comments & {
+    background: $background-color image-url("template/banner_blog.png") no-repeat;
   }
 }
 
