@@ -10,9 +10,16 @@
 
       %footer.post_meta
         = link_to post.user.name, blog_index_path(:user=>post.user), :class=>"post_user"
-        = link_to pluralize(post.comments.length, "comment"), blog_path(post, :anchor=>"comments"), :class=>"post_comment_count"
+        - unless params[:action] == "show"
+          = link_to pluralize(post.comments.length, "comment"), blog_path(post, :anchor=>"comments"), :class=>"post_comment_count"
         - if post.tags.length > 0
-          %span.post_tags= tag_list(post.tags, 70)
+          %span.post_tags= tag_list(post.tags, params[:action] == "show"? 82 : 70)
+        - if params[:action] == "show"
+          %span.admin
+            - if can? :destroy, post
+              = link_to raw("<i class='icon-trash'></i>"), post, method: :delete, data: { confirm: 'Are you sure?' }, :title => 'Delete'
+            - if can? :edit, post
+              = link_to raw("<i class='icon-pencil'></i>"), edit_blog_path(post), :title => 'Edit'
     - else
       %p
         Old content is locked.
