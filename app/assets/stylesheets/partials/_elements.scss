@@ -115,13 +115,14 @@ textarea {
   width: 100%;
 }
 
-input[type=submit], button {
+input[type=submit], button, a.button {
   color: initial;
   @include sassy-button("glass", 4px, 14px, $form-background-color, $form-background-color, #fff, "inset", true, true, image-url("template/button_tentacle.png") no-repeat);
 }
 
-input[type=submit]:hover, button:hover {
+input[type=submit]:hover, button:hover, a.button:hover {
   @include box-shadow(none);
+  color: #fff !important;
 }
 
 h1 time, time {
