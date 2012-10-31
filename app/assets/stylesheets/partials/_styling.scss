@@ -230,4 +230,10 @@ article {
   i {
     margin-left: 5px;
   }
+
+  &.left {
+    i {
+      margin: 0 5px 0 0;
+    }
+  }
 }

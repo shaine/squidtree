@@ -18,6 +18,10 @@
   .section {
     margin-bottom: 30px;
   }
+
+  .admin {
+    display: none;
+  }
 }
 
 #lefter_inner {
@@ -65,7 +69,7 @@
 #links {
   height: 374px;
   margin: 0;
-  overflow: hidden;
+  overflow: auto;
   padding: 0;
 
   &::-webkit-scrollbar {
