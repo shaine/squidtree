@@ -8,5 +8,7 @@
   %footer
     = comment.created_at_formatted true
     %span.admin
-      = link_to raw("<i class='icon-trash'></i>"), comment, method: :delete, data: { confirm: 'Are you sure?' }
-      = link_to raw("<i class='icon-pencil'></i>"), edit_comment_path(comment)
+      - if can? :destroy, comment
+        = link_to raw("<i class='icon-trash'></i>"), comment, method: :delete, data: { confirm: 'Are you sure?' }
+      - if can? :edit, comment
+        = link_to raw("<i class='icon-pencil'></i>"), edit_comment_path(comment)
