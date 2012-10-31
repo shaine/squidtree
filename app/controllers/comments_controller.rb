@@ -25,12 +25,14 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
     @comment.created_at = Time.current
-    if @post
+    post_saved = false
+    if @post && can?(:read, @post)
       @post.comments << @comment
+      post_saved = @post.save
     end
 
     respond_to do |format|
-      if @post && @post.save
+      if post_saved
         format.html { redirect_to blog_path(@post, anchor: @comment.anchor), notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else

@@ -26,16 +26,23 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new
+
+    can :read, Link
+    can :read, Post, :is_old? => false
+    can :manage, Comment do |comment|
+      comment.user == user &&
+      comment.post.comments.last == comment
+    end
+    can :create, Comment
+
     if user.admin?
       can :manage, :all
     elsif user.editor? || user.old_post_whitelisted
       can :read, Post
-      can :read, Link
-      can :create, Comment
+    elsif user.reader?
     else
-      can :read, Post
-      can :read, Link
-      can :create, Comment
+      cannot :create, Comment
     end
+
   end
 end
