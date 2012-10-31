@@ -28,10 +28,11 @@ class Ability
     user ||= User.new
 
     can :read, Link
-    can :read, Post, :is_old? => false
+    can :read, Post
     can :manage, Comment do |comment|
       comment.user == user &&
-      comment.post.comments.last == comment
+      comment.post.comments.last == comment &&
+      comment.created_at > 15.minutes.ago
     end
     can :create, Comment
 
