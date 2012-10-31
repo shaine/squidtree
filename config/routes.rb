@@ -7,7 +7,6 @@ Squidtree::Application.routes.draw do
   get "/auth/failure", :to => "sessions#failure"
   get "/logout", :to => "sessions#destroy"
 
-  get "tags/view"
   get "users/view"
 
   resources :blog, :controller => :posts
