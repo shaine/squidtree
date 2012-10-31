@@ -45,7 +45,7 @@ h1#page_title {
     background: $background-color image-url("template/banner_portfolio.png") no-repeat;
   }
 
-  .posts &, .comments & {
+  .posts &, .comments &, .links & {
     background: $background-color image-url("template/banner_blog.png") no-repeat;
   }
 }
