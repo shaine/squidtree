@@ -41,4 +41,8 @@ class User
   def editor?
     ["editor", "admin"].include? self.role
   end
+
+  def reader?
+    !self.uid.nil?
+  end
 end
