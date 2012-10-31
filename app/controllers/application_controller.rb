@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
       @links = Link.all(:sort=>"created_at desc", :limit=>20)
     end
     @search = params["search"]
+
+    if params[:page] && params[:page].to_i > 1
+      @outer_title = "Page #{params[:page]}"
+    end
   end
 
   def remember_request

@@ -43,8 +43,6 @@ class PostsController < ApplicationController
         {:content => regex},
         {:title => regex}
       ]
-    elsif params[:page]
-      @outer_title = "Page #{params[:page]}"
     end
 
     @posts = Post.paginate(options)
