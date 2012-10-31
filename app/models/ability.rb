@@ -28,7 +28,7 @@ class Ability
     user ||= User.new
 
     can :read, Link
-    can :read, Post
+    can :read, Post, :is_old? => false
     can :manage, Comment do |comment|
       comment.user == user &&
       comment.post.comments.last == comment &&
