@@ -1,7 +1,7 @@
 = form_for @link do |f|
   -if @link.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@link.errors.count, "error")} prohibited this link from being saved:"
+    %fieldset#error_explanation.notice.message
+      %legend= "#{pluralize(@link.errors.count, "error")} prohibited this link from being saved:"
       %ul
         - @link.errors.full_messages.each do |msg|
           %li= msg
@@ -10,7 +10,7 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.label :url
+    = f.label :url, "URL"
     = f.text_field :url
   .field
     = f.label :comment
