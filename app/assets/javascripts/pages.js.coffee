@@ -35,17 +35,17 @@ $ ->
 
     false
 
-  $("#links_callout").click ->
+  $("#links_callout .older").click ->
     callout = $(this)
     ul = callout.closest("ul")
-    ul.css "overflow", "auto"
     ul.data "page", ul.data("page") + 1
     $.getJSON ul.data("action"),
-      page: ul.data("page")+'?'+ul.data("query"),
+      page: ul.data("page")+'?'+ul.data("query")
+      per_page: ul.data("per_page"),
       (data) ->
         $(data).each (index, val) ->
           link = $('<li><a href="'+val.url+'" target="_blank" class="'+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
-          callout.before link
+          callout.parent().before link
           $("a", link).tipsy
             html: true
             fade: true

@@ -4,9 +4,10 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
+    per_page = params[:per_page] || 60
     options = {
       :page => params[:page],
-      :per_page => 20,
+      :per_page => per_page,
       :order => 'created_at DESC'
     }
 
