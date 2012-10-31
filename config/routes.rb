@@ -1,15 +1,13 @@
 Squidtree::Application.routes.draw do
   resources :comments, :except => [:index, :show]
+  resources :links, :except => [:show]
 
   match "/login" => redirect("/auth/facebook")
   match "/auth/:provider/callback", :to => "sessions#create"
   get "/auth/failure", :to => "sessions#failure"
   get "/logout", :to => "sessions#destroy"
 
-  resources :links
-
   get "tags/view"
-
   get "users/view"
 
   resources :blog, :controller => :posts
