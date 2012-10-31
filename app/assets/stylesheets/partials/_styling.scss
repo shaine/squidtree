@@ -226,6 +226,51 @@ article {
   margin-bottom: 40px;
 }
 
+.pagination {
+  color: $link-color;
+  display: block;
+  padding-bottom: 10px;
+  text-align: center;
+
+  em {
+    color: $font-color;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .previous_page, .next_page {
+    background: transparent image_url("template/pager_sprite.gif") no-repeat;
+    background-position: left top;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-bottom: -6px;
+    height: 22px;
+    width: 12px;
+
+    &.disabled {
+      display: none;
+    }
+  }
+
+  .next_page {
+    background-position: right top;
+    margin-left: 10px;
+
+    &:active, &:hover {
+      background-position: right bottom;
+    }
+  }
+
+  .previous_page {
+    margin-right: 10px;
+
+    &:active, &:hover {
+      background-position: left bottom;
+    }
+  }
+}
+
 .admin {
   i {
     margin-left: 5px;
