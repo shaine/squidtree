@@ -9,6 +9,6 @@
     = comment.created_at_formatted true
     %span.admin
       - if can? :destroy, comment
-        = link_to raw("<i class='icon-trash'></i>"), comment, method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to raw("<i class='icon-trash'></i>"), comment, method: :delete, data: { confirm: 'Are you sure?' }, :title => 'Delete'
       - if can? :edit, comment
-        = link_to raw("<i class='icon-pencil'></i>"), edit_comment_path(comment)
+        = link_to raw("<i class='icon-pencil'></i>"), edit_comment_path(comment), :title => 'Edit'
