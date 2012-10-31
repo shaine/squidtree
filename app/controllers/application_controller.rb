@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
   def init
     @color_date = Colorable.day_of_year
     @user = current_user
+    unless params[:controller] == "links"
+      @links = Link.all(:sort=>"created_at desc", :limit=>20)
+    end
     @search = params["search"]
   end
 
