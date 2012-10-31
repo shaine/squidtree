@@ -1,6 +1,10 @@
 - title "Discoveries"
 - page_title "Discoveries"
 
+- if can? :create, Link
+  .admin_header
+    = link_to "New Discovery", new_link_path, :class => "button"
+
 %h1 Discoveries
 - if @links.empty?
   %p Sorry, whatever you're looking for doesn't seem to be here.
