@@ -10,6 +10,7 @@ gem "haml"
 gem "mm-sluggable"
 gem "mongo_mapper"
 gem "omniauth-facebook"
+gem "redcarpet"
 gem "stringex"
 gem "will_paginate", "~> 3.0"
 
@@ -26,7 +27,6 @@ end
 gem "jquery-rails"
 gem "haml-rails"
 
-gem "heroku", :group=>"development"
 gem "thin", :group=>"development"
 
 group :test do
