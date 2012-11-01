@@ -4,7 +4,7 @@
     - month_f = month.strftime("%B %Y")
     %li
       = link_to month_f,
-        blog_index_path(:month=>month_f.to_url),
+        posts_path(:month=>month_f.to_url),
         :class => "#{month.color_class} white",
         :id => month_f.to_url
   %li#months_callout

@@ -33,10 +33,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if post_saved
-        format.html { redirect_to blog_path(@post, anchor: @comment.anchor) }
+        format.html { redirect_to post_path(@post, anchor: @comment.anchor) }
         format.json { render json: @comment, status: :created, location: @comment }
       else
-        format.html { redirect_to blog_path(@post), notice: 'Comment failed to save.' }
+        format.html { redirect_to post_path(@post), notice: 'Comment failed to save.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to blog_path(@post, anchor: @comment.anchor), notice: 'Comment was successfully updated.' }
+        format.html { redirect_to post_path(@post, anchor: @comment.anchor), notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
