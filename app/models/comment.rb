@@ -47,4 +47,8 @@ class Comment
   def index
     self.post.comments.index self
   end
+
+  def is_old?
+    self.created_at.year < 2010
+  end
 end
