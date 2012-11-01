@@ -3,7 +3,7 @@
 
 - if can? :create, Post
   .admin_header
-    = link_to "New Post", new_blog_path, :class => "button"
+    = link_to "New Post", new_post_path, :class => "button"
 
 - if @posts.empty?
   %p Sorry, whatever you're looking for doesn't seem to be here.
