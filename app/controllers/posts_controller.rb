@@ -60,9 +60,16 @@ class PostsController < ApplicationController
     @query = params
     @query.delete "page"
 
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Squidtree"
+
+    # this will be our Feed's update timestamp
+    @updated = @posts.first.updated_at unless @posts.empty?
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.rss { render :layout => false }
+      format.atom { render :layout => false }
     end
   end
 
@@ -82,7 +89,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @post }
     end
   end
 
@@ -144,24 +150,6 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :ok }
-    end
-  end
-
-  def feed
-    # this will be the name of the feed displayed on the feed reader
-    @title = "Squidtree"
-
-    # the news items
-    @posts = Post.paginate :per_page => 10, :order => 'created_at DESC'
-
-    # this will be our Feed's update timestamp
-    @updated = @posts.first.updated_at unless @posts.empty?
-
-    respond_to do |format|
-      format.atom { render :layout => false }
-
-      # we want the RSS feed to redirect permanently to the ATOM feed
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 end
