@@ -4,7 +4,7 @@
   %header
     %a{:href=>"##{comment.anchor}"} #{name} #{comment_verb comment.id.to_s.hex.to_i}
   .content
-    = simple_format comment.content
+    = format_comment comment
   %footer
     = comment.created_at_formatted true
     %span.admin
