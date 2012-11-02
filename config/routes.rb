@@ -1,4 +1,8 @@
 Squidtree::Application.routes.draw do
+  get "errors/error_404"
+
+  get "errors/error_500"
+
   resources :comments, :except => [:index, :show]
   resources :links, :except => [:show]
 
