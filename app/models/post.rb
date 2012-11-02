@@ -17,7 +17,9 @@ class Post
   many :site_activities, :as => :loggable
 
   # Validations.
-  validates_presence_of :title, :slug, :user_id
+  validates_presence_of :title, :user_id, :content
+  validates_presence_of :slug, :unless => "errors.include?(:title)"
+  validates_uniqueness_of :slug
 
   sluggable :title, :method => :to_url, :index => false
 
