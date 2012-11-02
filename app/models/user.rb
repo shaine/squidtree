@@ -19,6 +19,7 @@ class User
 
   # Validations.
   validates_presence_of :first_name, :last_name, :email, :slug
+  validates_uniqueness_of :uid, :slug, :email, :alias
 
   sluggable :alias, :method => :to_url, :index => false
 
