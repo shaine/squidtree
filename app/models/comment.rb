@@ -17,6 +17,9 @@ class Comment
   # Validations.
   validates_presence_of :content, :user_id
 
+  before_save :before_save
+  before_destroy :before_destroy
+
   def self.find(id)
     unless id.instance_of?(BSON::ObjectId)
       id = BSON::ObjectId.from_string(id)
@@ -50,5 +53,21 @@ class Comment
 
   def is_old?
     self.created_at.year < 2010
+  end
+
+  private
+  def before_destroy
+    self.site_activities.each do |activity|
+      activity.destroy
+    end
+  end
+
+  def before_save
+    site_activity = SiteActivity.new
+    site_activity.user = self.user
+    site_activity.created_at = self.created_at
+    site_activity.save
+    self.site_activities << site_activity
+    self.save
   end
 end
