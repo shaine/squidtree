@@ -1,4 +1,8 @@
 %h2 Say Stuff
+%em
+  Some
+  %a{href: "http://daringfireball.net/projects/markdown/syntax", target: "_blank"} Markdown
+  is allowed.
 = form_for @comment do |f|
   - if @comment.errors.any?
     %fieldset#error_explanation.notice.message
