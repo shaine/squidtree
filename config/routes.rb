@@ -11,7 +11,7 @@ Squidtree::Application.routes.draw do
   get "/auth/failure", :to => "sessions#failure"
   get "/logout", :to => "sessions#destroy"
 
-  resources :blog, :controller => :posts
+  resources :blog, :controller => :posts, :as => :posts
   match "/feed" => "posts#index",
       :as => :feed,
       :defaults => { :format => "rss" }
