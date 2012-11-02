@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.user = current_user
     @comment.created_at = Time.current
+
     post_saved = false
     if @post && can?(:read, @post)
       @post.comments << @comment
