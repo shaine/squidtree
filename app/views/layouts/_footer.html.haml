@@ -4,14 +4,26 @@
 #footer_inner
   %aside#footer_left
     %h1 Recent Comments
-    
-    = render_cell :comments, :index
+    - for log in @comment_logs
+      - comment = log.loggable
+      %article.comment{:class=>comment.color_class}
+        %a.comment_link{:href=>"#{comment.url}#comments"}
+          %time= comment.created_at_formatted
+
+          %section
+            = truncate(strip_tags(format_comment(comment)), :length => 70, :separator => ' ', :omission => ' [...]')
+
+          %footer.comment_meta
+            %span.comment_user #{log.user.name},
+            %span.comment_title
+              = strip_tags comment.post.title
+      .hr.tiny
 
   %aside#footer_right
     = render_cell :posts, :index
-    
+
     %h1 Social Obligations
-    
+
     %p
       %a{:href=>"http://www.facebook.com/shaineh", :target=>"_blank"}><
         = image_tag("template/f.gif", :class=>"social", :alt=>"Follow Shaine Hatch on Facebook", :title=>"Friend me on Facebook!")
