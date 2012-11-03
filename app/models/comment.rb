@@ -17,7 +17,7 @@ class Comment
   # Validations.
   validates_presence_of :content, :user_id
 
-  before_save :before_save
+  before_create :after_create
   before_destroy :before_destroy
 
   def self.find(id)
@@ -55,19 +55,17 @@ class Comment
     self.created_at.year < 2010
   end
 
-  private
   def before_destroy
     self.site_activities.each do |activity|
       activity.destroy
     end
   end
 
-  def before_save
-    site_activity = SiteActivity.new
-    site_activity.user = self.user
-    site_activity.created_at = self.created_at
-    site_activity.save
-    self.site_activities << site_activity
-    self.save
+  private
+  def after_create
+    #site_activity = SiteActivity.new
+    #site_activity.user = self.user
+    #site_activity.created_at = Time.now
+    #self.site_activities << site_activity
   end
 end

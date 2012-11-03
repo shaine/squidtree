@@ -26,6 +26,11 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.created_at = Time.current
 
+    site_activity = SiteActivity.new
+    site_activity.user = current_user
+    site_activity.created_at = @comment.created_at
+    @comment.site_activities << site_activity
+
     post_saved = false
     if @post && can?(:read, @post)
       @post.comments << @comment
@@ -64,6 +69,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment = Comment.find(params[:id])
+    @comment.before_destroy
     @comment.post.comments.delete @comment
     @comment.post.save
 
