@@ -9,7 +9,7 @@
 - if @links.empty?
   %p Sorry, whatever you're looking for doesn't seem to be here.
 - else
-  .index_collection
+  %ul.index_collection
     = render :partial => "link", :collection => @links
 
 = will_paginate @links, :inner_window => 3
