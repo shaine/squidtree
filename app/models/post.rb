@@ -30,4 +30,8 @@ class Post
   def to_param
     self.slug
   end
+
+  def tags_as_string
+    self.tags.join(",")
+  end
 end
