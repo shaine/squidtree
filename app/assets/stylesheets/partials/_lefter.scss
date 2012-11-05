@@ -4,8 +4,9 @@
 // Structure
 //
 #s_lefter {
-  width: 250px;
+  @include long-wrap;
   float: left;
+  width: 250px;
 
   a:link {
     color: #fff;
@@ -86,6 +87,10 @@
 
   a:visited {
     color: #9d9ea2;
+  }
+
+  .discovery_link {
+    width: 200px;
   }
 
   #links_callout {
