@@ -79,6 +79,11 @@ $ ->
     fade: true
     gravity: "w"
 
+  $(".tag_list").width(500).tagsInput(
+    placeholderColor: "#808082"
+    width: "100%"
+  )
+
 fade_social = (icon, direction)->
   if direction == 'in'
     val = 1
