@@ -22,11 +22,22 @@ class ApplicationController < ActionController::Base
     if params[:page] && params[:page].to_i > 1
       @outer_title = "Page #{params[:page]}"
     end
+
+    @months = Post.first(:sort=>"created_at ASC").created_at.to_date.all_months_until Post.first(:sort=>"created_at DESC").created_at.to_date
+    @months.reverse!
+    @months.reject!{|item|
+      count = Post.count(
+        :created_at => {
+          '$lt' => (item >> 1).midnight,
+          '$gt' => item.midnight
+        }
+      )
+      count <= 0
+    }
   end
 
   def remember_request
     session[:previous_page] = request.url
-    puts request.url
   end
 
   def back_or_home
