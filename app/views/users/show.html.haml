@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Uid:
+  = @user.uid
+%p
+  %b Slug:
+  = @user.slug
+%p
+  %b Alias:
+  = @user.alias
+%p
+  %b Role:
+  = @user.role
+%p
+  %b Old post whitelisted:
+  = @user.old_post_whitelisted
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

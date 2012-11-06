@@ -1,0 +1,12 @@
+%h1 Listing Users
+
+- @users.each do |user|
+  %p
+    = user.name
+    - if user.uid
+      (#{user.uid})
+    %span.admin
+      - if can? :destroy, user
+        = link_to raw("<i class='icon-trash'></i>"), user, method: :delete, data: { confirm: 'Are you sure?' }, :title => 'Delete'
+      - if can? :edit, user
+        = link_to raw("<i class='icon-pencil'></i>"), edit_user_path(user), :title => 'Edit'
