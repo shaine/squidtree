@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource :except => [:index, :show]
+  before_filter :convert_tags, :only => [:create, :update]
 
   # GET /posts
   # GET /posts.json
@@ -150,6 +151,13 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :ok }
+    end
+  end
+
+  private
+  def convert_tags
+    if params[:post].has_key? :tags
+      params[:post][:tags] = params[:post][:tags].split(",")
     end
   end
 end
