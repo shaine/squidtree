@@ -23,16 +23,8 @@ class User
 
   sluggable :alias, :method => :to_url, :index => false
 
-  def to_param
-    slug # or whatever you set :url_attribute to
-  end
-
   def name
     self.first_name + " " + self.last_name
-  end
-
-  def to_param
-    self.slug
   end
 
   def admin?
