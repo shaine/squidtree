@@ -50,4 +50,19 @@ module PostsHelper
       'swears'
     ].sample(:random => Random.new(seed))
   end
+
+  def format_post(post)
+    unless post.is_old?
+      rndr = Redcarpet::Render::HTML.new(
+        :filter_html => false,
+        :no_styles => false
+      )
+      mkdn = Redcarpet::Markdown.new rndr, {
+        :autolink => true
+      }
+      mkdn.render(post.content).html_safe
+    else
+      post.content
+    end
+  end
 end
