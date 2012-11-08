@@ -6,7 +6,9 @@ gem "cancan"
 gem "cells"
 gem "bson_ext"
 gem "haml"
+gem "haml-rails"
 #gem "html5-boilerplate", :group => :production, :git => "git://github.com/sporkd/compass-html5-boilerplate.git"
+gem "jquery-rails"
 gem "mm-sluggable"
 gem "mongo_mapper"
 gem "omniauth-facebook"
@@ -24,9 +26,7 @@ group :assets do
   gem "uglifier"
 end
 
-gem "jquery-rails"
-gem "haml-rails"
-
+gem "letter_opener", :group => :development
 gem "thin", :group=>"development"
 
 group :test do
