@@ -11,7 +11,10 @@
           %time= comment.created_at_formatted
 
           %section
-            = truncate(strip_tags(format_comment(comment)), :length => 70, :separator => ' ', :omission => ' [...]').html_safe
+            - if can? :read, comment.post
+              = truncate(strip_tags(format_comment(comment)), :length => 70, :separator => ' ', :omission => ' [...]').html_safe
+            - else
+              Comment is private.
 
           %footer.comment_meta
             %span.comment_user #{log.user.name},

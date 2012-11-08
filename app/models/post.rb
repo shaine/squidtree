@@ -3,10 +3,11 @@ class Post
   include Colorable
   plugin MongoMapper::Plugins::Sluggable
 
-  key :slug, String
-  key :title, String
   key :content, String
+  key :is_private, Boolean
+  key :slug, String
   key :tags, Array
+  key :title, String
   key :user_id, ObjectId
   timestamps!
 
@@ -25,6 +26,10 @@ class Post
 
   def is_old?
     self.created_at.year < 2010
+  end
+
+  def is_private?
+    self.is_private || self.is_old?
   end
 
   def to_param
