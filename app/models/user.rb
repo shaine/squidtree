@@ -7,6 +7,7 @@ class User
   key :first_name, String
   key :last_name, String
   key :email, String
+  key :facebook_url, String
   key :alias, String
   key :role, String, :default => "reader"
   key :old_post_whitelisted, Boolean, :default => false
@@ -18,7 +19,7 @@ class User
   many :posts
 
   # Validations.
-  validates_presence_of :first_name, :last_name, :email, :slug
+  validates_presence_of :first_name, :last_name, :email, :slug, :facebook_url
   validates_uniqueness_of :uid, :slug, :email, :alias
 
   sluggable :alias, :method => :to_url, :index => false
