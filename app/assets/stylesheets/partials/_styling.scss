@@ -299,5 +299,23 @@ article {
   background-color: $form-background-color;
   border: 1px solid $form-border-color;
   width: 100%;
+
+  .tag {
+    border-color: $form-border-color !important;
+    color: #fff !important;
+    margin: 5px 0 5px 5px !important;
+
+    a:link, a:visited {
+      color: $lighter-grey !important;
+    }
+
+    a:active, a:hover {
+      color: #fff !important;
+    }
+  }
+
+  #post_tags_tag {
+    line-height: 24px;
+  }
 }
 

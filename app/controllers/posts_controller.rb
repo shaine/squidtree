@@ -107,6 +107,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find_by_slug(params[:id])
+    @color_date = @post.day_of_year
   end
 
   # POST /posts
