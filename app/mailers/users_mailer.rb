@@ -10,7 +10,8 @@ class UsersMailer < ActionMailer::Base
   def request_access(user, user_url)
     @user = user
     @user_url = user_url
+    @subject = "Squidtree Access Request"
 
-    mail to: "hatch@fadelight.com", subject: "Squidtree Access Request"
+    mail to: "hatch@fadelight.com", subject: @subject
   end
 end
