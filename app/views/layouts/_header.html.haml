@@ -4,10 +4,10 @@
   #logo_bg.primary_bg_color
 
 #s_top_links
-  - if @user
+  - if @current_user
     %a.login_link{:href => "/logout"}
       %i.icon-facebook-sign
-      =@user.name
+      =@current_user.name
       [ logout ]
   - else
     %a.login_link{:href => "/login"}
