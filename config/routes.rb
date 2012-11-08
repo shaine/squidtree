@@ -21,6 +21,7 @@ Squidtree::Application.routes.draw do
 
   match "about/" => "pages#about"
   match "contact/" => "contacts#new"
+  match "request_access" => "users#request_access"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
