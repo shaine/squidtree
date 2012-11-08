@@ -23,4 +23,7 @@
     - else
       %p
         Old content is locked.
-        %a{:href => "#"} Request access to old content
+        - if @current_user
+          %a{:href => request_access_path} Request access to old content
+        - else
+          %a{:href => request_access_path} Login to request access to old content

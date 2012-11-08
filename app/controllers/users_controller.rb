@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :request_access
 
   # GET /users
   # GET /users.json
@@ -76,6 +76,21 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  def request_access
+    if current_user
+      if !current_user.old_post_whitelisted
+        UsersMailer.request_access(current_user, edit_user_url(current_user)).deliver
+        flash[:notice] = "Request sent. You will not receive notification regarding approval."
+        redirect_to posts_path
+      else
+        flash[:notice] = "You already have access to private content."
+        redirect_to posts_path
+      end
+    else
+      redirect_to login_path
     end
   end
 end
