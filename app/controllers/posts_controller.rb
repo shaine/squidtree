@@ -88,6 +88,8 @@ class PostsController < ApplicationController
 
     @color_date = @post.day_of_year
 
+    UsersMailer.request_access(current_user, edit_user_url(current_user)).deliver
+
     respond_to do |format|
       format.html # show.html.erb
     end
