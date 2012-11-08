@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       :last_name => auth_hash["info"]["last_name"],
       :alias => auth_hash["info"]["nickname"],
       :email => auth_hash["info"]["email"],
+      :facebook_url => auth_hash["info"]["urls"]["Facebook"],
       :uid => auth_hash["uid"]
     }
 
@@ -29,11 +30,12 @@ class SessionsController < ApplicationController
     end
 
     # Save user
-    unless user.save
+    if user.save
+      session[:user_id] = user.id
+    else
+      session[:user_id] = nil
       flash[:notice] = "User account failed to save."
     end
-
-    session[:user_id] = user.id
 
     back_or_home
   end
