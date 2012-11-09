@@ -16,16 +16,6 @@ $ ->
 
     false
 
-  $('.social').hover(
-    -> fade_social $(this), 'in'
-    -> fade_social $(this), 'out'
-  )
-
-  $('.social').fadeTo(
-    400
-    .33
-  )
-
   $("#months_list li:gt(11)").hide()
   $("#months_callout").show()
   $("#months_callout").click ->
@@ -83,15 +73,6 @@ $ ->
     placeholderColor: "#808082"
     width: "100%"
   )
-
-fade_social = (icon, direction)->
-  if direction == 'in'
-    val = 1
-  else
-    val = .33
-
-  icon.clearQueue()
-  icon.fadeTo 400, val
 
 calcParallax = (tileheight, speedratio, scrollposition) ->
   (tileheight) - (Math.floor(scrollposition / speedratio) % (tileheight + 1))
