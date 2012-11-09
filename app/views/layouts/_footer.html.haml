@@ -37,11 +37,15 @@
 
     %h1 Social Obligations
 
-    %p
+    %p.social
       %a{:href=>"http://www.facebook.com/shaineh", :target=>"_blank"}><
-        = image_tag("template/f.gif", :class=>"social", :alt=>"Follow Shaine Hatch on Facebook", :title=>"Friend me on Facebook!")
+        %i.icon-facebook
+      %a{:href=>"https://twitter.com/ShaineHatch", :target=>"_blank"}><
+        %i.icon-twitter
+      %a{:href=>"http://www.github.com/shaine", :target=>"_blank"}><
+        %i.icon-github
       %a{:href=>"/feed", :target=>"_blank"}><
-        = image_tag("template/rss.gif", :class=>"social", :alt=>"Follow Squidtree via RSS", :title=>"Follow Squidtree via RSS")
+        %i.icon-rss
 
   .clear
 
