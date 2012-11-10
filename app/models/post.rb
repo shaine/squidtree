@@ -30,7 +30,7 @@ class Post
   end
 
   def is_private?
-    self.is_private || self.is_old?
+    self.is_private || self.is_old? || !self.is_published
   end
 
   def to_param
