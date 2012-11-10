@@ -19,7 +19,9 @@ module NavigationHelpers
     when /the contact page/
       '/contact/'
     when /the login page/
-      '/auth/facebook'
+      '/login/'
+    when /the logout page/
+      '/logout/'
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
