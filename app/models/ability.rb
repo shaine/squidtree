@@ -39,7 +39,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.editor? || user.old_post_whitelisted
-      can :read, Post
+      can :read, Post, :is_published? => true
     elsif user.reader?
     else
       cannot :create, Comment
