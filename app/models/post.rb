@@ -4,7 +4,8 @@ class Post
   plugin MongoMapper::Plugins::Sluggable
 
   key :content, String
-  key :is_private, Boolean
+  key :is_private, Boolean, :default => false
+  key :is_published, Boolean, :default => true
   key :slug, String
   key :tags, Array
   key :title, String

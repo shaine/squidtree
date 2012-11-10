@@ -16,7 +16,10 @@
     = f.label :tags
     = f.text_field :tags, :class => "tag_list", :value => @post.tags_as_string
   .field
-    = f.label :is_private
+    = f.label :is_private, "Private?"
     = f.check_box :is_private
+  .field
+    = f.label :is_published, "Published?"
+    = f.check_box :is_published
   .actions
     = f.submit 'Save'
