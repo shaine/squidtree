@@ -12,7 +12,7 @@ Feature: Blog
     And I should see 21 discoveries
     And I should see 3 recent comments
 
-  @wip @javascript
+  @javascript
   Scenario: I view more discoveries
     When I follow the View More Discoveries link
     Then I should see 41 discoveries
