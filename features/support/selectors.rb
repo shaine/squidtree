@@ -4,6 +4,10 @@ module HtmlSelectorsHelpers
 
     when /the page/
       "html > body"
+    when /the login link/
+      "a[rel=login]"
+    when /the logout link/
+      "a[rel=logout]"
     when /posts/
       "article.post"
     when /discoveries/

@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
     # Extract user details from hash
     auth_hash = request.env['omniauth.auth']
     user_details = {
-      :first_name => auth_hash["info"]["first_name"],
-      :last_name => auth_hash["info"]["last_name"],
-      :alias => auth_hash["info"]["nickname"],
-      :email => auth_hash["info"]["email"],
-      :facebook_url => auth_hash["info"]["urls"]["Facebook"],
+      :first_name => auth_hash[:info]["first_name"],
+      :last_name => auth_hash[:info]["last_name"],
+      :alias => auth_hash[:info]["nickname"],
+      :email => auth_hash[:info]["email"],
+      :facebook_url => auth_hash[:info]["urls"]["Facebook"],
       :uid => auth_hash["uid"]
     }
 
