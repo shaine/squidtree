@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       :first_name => auth_hash[:info]["first_name"],
       :last_name => auth_hash[:info]["last_name"],
       :alias => auth_hash[:info]["nickname"],
+      :slug => auth_hash[:info]["nickname"],
       :email => auth_hash[:info]["email"],
       :facebook_url => auth_hash[:info]["urls"]["Facebook"],
       :uid => auth_hash["uid"]
