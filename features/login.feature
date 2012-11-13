@@ -7,11 +7,9 @@ Feature: Login
     Given I am logged out
     And I am on the blog page
 
-  @wip
   Scenario: I login as an admin
     Given I am signed in with provider "Facebook" as Admin Test
     When I click on the login link
-    Then show me the page
     Then I should see the logout link
 
   Scenario: I login as an editor
@@ -31,6 +29,7 @@ Feature: Login
 
   Scenario: I logout
     Given I am signed in with provider "Facebook"
-    When I click on the logout link
+    When I click on the login link
+    And I click on the logout link
     Then I should see the login link
     And I should see the logout message

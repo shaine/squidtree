@@ -31,9 +31,9 @@ gem "thin", :group=>"development"
 
 group :test do
   # Pretty printed test output
-  gem "cucumber-rails", ">= 1.2.1"
-  gem "rspec-rails", ">= 2.8.0.rc2"
-  gem "capybara", ">= 1.1.2"
+  gem "cucumber-rails"
+  gem "rspec-rails"
+  gem "capybara"
   gem "database_cleaner"
   gem "launchy"
   gem "simplecov", :require => false

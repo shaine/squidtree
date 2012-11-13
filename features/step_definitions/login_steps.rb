@@ -9,7 +9,7 @@ Given /^I am signed in with provider "(.*?)"(?: as (.*?))?$/ do |provider, user|
 
     case user
     when "Admin Test"
-      OmniAuth.config.mock_auth[:facebook]["uid"] = 123451
+      OmniAuth.config.mock_auth[:facebook]["uid"] = "123451"
       OmniAuth.config.mock_auth[:facebook][:info] =
         {
           "email" => "admin@squidtree.com",
@@ -22,7 +22,7 @@ Given /^I am signed in with provider "(.*?)"(?: as (.*?))?$/ do |provider, user|
           }
         }
     when "Editor Test"
-      OmniAuth.config.mock_auth[:facebook]["uid"] = 123452
+      OmniAuth.config.mock_auth[:facebook]["uid"] = "123452"
       OmniAuth.config.mock_auth[:facebook][:info] =
         {
           "email" => "editor@squidtree.com",
@@ -35,7 +35,7 @@ Given /^I am signed in with provider "(.*?)"(?: as (.*?))?$/ do |provider, user|
           }
         }
     when "Whitelisted Test"
-      OmniAuth.config.mock_auth[:facebook]["uid"] = 123453
+      OmniAuth.config.mock_auth[:facebook]["uid"] = "123453"
       OmniAuth.config.mock_auth[:facebook][:info] =
         {
           "email" => "whitelisted@squidtree.com",
@@ -48,7 +48,7 @@ Given /^I am signed in with provider "(.*?)"(?: as (.*?))?$/ do |provider, user|
           }
         }
     else # Or a user
-      OmniAuth.config.mock_auth[:facebook]["uid"] = 123454
+      OmniAuth.config.mock_auth[:facebook]["uid"] = "123454"
       OmniAuth.config.mock_auth[:facebook][:info] =
         {
           "email" => "anonymous@squidtree.com",
@@ -64,8 +64,6 @@ Given /^I am signed in with provider "(.*?)"(?: as (.*?))?$/ do |provider, user|
   else
     raise "Provider #{provider} has not been configured."
   end
-
-  visit "/auth/#{provider.downcase}"
 end
 
 Given /I am logged out/ do
