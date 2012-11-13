@@ -8,6 +8,8 @@ module HtmlSelectorsHelpers
       "a[rel=login]"
     when /the logout link/
       "a[rel=logout]"
+    when /the (.*) message/
+      ".message.notice"
     when /posts/
       "article.post"
     when /discoveries/
@@ -18,15 +20,21 @@ module HtmlSelectorsHelpers
       "#links_callout"
     when /(?:the |an )?(un)?advise button/
       ".#{$1}advise"
-    when /streamed decisions?/
-      "section.stream .decision"
-    when /activity items?/
-      "section.stream .activity"
     when /(pending|active|complete|read|unread)?\s?decisions?/
       "section.stream .decision#{$1.blank? ? "" : '.'+$1}"
     else
       raise "Can't find mapping from \"#{locator}\" to a selector.\n" +
         "Now, go and add a mapping in #{__FILE__}"
+    end
+  end
+
+  def text_for(message)
+    case message
+
+    when /the logout message/
+      "logged out"
+    else
+      ""
     end
   end
 end

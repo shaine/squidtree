@@ -43,8 +43,8 @@ class ApplicationController < ActionController::Base
   def back_or_home
     begin
       redirect_to session[:previous_page]
-    rescue ActionController::RedirectBackError
-      redirect_to root_path
+    rescue
+      redirect_to root_url
     end
   end
 end
