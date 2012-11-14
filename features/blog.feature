@@ -8,7 +8,7 @@ Feature: Blog
 
   Scenario: I visit the blog
     When I go to the blog
-    And I should see 10 posts
+    Then I should see 10 posts
     And I should see 21 discoveries
     And I should see 3 recent comments
 
