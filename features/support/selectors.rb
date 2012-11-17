@@ -17,7 +17,7 @@ module HtmlSelectorsHelpers
     when /recent comments/
       "article.comment"
     when /the View More Discoveries link/
-      "#links_callout"
+      "a[rel=discoveries_view_more]"
     when /(?:the |an )?(un)?advise button/
       ".#{$1}advise"
     when /(pending|active|complete|read|unread)?\s?decisions?/
