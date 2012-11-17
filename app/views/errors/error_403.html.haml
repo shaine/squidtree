@@ -1,0 +1,7 @@
+%h1 Forbidden
+%p
+  You're not allowed to do that.
+  - unless @current_user
+    Maybe you need to
+    %a{href: login_path} sign in
+    ?
