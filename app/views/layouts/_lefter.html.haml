@@ -5,7 +5,7 @@
 
 .hr.big.hr1
 
-- if params[:controller] == "posts"
+- if ["posts", "pages"].include? params[:controller]
   %aside.section
     %h1 Search
     %form{:method=> "get"}
@@ -21,7 +21,7 @@
     %ul#links{:data => {:page => 1, :per_page => 20, :query=>@query, :action=>links_path(:format=>'json')}}
       = render :partial => "links/link", :collection => @links
       %li#links_callout
-        %a.older{:href=>"#"}Older »
+        %a.older{:href => "#", :rel => "discoveries_view_more"}Older »
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         = link_to "All »", links_path
 
