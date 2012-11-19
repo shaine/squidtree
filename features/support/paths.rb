@@ -9,19 +9,25 @@ module NavigationHelpers
     case page_name
 
     when /the home\s?page/
-      '/'
+      "/"
     when /the blog/
-      '/blog/'
+      "/blog/"
     when /the portfolio page/
-      '/portfolio/'
+      "/portfolio/"
     when /the about page/
-      '/about/'
+      "/about/"
     when /the contact page/
-      '/contact/'
+      "/contact/"
     when /the login page/
-      '/login/'
+      "/login/"
     when /the logout page/
-      '/logout/'
+      "/logout/"
+    when /the discoveries page/
+      "/links/"
+    when /the user admin page/
+      "/users/"
+    when /a bad URL/
+      "/foo/bar/baz"
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
