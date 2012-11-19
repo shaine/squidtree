@@ -14,7 +14,7 @@ Feature: Layout
     And I should not see the discoveries sidebar
     And I should not see the search box
 
-  @wip
+  @javascript
   Scenario: I view more discoveries
     When I go to the homepage
     Then I should see 20 discoveries
