@@ -34,7 +34,12 @@ group :test do
   gem "cucumber-rails"
   gem "rspec-rails"
   gem "capybara"
+  gem "capybara-webkit"
   gem "database_cleaner"
   gem "launchy"
   gem "simplecov", :require => false
+end
+
+group :cucumber do
+  gem 'cucumber_spinner'
 end
