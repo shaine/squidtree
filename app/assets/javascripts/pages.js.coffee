@@ -34,7 +34,7 @@ $ ->
       per_page: ul.data("per_page"),
       (data) ->
         $(data).each (index, val) ->
-          link = $('<li><a href="'+val.url+'" target="_blank" class="'+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
+          link = $('<li class="link_line"><a href="'+val.url+'" target="_blank" class="discovery_link '+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
           callout.parent().before link
           $("a", link).tipsy
             html: true

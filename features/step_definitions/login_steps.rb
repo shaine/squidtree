@@ -70,4 +70,7 @@ Given /I am logged out/ do
   visit path_to("the logout page")
 end
 
+When /I log in/ do
+  visit path_to("the login page")
+end
 
