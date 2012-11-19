@@ -32,6 +32,7 @@ Feature: Layout
     When I view all archive months
     Then I should see old archive months
 
+  @allow-rescue
   Scenario: I visit a bad URL
     When I visit a bad URL
     Then I should see the 404 message
