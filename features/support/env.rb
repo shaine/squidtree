@@ -8,14 +8,16 @@ require "simplecov"
 SimpleCov.start
 
 require "cucumber/rails"
+require "cucumber_spinner/progress_bar_formatter"
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
 # prefer to use XPath just remove this line and adjust any selectors in your
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
+Capybara.ignore_hidden_elements = true
+Capybara.javascript_driver = :webkit
 OmniAuth.config.test_mode = true
-
 
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
@@ -39,7 +41,6 @@ ActionController::Base.allow_rescue = false
 begin
   require "database_cleaner"
   require "database_cleaner/cucumber"
-  require "database_cleaner/mongo_mapper/truncation"
   DatabaseCleaner.strategy = nil
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
