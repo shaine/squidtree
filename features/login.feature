@@ -33,3 +33,21 @@ Feature: Login
     And I click on the logout link
     Then I should see the login link
     And I should see the logout message
+
+  Scenario: I visit a protected page while logged out
+    Given I am signed in with provider "Facebook"
+    And I am logged out
+    When try to visit the user admin page
+    Then I should see the forbidden message
+
+  Scenario: I visit a protected page as an editor
+    Given I am signed in with provider "Facebook" as Editor Test
+    When I log in
+    And I try to visit the user admin page
+    Then I should see the forbidden message
+
+  Scenario: I visit a protected page as an editor
+    Given I am signed in with provider "Facebook" as Admin Test
+    When I log in
+    And I try to visit the user admin page
+    Then I should see the forbidden message
