@@ -33,3 +33,5 @@ end
 When /^(?:|I )(?:|try to )visit (.+)$/ do |page_name|
   visit path_to(page_name)
 end
+
+
