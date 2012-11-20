@@ -1,10 +1,10 @@
-@javascript
 Feature: Login
   In order to be a user,
   I should be able to login.
 
   Background:
-    Given I am logged out
+    Given I am on the blog page
+    And I am logged out
     And I am on the blog page
 
   Scenario: I login as an admin
