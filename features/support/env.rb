@@ -15,8 +15,8 @@ require "cucumber_spinner/progress_bar_formatter"
 # prefer to use XPath just remove this line and adjust any selectors in your
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
-Capybara.ignore_hidden_elements = true
-Capybara.javascript_driver = :webkit
+#Capybara.ignore_hidden_elements = true
+#Capybara.javascript_driver = :selenium
 OmniAuth.config.test_mode = true
 
 # By default, any exception happening in your Rails application will bubble up
