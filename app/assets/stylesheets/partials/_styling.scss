@@ -220,10 +220,6 @@ article {
   text-align: right;
 }
 
-.index_collection {
-  margin-bottom: 40px;
-}
-
 .pagination {
   color: $link-color;
   display: block;
@@ -291,7 +287,7 @@ article {
 
 .index_collection {
   list-style: none;
-  margin: 0;
+  margin: 0 0 40px;
   padding: 0;
 }
 
