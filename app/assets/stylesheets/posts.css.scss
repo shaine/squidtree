@@ -13,6 +13,11 @@
         font-weight: bold;
       }
 
+      .content {
+        background: transparent image-url("template/quote.gif") no-repeat 0 1px;
+        text-indent: 13px;
+      }
+
       .content :last-child {
         margin-bottom: 0;
       }
