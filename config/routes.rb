@@ -1,8 +1,4 @@
 Squidtree::Application.routes.draw do
-  get "errors/error_404"
-
-  get "errors/error_500"
-
   resources :comments, :except => [:index, :show]
   resources :links, :except => [:show]
   resources :users
@@ -80,7 +76,7 @@ Squidtree::Application.routes.draw do
   # This is a legacy wild controller route that"s not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ":controller(/:action(/:id(.:format)))"
-  match "/404", to: "errors#error_404"
-  match "/500", to: "errors#error_500"
-  match "/403", to: "errors#error_403"
+  match "/404", to: "errors#error_404" unless Rails.application.config.consider_all_requests_local
+  match "/500", to: "errors#error_500" unless Rails.application.config.consider_all_requests_local
+  match "/403", to: "errors#error_403" unless Rails.application.config.consider_all_requests_local
 end
