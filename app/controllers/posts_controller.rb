@@ -46,6 +46,12 @@ class PostsController < ApplicationController
       ]
     end
 
+    unless can? :manage, Post
+      options[:is_published] = {
+        '$ne' => false
+      }
+    end
+
     @posts = Post.paginate(options)
 
     if @posts.length > 0
