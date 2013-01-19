@@ -1,1 +1,11 @@
 <3
+
+Getting it running
+==================
+
+1. `bundle install`
+2. Run `mongorestore squidtree_development` from the db/seed directory to
+populate the database.
+3. `rails s`
+
+
