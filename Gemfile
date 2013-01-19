@@ -26,8 +26,12 @@ group :assets do
   gem "uglifier"
 end
 
-gem "letter_opener", :group => :development
-gem "thin", :group=>"development"
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "letter_opener"
+  gem "thin"
+end
 
 group :test do
   # Pretty printed test output
