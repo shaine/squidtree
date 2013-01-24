@@ -2,6 +2,7 @@
 
 $medium-grey: #666;
 $light-grey: #9d9ea2;
+$lighter-grey: #ccc;
 
 $base-font-family: "Open Sans", Arial, unquote('sans-serif');  // default font-family
 $heading-font-family: InstitutionRegular, Arial, unquote('sans-serif');
@@ -29,4 +30,14 @@ $list-left-margin: 2em;  // left margin for ul an ol
 $background-color: #2b2c30;
 
 $form-background-color: #414245;
-$form-border-color: #B6B6B6;
+$form-border-color: #1d1d21;
+
+@mixin long-wrap() {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  // Non standard for webkit
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}

@@ -10,7 +10,7 @@
     $day: #{@color_date}
     $percent: percentage_from_day_of_year($day)
     $primary_color: primary_color_from_day($day)
-    $secondary_color: secondary_color_from_day($day)
+    $secondary_color: invert($primary_color)
 
     body
       background-color: $primary_color
@@ -18,15 +18,22 @@
     ::-moz-selection, ::selection
       background: $secondary_color
 
-    .primary_bg_color
-      background-color: $primary_color !important
+    #logo_outer
+      .primary_bg_color
+        background-color: $primary_color !important
 
-    .primary_color, aside h1
+      &:hover .primary_bg_color
+        background-color: saturate($primary_color, 15%) !important
+
+    .primary_color
       color: $primary_color !important
+
+    h1
+      color: $primary_color
 
     .secondary_color, footer aside h1
       color: $secondary_color !important
-    
+
     h2
       color: $secondary_color !important
 
@@ -36,5 +43,32 @@
       #s_nav &
         color: $secondary_color !important
 
-    input[type=text]:focus, input[type=password], textarea 
-      border-color: $secondary_color !important
+    input[type=text]:focus, textarea:focus
+      border-color: $primary_color !important
+
+    input[type=submit], button, a.button
+      &:hover
+        border-color: $primary_color !important
+
+    .message.notice
+      background-color: mix($secondary_color, #2B2C30, 20%)
+      border: 1px solid $secondary_color !important
+
+      legend
+        color: $secondary_color
+
+      ::-moz-selection, ::selection
+        background: $primary_color
+
+    .field_with_errors
+      input, textarea
+        border-color: $primary_color
+
+      label
+        color: $primary_color
+
+    blockquote
+      border-left-color: $primary_color
+
+    .tagsinput .tag
+      background-color: $primary_color !important

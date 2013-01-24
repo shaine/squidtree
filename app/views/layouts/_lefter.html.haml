@@ -2,19 +2,27 @@
   %h1 Squidtree is
   %p.intro
     the personal blog and portfolio of Shaine Hatch, web developer and designer.
-    = link_to '[login]', '/auth/facebook', :class => 'login_link'
 
 .hr.big.hr1
 
-%aside.section
-  %h1 Search
-  %form{:method=> "get"}
-    %p#sidebar_search
-      %a#search_button{:href => "#"}
-      %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
+- if ["posts", "pages"].include? params[:controller]
+  %aside.section
+    %h1 Search
+    %form{:method=> "get"}
+      %p#sidebar_search
+        %a#search_button{:href => "#"}
+        %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
 
-.hr.big.hr2
+  .hr.big.hr2
 
-= render_cell :links, :index
+- unless params[:controller] == "links"
+  %aside.section
+    %h1 Discoveries
+    %ul#links{:data => {:page => 1, :per_page => 20, :query=>@query, :action=>links_path(:format=>'json')}}
+      = render :partial => "links/link", :collection => @links
+      %li#links_callout
+        %a.older{:href => "#", :rel => "discoveries_view_more"}Older »
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        = link_to "All »", links_path
 
-.hr.big.hr3
+  .hr.big.hr3

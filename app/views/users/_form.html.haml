@@ -1,0 +1,37 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label "Facebook URL"
+    = f.text_field :facebook_url
+  .field
+    = f.label :uid
+    = f.text_field :uid
+  .field
+    = f.label :slug
+    = f.text_field :slug
+  .field
+    = f.label :alias
+    = f.text_field :alias
+  .field
+    = f.label :role
+    = f.text_field :role
+  .field
+    = f.label :old_post_whitelisted
+    = f.check_box :old_post_whitelisted
+  .actions
+    = f.submit 'Save'

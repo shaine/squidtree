@@ -1,0 +1,19 @@
+%h2 Say Stuff
+%em
+  Some
+  %a{href: "http://daringfireball.net/projects/markdown/syntax", target: "_blank"} Markdown
+  is allowed.
+= form_for @comment do |f|
+  - if @comment.errors.any?
+    %fieldset#error_explanation.notice.message
+      %legend= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment.errors.full_messages.each do |msg|
+          %li= msg
+
+  = hidden_field_tag "post_id", @post.id
+
+  .field
+    = f.text_area :content
+  .actions
+    = f.submit 'Save'

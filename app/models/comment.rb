@@ -6,6 +6,8 @@ class Comment
   key :user_id, ObjectId
   key :created_at, Time
 
+  attr_protected :user_id
+
   # Relationships.
   belongs_to :user
   embedded_in :post
@@ -15,17 +17,53 @@ class Comment
   # Validations.
   validates_presence_of :content, :user_id
 
-  def self.find_by_id(id)
-    post = Post.where("comments._id" => id).first
+  before_destroy :before_destroy
 
-    post.comments.each do |comment|
-      if comment._id == id
-        return comment
-      end
+  def self.find(id)
+    unless id.instance_of?(BSON::ObjectId)
+      id = BSON::ObjectId.from_string(id)
     end
+
+    post = Post.first("comments._id" => id)
+    unless post.nil?
+      post.comments.detect do |comment|
+        comment._id == id
+      end
+    else
+      nil
+    end
+  end
+
+  class << self
+    alias :find_by_id :find
   end
 
   def url
     "/blog/" + post.slug + "/"
+  end
+
+  def anchor
+    "comment_" + self.index.+(1).to_s
+  end
+
+  def index
+    self.post.comments.index self
+  end
+
+  def is_old?
+    self.created_at.year < 2010
+  end
+
+  def before_destroy
+    self.site_activities.each do |activity|
+      activity.destroy
+    end
+  end
+
+  def after_create
+    site_activity = SiteActivity.new
+    site_activity.user = self.user
+    site_activity.created_at = Time.now
+    self.site_activities << site_activity
   end
 end

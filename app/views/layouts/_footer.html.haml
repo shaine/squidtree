@@ -4,19 +4,48 @@
 #footer_inner
   %aside#footer_left
     %h1 Recent Comments
-    
-    = render_cell :comments, :index
+    - for log in @comment_logs
+      - comment = log.loggable
+      %article.comment{:class=>comment.color_class}
+        %a.comment_link{:href=>"#{comment.url}#comments"}
+          %time= comment.created_at_formatted
+
+          %section
+            - if can? :read, comment.post
+              = truncate(strip_tags(format_comment(comment)), :length => 70, :separator => ' ', :omission => ' [...]').html_safe
+            - else
+              Comment is private.
+
+          %footer.comment_meta
+            %span.comment_user #{log.user.name},
+            %span.comment_title
+              = strip_tags comment.post.title
+      .hr.tiny
 
   %aside#footer_right
-    = render_cell :posts, :index
-    
+    %h1 Archive
+    %ul#months_list
+      - for month in @months
+        - month_f = month.strftime("%B %Y")
+        %li
+          = link_to month_f,
+            posts_path(:month=>month_f.to_url),
+            :class => "#{month.color_class} white",
+            :id => month_f.to_url
+      %li#months_callout
+        %a{:href=>"#"} Older &raquo;
+
     %h1 Social Obligations
-    
-    %p
+
+    %p.social
       %a{:href=>"http://www.facebook.com/shaineh", :target=>"_blank"}><
-        = image_tag("template/f.gif", :class=>"social", :alt=>"Follow Shaine Hatch on Facebook", :title=>"Friend me on Facebook!")
+        %i.icon-facebook
+      %a{:href=>"https://twitter.com/ShaineHatch", :target=>"_blank"}><
+        %i.icon-twitter
+      %a{:href=>"http://www.github.com/shaine", :target=>"_blank"}><
+        %i.icon-github
       %a{:href=>"/feed", :target=>"_blank"}><
-        = image_tag("template/rss.gif", :class=>"social", :alt=>"Follow Squidtree via RSS", :title=>"Follow Squidtree via RSS")
+        %i.icon-rss
 
   .clear
 

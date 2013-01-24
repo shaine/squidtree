@@ -2,7 +2,18 @@
   %a#logo{:href => "/"}
     = image_tag("template/logo.png", :alt=>"Squidtree")
   #logo_bg.primary_bg_color
+
 #s_top_links
+  - if @current_user
+    %a.login_link{:href => "/logout", :rel => "logout"}
+      %i.icon-facebook-sign
+      =@current_user.name
+      [ logout ]
+  - else
+    %a.login_link{:href => "/login", :rel => "login"}
+      %i.icon-facebook-sign
+      login
+
 %nav#s_nav
   %ul
     %li.active

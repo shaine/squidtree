@@ -24,5 +24,26 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
+    user ||= User.new
+
+    can :read, Link
+    can :read, Post, :is_private? => false
+    can :manage, Comment do |comment|
+      comment.user == user &&
+      comment.post.comments.last == comment &&
+      comment.created_at > 15.minutes.ago
+    end
+    can :create, Comment
+
+    if user.admin?
+      can :manage, :all
+    elsif user.editor? || user.old_post_whitelisted
+      can :read, Post, :is_published? => true
+    elsif user.reader?
+    else
+      cannot :create, Comment
+    end
+
   end
 end

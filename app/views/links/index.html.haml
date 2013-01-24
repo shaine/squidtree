@@ -1,23 +1,16 @@
-%h1 Listing links
+- title "Discoveries"
+- page_title "Discoveries"
 
-%table
-  %tr
-    %th Title
-    %th Url
-    %th Comment
-    %th
-    %th
-    %th
+- if can? :create, Link
+  .admin_header
+    = link_to "New Discovery", new_link_path, :class => "button"
 
-  - @links.each do |link|
-    %tr
-      %td= link.title
-      %td= link.url
-      %td= link.comment
-      %td= link_to 'Show', link
-      %td= link_to 'Edit', edit_link_path(link)
-      %td= link_to 'Destroy', link, :confirm => 'Are you sure?', :method => :delete
+%h1 Discoveries
+- if @links.empty?
+  %p Sorry, whatever you're looking for doesn't seem to be here.
+- else
+  %ul.index_collection
+    = render :partial => "link", :collection => @links
 
-%br
+= will_paginate @links, :inner_window => 3
 
-= link_to 'New Link', new_link_path

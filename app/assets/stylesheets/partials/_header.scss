@@ -1,3 +1,5 @@
+@import "compass/css3/opacity";
+
 #s_header {
   background-color: #2b2c30;
   text-align: center;
@@ -21,11 +23,12 @@
 }
 
 #logo_bg {
-  width: 106px;
+  display: none;
   height: 145px;
+  left: 1px;
   position: absolute;
   top: 1px;
-  left: 1px;
+  width: 106px;
   z-index: 1;
 }
 
@@ -36,18 +39,42 @@
   top: 92px;
   display: block;
   width: 100%;
-  
+
   li {
     display: inline;
     margin-left: 19px;
     margin-right: 19px;
-    
+
     &#nav_spacer {
       margin-right: 160px;
     }
   }
-  
+
   a:link, a:visited {
     color: #fff;
+  }
+}
+
+#s_top_links {
+  font-size: 10px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+
+  a:link, a:visited {
+    color: #fff !important;
+    @include opacity(.6);
+
+    i {
+      font-size: 11px;
+    }
+  }
+
+  a:active, a:hover {
+    @include opacity(1);
+
+    i {
+      @include opacity(.99);
+    }
   }
 }

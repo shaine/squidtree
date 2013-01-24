@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource :except => [:index, :show]
+  before_filter :convert_tags, :only => [:create, :update]
 
   # GET /posts
   # GET /posts.json
@@ -43,8 +44,12 @@ class PostsController < ApplicationController
         {:content => regex},
         {:title => regex}
       ]
-    elsif params[:page]
-      @outer_title = "Page #{params[:page]}"
+    end
+
+    unless can? :manage, Post
+      options[:is_published] = {
+        '$ne' => false
+      }
     end
 
     @posts = Post.paginate(options)
@@ -52,7 +57,9 @@ class PostsController < ApplicationController
     if @posts.length > 0
       @color_date = @posts.first.day_of_year
 
-      if @posts.first.is_old?
+      if @posts.first.is_old? and
+      flash[:notice].nil? and
+      can? :read, @posts.first
         flash.now[:notice] = "You are currently viewing really, really old posts. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
       end
     end
@@ -60,9 +67,16 @@ class PostsController < ApplicationController
     @query = params
     @query.delete "page"
 
+    # this will be the name of the feed displayed on the feed reader
+    @title = "Squidtree"
+
+    # this will be our Feed's update timestamp
+    @updated = @posts.first.updated_at unless @posts.empty?
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @posts }
+      format.rss { render :layout => false }
+      format.atom { render :layout => false }
     end
   end
 
@@ -70,8 +84,11 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.first(:slug=>params[:id])
+    @comment = Comment.new
 
-    if @post.is_old?
+    if @post.is_old? and
+    flash[:notice].nil? and
+    can? :read, @post
       flash.now[:notice] = "You are currently viewing a really, really old post. Please forgive any broken images, links, or styles, as well as any weirdness or immaturity."
     end
 
@@ -79,7 +96,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @post }
     end
   end
 
@@ -96,13 +112,15 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
+    @color_date = @post.day_of_year
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -118,7 +136,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -134,7 +152,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
     @post.destroy
 
     respond_to do |format|
@@ -143,21 +161,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def feed
-    # this will be the name of the feed displayed on the feed reader
-    @title = "Squidtree"
-
-    # the news items
-    @posts = Post.paginate :per_page => 10, :order => 'created_at DESC'
-
-    # this will be our Feed's update timestamp
-    @updated = @posts.first.updated_at unless @posts.empty?
-
-    respond_to do |format|
-      format.atom { render :layout => false }
-
-      # we want the RSS feed to redirect permanently to the ATOM feed
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+  private
+  def convert_tags
+    if params[:post].has_key? :tags
+      params[:post][:tags] = params[:post][:tags].split(",")
     end
   end
 end

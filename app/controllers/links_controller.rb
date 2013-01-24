@@ -1,36 +1,15 @@
 class LinksController < ApplicationController
+  load_and_authorize_resource
+
   # GET /links
   # GET /links.json
   def index
+    per_page = params[:per_page] || 60
     options = {
       :page => params[:page],
-      :per_page => 20,
+      :per_page => per_page,
       :order => 'created_at DESC'
     }
-
-    if params[:month]
-      month_param = params[:month]
-
-      month = Date.parse month_param
-
-      options[:created_at] = {
-        '$lt' => (month >> 1).midnight,
-        '$gt' => month.midnight
-      }
-    elsif params[:user]
-      user = User.find_by_slug(params[:user])
-
-      options[:user_id] = user.id
-    elsif params[:search]
-      search = params[:search]
-
-      regex = Regexp.new(Regexp.escape(search), Regexp::IGNORECASE)
-      options["$or"] = [
-        {:comment => regex},
-        {:url => regex},
-        {:title => regex}
-      ]
-    end
 
     @links = Link.paginate(options)
 

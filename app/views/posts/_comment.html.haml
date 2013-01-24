@@ -1,9 +1,0 @@
-- comment_id = "comment_#{comment_counter + 1}"
-- name = comment.user.name rescue "Unknown"
-%aside.comment{:id=>comment_id, :class=>comment.color_class}
-  %header
-    %a{:href=>"##{comment_id}"} #{name} #{comment_verb comment.id.to_s.hex.to_i}
-  .content
-    = simple_format comment.content
-  %footer
-    = comment.created_at_formatted true

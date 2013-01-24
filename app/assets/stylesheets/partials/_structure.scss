@@ -15,11 +15,12 @@ body {
 }
 
 #s_content {
-  min-height: 920px;
+  @include long-wrap;
+  background-color: #2b2c30;
+  float: right;
   height: auto !important;
   height: 920px;
-  float: right;
-  background-color: #2b2c30;
+  min-height: 920px;
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
@@ -28,13 +29,12 @@ body {
 }
 
 h1#page_title {
+  background: $background-color image-url("template/banner_home.png") no-repeat;
   height: 85px;
-  z-index: 10;
+  margin: 0;
+  padding: 0 0 30px 0;
   position: relative;
-
-  .index & {
-    background: $background-color image-url("template/banner_home.png") no-repeat;
-  }
+  z-index: 10;
 
   .about & {
     background: $background-color image-url("template/banner_about.png") no-repeat;
@@ -47,6 +47,10 @@ h1#page_title {
   .portfolio & {
     background: $background-color image-url("template/banner_portfolio.png") no-repeat;
   }
+
+  .posts &, .comments &, .links & {
+    background: $background-color image-url("template/banner_blog.png") no-repeat;
+  }
 }
 
 h1#page_title span {
@@ -56,7 +60,7 @@ h1#page_title span {
 h1#outer_title {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
-  color: #343434;
+  color: $background-color;
   display: inline-block;
   zoom: 1;
   *display: inline;

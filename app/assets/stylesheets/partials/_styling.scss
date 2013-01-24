@@ -1,8 +1,9 @@
+@import "compass/css3/border-radius";
+
 .default_text {
   color: #808082 !important;
   background-color: #414245;
 }
-
 
 //
 // Helpers
@@ -19,25 +20,23 @@
 
 .intro {
   font-size: 13px;
-
-  .login_link {
-    float: right;
-    margin-right: 9px;
-  }
 }
 
-#flash {
-  p {
-    margin-bottom: 0;
-  }
+.message {
+  margin-bottom: 30px;
+  padding: 20px 20px 20px 50px;
 
-  .message {
-    margin-bottom: 30px;
-    padding: 20px;
+  &.notice {
+    background-color: #414245;
+    background-image: image-url("icon/warning.gif");
+    background-position-x: 20px;
+    @include border-bottom-radius(4px);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border: 1px solid $light-grey;
 
-    &.notice {
-      background-color: #414245;
-      border: 1px solid $light-grey;
+    p {
+      margin-bottom: 0;
     }
   }
 }
@@ -77,14 +76,14 @@
   &.small {
     background: transparent image-url("template/hr1.gif") no-repeat;
     height: 18px;
-    margin: 0 0 30px -20px;
+    margin: 30px 0 30px -20px;
     width: 550px;
 
-    &:nth-child(6n+5) {
+    &:nth-child(6n+4) {
       background: transparent image-url("template/hr2.gif") no-repeat;
     }
 
-    &:nth-child(6n+1) {
+    &:nth-child(6n) {
       background: transparent image-url("template/hr3.gif") no-repeat;
     }
 
@@ -120,8 +119,6 @@ article {
   // Posts
   //
   &.post {
-    margin-bottom: 30px;
-
     h1 {
       a:link span, a:visited span, span {
         color: #9d9ea2 !important;
@@ -157,8 +154,8 @@ article {
   &.comment {
     section {
       color: #fff;
-      text-indent: 13px;
       background: transparent image-url("template/quote.gif") no-repeat 0 1px;
+      text-indent: 13px;
     }
 
     .comment_user {
@@ -214,3 +211,107 @@ article {
     }
   }
 }
+
+.field {
+  margin-bottom: 10px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.pagination {
+  color: $link-color;
+  display: block;
+  padding-bottom: 10px;
+  text-align: center;
+
+  em {
+    color: $font-color;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .previous_page, .next_page {
+    background: transparent image_url("template/pager_sprite.gif") no-repeat;
+    background-position: left top;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-bottom: -6px;
+    height: 22px;
+    width: 12px;
+
+    &.disabled {
+      display: none;
+    }
+  }
+
+  .next_page {
+    background-position: right top;
+    margin-left: 10px;
+
+    &:active, &:hover {
+      background-position: right bottom;
+    }
+  }
+
+  .previous_page {
+    margin-right: 10px;
+
+    &:active, &:hover {
+      background-position: left bottom;
+    }
+  }
+}
+
+.admin {
+  i {
+    margin-left: 5px;
+  }
+
+  &.left {
+    i {
+      margin: 0 5px 0 0;
+    }
+  }
+}
+
+.admin_header {
+  float: right;
+}
+
+.field label {
+  display: block;
+}
+
+.index_collection {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+.tagsinput {
+  background-color: $form-background-color;
+  border: 1px solid $form-border-color;
+  width: 100%;
+
+  .tag {
+    border-color: $form-border-color !important;
+    color: #fff !important;
+    margin: 5px 0 5px 5px !important;
+
+    a:link, a:visited {
+      color: $lighter-grey !important;
+    }
+
+    a:active, a:hover {
+      color: #fff !important;
+    }
+  }
+
+  #post_tags_tag {
+    line-height: 24px;
+  }
+}
+

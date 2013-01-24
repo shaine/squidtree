@@ -7,7 +7,10 @@ class User
   key :first_name, String
   key :last_name, String
   key :email, String
+  key :facebook_url, String
   key :alias, String
+  key :role, String, :default => "reader"
+  key :old_post_whitelisted, Boolean, :default => false
   timestamps!
 
   # Relationships.
@@ -16,19 +19,24 @@ class User
   many :posts
 
   # Validations.
-  validates_presence_of :first_name, :last_name, :email, :slug
+  validates_presence_of :first_name, :last_name, :email, :slug, :facebook_url
+  validates_uniqueness_of :uid, :slug, :email, :alias
 
   sluggable :alias, :method => :to_url, :index => false
 
-  def to_param
-    slug # or whatever you set :url_attribute to
-  end
-
   def name
-    first_name + ' ' + last_name
+    self.first_name + " " + self.last_name
   end
 
-  def to_param
-    self.slug
+  def admin?
+    ["admin"].include? self.role
+  end
+
+  def editor?
+    ["editor", "admin"].include? self.role
+  end
+
+  def reader?
+    !self.uid.nil?
   end
 end

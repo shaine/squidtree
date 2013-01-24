@@ -57,6 +57,53 @@
   }
 }
 
+.social {
+  a {
+    font-size: 30px;
+    margin-right: 15px;
+    padding-left: 1px;
+
+    &:link, &:visited {
+      i {
+        color: #fff;
+
+        &.icon-facebook {
+          padding-left: 10px;
+          padding-right: 1px;
+        }
+
+        &.icon-github {
+          padding-right: 1px;
+        }
+
+        &.icon-twitter {
+          padding-right: 1px;
+        }
+      }
+    }
+
+    &:active, &:hover {
+      i {
+        &.icon-facebook {
+          color: #3B5998;
+        }
+
+        &.icon-github {
+          color: #a8a8a8;
+        }
+
+        &.icon-twitter {
+          color: #4099FF;
+        }
+
+        &.icon-rss {
+          color: #FFA500;
+        }
+      }
+    }
+  }
+}
+
 #footer_bottom {
   background: transparent image-url("template/se_frame.png") no-repeat;
   width: 550px;

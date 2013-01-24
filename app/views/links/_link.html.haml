@@ -1,0 +1,9 @@
+- title = link.user.name
+- title = "#{title}<br>#{link.comment}" unless link.comment.empty?
+%li.link_line
+  %span.admin.left
+    - if can? :destroy, link
+      = link_to raw("<i class='icon-trash'></i>"), link, method: :delete, data: { confirm: 'Are you sure?' }, :title => 'Delete'
+    - if can? :edit, link
+      = link_to raw("<i class='icon-pencil'></i>"), edit_link_path(link), :title => 'Edit'
+  %a.discovery_link{:href => link.url, :target => "_blank", :class => link.color_class, :title => title}= link.title
