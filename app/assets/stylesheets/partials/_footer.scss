@@ -2,12 +2,12 @@
 // Structure
 //
 #s_footer {
-  width: 550px;
   clear: both;
   margin: 0 auto;
   padding-top: 10px;
   padding-left: 250px;
   position: relative;
+  width: 550px;
   z-index: 10;
 
   .social {
@@ -16,9 +16,9 @@
 
   .footer_hr {
     background: transparent image-url("template/hr_footer.gif") no-repeat;
-    width: 195px;
     height: 5px;
     margin-bottom: 13px;
+    width: 195px;
   }
 }
 
@@ -121,8 +121,8 @@
     width: 7px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
     background-color: rgba(255,255,255,.5);
+    border-radius: 4px;
   }
 
   #months_callout {
@@ -135,18 +135,18 @@
 //
 #ribbon {
   background: transparent image-url("template/ribbon.png") no-repeat;
-  width: 84px;
   height: 486px;
-  position: absolute;
-  top: 7px;
   left: 489px;
   padding-bottom: 20px;
+  position: absolute;
+  top: 7px;
+  width: 84px;
 }
 
 #ribbon_link {
-  position: absolute;
-  width: 80px;
   height: 426px;
-  top: 0;
   left: 4px;
+  position: absolute;
+  top: 0;
+  width: 80px;
 }
