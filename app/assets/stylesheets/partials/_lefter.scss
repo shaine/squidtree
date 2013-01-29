@@ -4,8 +4,9 @@
 // Structure
 //
 #s_lefter {
-  @include long-wrap;
   float: left;
+  @include long-wrap;
+  position: absolute;
   width: 250px;
 
   a:link {
@@ -23,19 +24,26 @@
   .admin {
     display: none;
   }
+
+  .intro {
+    background: transparent image-url("template/pixel_mini.gif") no-repeat left center;
+    padding-left: 38px;
+  }
 }
 
 #lefter_inner {
   background: #2b2c30 image-url("template/side_divider.gif") no-repeat right top;
+  @include border-radius(0 0 0 20px);
+  padding-bottom: 19px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 #lefter_bottom {
-  background: transparent image-url("template/sw_frame.png") no-repeat;
-  width: 250px;
-  height: 38px;
+  background: transparent image-url("template/sw_frame.png") no-repeat center right;
+  height: 19px;
   margin-top: 0;
+  width: 250px;
 }
 
 //

@@ -22,9 +22,10 @@
               = render "layouts/lefter"
             #lefter_bottom
 
-          #s_content
-            = render "layouts/flashes"
-            = yield
+          #s_content_outer
+            #s_content
+              = render "layouts/flashes"
+              = yield
 
       %footer#s_footer
         = render "layouts/footer"

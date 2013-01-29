@@ -5,6 +5,7 @@
 
 body, select, input, textarea {
   color: $font-color;
+  font-weight: 300;
   // Set your base font here, to apply evenly
   // font-family: Georgia, serif;
 }
@@ -129,4 +130,8 @@ h1 time, time {
   font-family: $base-font-family;
   font-size: 10px;
   color: $link-color;
+}
+
+article section {
+  margin-bottom: 30px;
 }
