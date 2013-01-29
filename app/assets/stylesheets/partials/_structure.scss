@@ -14,22 +14,25 @@ body {
   width: 800px;
 }
 
-#s_content {
-  @include long-wrap;
+#s_content_outer {
   background-color: #2b2c30;
-  float: right;
-  height: auto !important;
-  height: 920px;
-  min-height: 920px;
+  margin-left: 250px;
   padding-left: 20px;
   padding-right: 20px;
-  position: relative;
-  width: 510px;
-  z-index: 2;
+
+  #s_content {
+    @include long-wrap;
+    height: auto !important;
+    height: 920px;
+    min-height: 920px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
 }
 
 h1#page_title {
-  background: $background-color image-url("template/banner_home.png") no-repeat;
+  background: $background-color image-url("template/banner_home.png") no-repeat top center;
   height: 85px;
   margin: 0;
   padding: 0 0 30px 0;
@@ -37,19 +40,19 @@ h1#page_title {
   z-index: 10;
 
   .about & {
-    background: $background-color image-url("template/banner_about.png") no-repeat;
+    background: $background-color image-url("template/banner_about.png") no-repeat top center;
   }
 
   .contacts & {
-    background: $background-color image-url("template/banner_contact.png") no-repeat;
+    background: $background-color image-url("template/banner_contact.png") no-repeat top center;
   }
 
   .portfolio & {
-    background: $background-color image-url("template/banner_portfolio.png") no-repeat;
+    background: $background-color image-url("template/banner_portfolio.png") no-repeat top center;
   }
 
   .posts &, .comments &, .links & {
-    background: $background-color image-url("template/banner_blog.png") no-repeat;
+    background: $background-color image-url("template/banner_blog.png") no-repeat top center;
   }
 }
 

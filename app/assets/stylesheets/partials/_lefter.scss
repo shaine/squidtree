@@ -4,8 +4,9 @@
 // Structure
 //
 #s_lefter {
-  @include long-wrap;
   float: left;
+  @include long-wrap;
+  position: absolute;
   width: 250px;
 
   a:link {
