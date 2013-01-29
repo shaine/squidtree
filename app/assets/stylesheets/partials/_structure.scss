@@ -9,9 +9,11 @@ body {
 
 #s_outer {
   margin: 0 auto;
+  max-width: 800px;
+  min-width: 748px;
   padding-bottom: 110px;
   position: relative;
-  width: 800px;
+  width: 80%;
 }
 
 #s_content_outer {

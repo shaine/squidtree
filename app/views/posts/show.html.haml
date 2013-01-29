@@ -9,7 +9,7 @@
     - if @post.comments.length > 0
       %h2 #{pluralize @post.comments.length, "Comment"}
       = render :partial => "comments/comment", :collection => @post.comments, :spacer_template => "comments/comment_separator"
-      = render :partial => "post_separator"
+      .hr.small.hr2
     - if can? :create, Comment
       = render "comments/form", :comment => @comment, :post => @post
 

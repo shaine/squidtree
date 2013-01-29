@@ -77,14 +77,13 @@
     background: transparent image-url("template/hr1.gif") no-repeat top center;
     height: 18px;
     margin: 30px 0;
-    width: 550px;
 
-    &:nth-child(6n+4) {
-      background: transparent image-url("template/hr2.gif") no-repeat;
+    &:nth-child(6n+4), &.hr2 {
+      background: transparent image-url("template/hr2.gif") no-repeat top center;
     }
 
-    &:nth-child(6n) {
-      background: transparent image-url("template/hr3.gif") no-repeat;
+    &:nth-child(6n), &.hr3 {
+      background: transparent image-url("template/hr3.gif") no-repeat top center;
     }
 
     &:last-child {
@@ -93,17 +92,15 @@
   }
 
   &.comment {
-    background: transparent image-url("template/hr_comment.gif") no-repeat;
+    background: transparent image-url("template/hr_comment.gif") no-repeat top center;
     height: 5px;
     margin: 18px 0 15px 0;
-    width: 528px;
   }
 
   &.tiny {
-    background: transparent image-url("template/hr_footer.gif") no-repeat;
+    background: transparent image-url("template/hr_footer.gif") no-repeat top center;
     height: 5px;
     margin: 0 auto 13px auto;
-    width: 195px;
 
     &:last-child {
       display: none;
