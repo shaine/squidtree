@@ -1,14 +1,16 @@
 class ContactsMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "info@squidtree.com"
+  default_url_options[:host] = "squidtree.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.contacts_mailer.contact.subject
   #
-  def contact
-    @greeting = "Hi"
+  def contact(contact)
+    @contact = contact
+    @subject = "Squidtree Contact"
 
-    mail to: "to@example.org"
+    mail to: "shaine@squidtree.com", subject: @subject
   end
 end

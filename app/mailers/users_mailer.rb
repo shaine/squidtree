@@ -12,6 +12,6 @@ class UsersMailer < ActionMailer::Base
     @user_url = user_url
     @subject = "Squidtree Access Request"
 
-    mail to: "hatch@fadelight.com", subject: @subject
+    mail to: "shaine@squidtree.com", subject: @subject
   end
 end

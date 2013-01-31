@@ -110,17 +110,18 @@
   %body{:style => "font-family: Helvetica, sans-serif;"}
     %p Dear Shaine,
 
-    %p #{@user.name} has requested access to view protected/old posts at Squidtree.
-
-    %p You may update this user's preferences here:
+    %p A new contact has come in from squidtree.com.
 
     %p
-      %a{:href => @user_url, :target => :blank, :title => '', :style => 'color: orange, :text-decoration: none;'}= @user_url
-
-    %p If you want to learn more about this user, you may find them on Facebook here:
-
-    %p
-      %a{:href => @user.facebook_url, :target => :blank, :title => '', :style => 'color: orange, :text-decoration: none;'}= @user.facebook_url
+      %strong Name:
+      #{@contact.name}
+      %br
+      %strong Email:
+      #{@contact.email}
+      %br
+      %strong Message:
+      %br
+      = simple_format @contact.message
 
     %p
       Thanks for being awesome,
