@@ -30,7 +30,11 @@
     color: #4875B4;
   }
 
-  &.rss span {
-    color: #FFA500;
+  &.rss {
+    display: inline;
+
+    span {
+      color: #FFA500;
+    }
   }
 }
