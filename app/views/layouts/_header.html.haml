@@ -8,11 +8,11 @@
     %a.login_link{:href => "/logout", :rel => "logout"}
       %i.icon-facebook-sign
       =@current_user.name
-      [ logout ]
+      [ log out ]
   - else
     %a.login_link{:href => "/login", :rel => "login"}
       %i.icon-facebook-sign
-      login
+      log in
 
 %nav#s_nav
   %ul
