@@ -2,9 +2,14 @@ module PostsHelper
   def tag_list(tags, length = 0)
     tag_list_string = ""
     extra_tag_list_string = ""
-    tags.each do |tag|
+    tags.each_with_index do |tag, i|
+      puts tags.class
       if length <= 0 || strip_tags(tag_list_string + " #{tag}").strip.length < length
-        tag_string = "&nbsp; " + link_to(tag, posts_path(:tag=>tag))
+        tag_string = ""
+        unless i == 0
+          tag_string = "&nbsp; "
+        end
+        tag_string += link_to(tag, posts_path(:tag=>tag))
         tag_list_string += tag_string
       else
         tag_string = link_to(tag, posts_path(:tag=>tag)) + "<br>".html_safe

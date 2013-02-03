@@ -169,6 +169,12 @@ article {
         padding: 0;
       }
     }
+
+    footer {
+      i {
+        color: #fff;
+      }
+    }
   }
 
   //
@@ -217,20 +223,14 @@ article {
     }
 
     .post_user {
-      padding-left: 12px;
-      background: transparent image-url("template/person.gif") no-repeat 0 4px;
       margin-right: 10px;
     }
 
     .post_comment_count {
-      padding-left: 14px;
-      background: transparent image-url("template/comment_left.gif") no-repeat 0 4px;
       margin-right: 10px;
     }
 
     .post_tags {
-      padding-left: 7px;
-      background: transparent image-url("template/tag.gif") no-repeat 0 4px;
       margin-right: 10px;
     }
   }

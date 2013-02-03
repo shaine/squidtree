@@ -12,13 +12,16 @@
 
       %footer.post_meta
         %span{:itemprop => "author", :itemscope => true, :itemtype => "http://schema.org/Person"}
+          %i.icon-user
           %a.post_user{:href => posts_path(:user=>post.user.slug)}
             %span{:itemprop => "name"}= post.user.name
           - if post.user.google_plus_url
             %a.hidden{:href => post.user.google_plus_url + "?author", :rel => "author", :itemprop => "url"} Google+ Profile
         - unless params[:action] == "show"
+          %i.icon-comments-alt
           = link_to pluralize(post.comments.length, "comment"), post_path(post, :anchor=>"comments"), :class=>"post_comment_count"
         - if post.tags.length > 0
+          %i.icon-tags
           %span.post_tags{:itemprop => "keywords"}= tag_list(post.tags, params[:action] == "show"? 82 : 70)
         - if params[:action] == "show"
           %span.admin
