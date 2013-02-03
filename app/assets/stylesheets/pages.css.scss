@@ -7,3 +7,34 @@
   float: right;
   margin: 0 0 0 10px;
 }
+
+.inline-social-link {
+  display: inline-block;
+  margin-left: 2px;
+
+  &.twitter {
+    span {
+      color: #4099FF;
+    }
+  }
+
+  &.facebook span {
+    color: #3B5998;
+  }
+
+  &.github span {
+    color: #a8a8a8;
+  }
+
+  &.linkedin span {
+    color: #4875B4;
+  }
+
+  &.rss {
+    display: inline;
+
+    span {
+      color: #FFA500;
+    }
+  }
+}

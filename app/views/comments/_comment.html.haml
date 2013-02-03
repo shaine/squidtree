@@ -1,12 +1,13 @@
 - comment_id = "comment_#{comment_counter + 1}"
 - name = comment.user.name rescue "Unknown"
-%aside.comment{:id=>comment_id, :class=>comment.color_class}
+%aside.comment{:id=>comment_id, :class=>comment.color_class, :itemscope => true, :itemtype => "http://schema.org/Comment"}
   %header
-    %a{:href=>"##{comment.anchor}"} #{name} #{comment_verb comment.id.to_s.hex.to_i}
-  .content
+    %a{:href=>"##{comment.anchor}", :itemprop => "url"}
+      %span{:itemprop => "headline"} <span itemscope itemprop="author" itemtype="http://schema.org/Person"><span itemprop="name">#{name}</span></span> #{comment_verb comment.id.to_s.hex.to_i}
+  .content{:itemprop => "text"}
     = format_comment comment
   %footer
-    = comment.created_at_formatted true
+    %time{:itemprop => "datePublished", :datetime => comment.created_at.iso8601}= comment.created_at_formatted true
     %span.admin
       - if can? :destroy, comment
         = link_to raw("<i class='icon-trash'></i>"), comment, method: :delete, data: { confirm: 'Are you sure?' }, :title => 'Delete'

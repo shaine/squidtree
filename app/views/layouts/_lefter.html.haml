@@ -1,19 +1,18 @@
-%aside.section
+%aside.section{:itemprop => "description"}
   %h1 Squidtree is
   %p.intro
-    the personal blog and portfolio of Shaine Hatch, web developer and designer.
+    the personal blog and portfolio of <a href="http://squidtree.com/about/" rel="author" itemprop="author">Shaine Hatch</a>, web developer and designer.
 
 .hr.big.hr1
 
-- if ["posts", "pages"].include? params[:controller]
-  %aside.section
-    %h1 Search
-    %form{:method=> "get"}
-      %p#sidebar_search
-        %a#search_button{:href => "#"}
-        %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
+%aside.section
+  %h1 Search
+  %form{:method=> "get", :action => posts_path}
+    %p#sidebar_search
+      %a#search_button{:href => "#"}
+      %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
 
-  .hr.big.hr2
+.hr.big.hr2
 
 - unless params[:controller] == "links"
   %aside.section

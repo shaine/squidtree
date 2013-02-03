@@ -1,15 +1,22 @@
 - title strip_tags "Blog - #{@post.title}"
 - page_title strip_tags "Blog - #{@post.title}"
 
-= render :partial => "post", :locals => { :post => @post }
-= render :partial => "post_separator"
+%div{:itemscope => true, :itemtype => "http://schema.org/Blog"}
+  = render :partial => "post", :locals => { :post => @post }
+  = render :partial => "post_separator"
 
-#comments
-  - if (can? :read, @post)
-    - if @post.comments.length > 0
-      %h2 #{pluralize @post.comments.length, "Comment"}
-      = render :partial => "comments/comment", :collection => @post.comments, :spacer_template => "comments/comment_separator"
-      = render :partial => "post_separator"
-    - if can? :create, Comment
-      = render "comments/form", :comment => @comment, :post => @post
+  #comments
+    - if (can? :read, @post)
+      - if @post.comments.length > 0
+        %h2 #{pluralize @post.comments.length, "Comment"}
+        = render :partial => "comments/comment", :collection => @post.comments, :spacer_template => "comments/comment_separator"
+        .hr.small.hr2
+      %h2 Say Stuff
+      - if can? :create, Comment
+        = render "comments/form", :comment => @comment, :post => @post
+      - else
+        %p
+          %a.login_link{:href => "/login", :rel => "login", :class => "inline-social-link facebook"}
+            %span.icon-facebook-sign
+            Sign in with Facebook to leave a comment.
 

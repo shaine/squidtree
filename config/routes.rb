@@ -1,4 +1,6 @@
 Squidtree::Application.routes.draw do
+  resources :contact, :only => [:new, :create], :as => "contacts", :controller => "contacts"
+  match "contact/" => "contacts#new"
   resources :comments, :except => [:index, :show]
   resources :links, :except => [:show]
   resources :users
@@ -16,7 +18,6 @@ Squidtree::Application.routes.draw do
   resources :portfolio, :controller=>"portfolio"
 
   match "about/" => "pages#about"
-  match "contact/" => "contacts#new"
   match "request_access" => "users#request_access"
 
   # The priority is based upon order of creation:

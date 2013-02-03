@@ -7,19 +7,8 @@
   padding-top: 10px;
   padding-left: 250px;
   position: relative;
-  width: 550px;
+  min-width: 499px;
   z-index: 10;
-
-  .social {
-    margin-right: 10px;
-  }
-
-  .footer_hr {
-    background: transparent image-url("template/hr_footer.gif") no-repeat;
-    height: 5px;
-    margin-bottom: 13px;
-    width: 195px;
-  }
 }
 
 #footer_inner {
@@ -31,12 +20,16 @@
 
 #footer_left {
   float: left;
-  width: 203px;
+  max-width: 203px;
+  min-width: 189px;
+  width: 37%;
 }
 
 #footer_right {
   float: right;
-  width: 187px;
+  max-width: 187px;
+  min-width: 172px;
+  width: 34%;
 
   ul {
     list-style: none;
@@ -131,7 +124,7 @@
 #ribbon {
   background: transparent image-url("template/ribbon.png") no-repeat;
   height: 486px;
-  left: 489px;
+  left: 62%;
   padding-bottom: 20px;
   position: absolute;
   top: 7px;
