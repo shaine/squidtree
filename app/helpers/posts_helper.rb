@@ -52,7 +52,8 @@ module PostsHelper
   end
 
   def format_post(post)
-    unless post.is_old?
+    # Parse MD if post isn't HTML
+    unless post.is_html?
       rndr = Redcarpet::Render::HTML.new(
         :filter_html => false,
         :no_styles => false
@@ -61,6 +62,7 @@ module PostsHelper
         :autolink => true
       }
       mkdn.render(post.content).html_safe
+    # Post is HTML
     else
       post.content
     end

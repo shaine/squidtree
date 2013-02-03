@@ -103,6 +103,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @post.is_html = false # Default to MD for new posts
 
     respond_to do |format|
       format.html # new.html.erb

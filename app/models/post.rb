@@ -6,6 +6,7 @@ class Post
   key :content, String
   key :is_private, Boolean, :default => false
   key :is_published, Boolean, :default => true
+  key :is_html, Boolean, :default => true
   key :slug, String
   key :tags, Array
   key :title, String
@@ -23,7 +24,7 @@ class Post
   validates_presence_of :slug, :unless => "errors.include?(:title)"
   validates_uniqueness_of :slug
 
-  sluggable :title, :method => :to_url, :index => false
+  sluggable :title, :method => :to_url, :index => false, :blacklist => ["new"]
 
   def is_old?
     self.created_at.year < 2010
