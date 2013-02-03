@@ -10,6 +10,7 @@
   %form{:method=> "get", :action => posts_path}
     %p#sidebar_search
       %a#search_button{:href => "#"}
+        %i.icon-search
       %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
 
 .hr.big.hr2

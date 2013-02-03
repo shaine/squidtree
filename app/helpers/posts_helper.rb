@@ -3,7 +3,6 @@ module PostsHelper
     tag_list_string = ""
     extra_tag_list_string = ""
     tags.each_with_index do |tag, i|
-      puts tags.class
       if length <= 0 || strip_tags(tag_list_string + " #{tag}").strip.length < length
         tag_string = ""
         unless i == 0

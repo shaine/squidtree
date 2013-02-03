@@ -54,22 +54,26 @@
 }
 
 #search_button {
-  background: #1d1d21 image-url("template/magnify.gif") no-repeat center center;
-  width: 23px;
-  height: 23px;
-  display: inline-block;
-  font-size: 0;
-  line-height: 0;
-  z-index: 1;
-  position: relative;
+  background-color: #1d1d21;
   border: 1px solid #1d1d21;
+  display: inline-block;
+  height: 23px;
+  line-height: 17px;
+  position: relative;
+  text-align: center;
+  width: 23px;
+  z-index: 1;
+
+  i {
+    vertical-align: bottom;
+  }
 }
 
 #site_search {
   float: right;
+  position: relative;
   width: 179px;
   z-index: 5;
-  position: relative;
 }
 
 //
@@ -85,8 +89,8 @@
     width: 7px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
     background-color: rgba(255,255,255,.5);
+    border-radius: 4px;
   }
 
   li {
