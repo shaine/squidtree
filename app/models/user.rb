@@ -8,6 +8,7 @@ class User
   key :last_name, String
   key :email, String
   key :facebook_url, String
+  key :google_plus_url, String
   key :alias, String
   key :role, String, :default => "reader"
   key :old_post_whitelisted, Boolean, :default => false
