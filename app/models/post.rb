@@ -6,6 +6,7 @@ class Post
   key :content, String
   key :is_private, Boolean, :default => false
   key :is_published, Boolean, :default => true
+  key :is_html, Boolean, :default => true
   key :slug, String
   key :tags, Array
   key :title, String
