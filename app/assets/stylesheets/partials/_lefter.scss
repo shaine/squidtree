@@ -32,15 +32,14 @@
 }
 
 #lefter_inner {
-  background: #2b2c30 image-url("template-sprite.png") no-repeat 249px -632px;
+  background: #2b2c30 image-url("template-sprite.png") no-repeat 249px -602px;
   @include border-radius(0 0 0 20px);
-  padding-bottom: 19px;
-  padding-left: 20px;
-  padding-right: 20px;
+  min-height: 670px;
+  padding: 30px 20px 19px 20px;
 }
 
 #lefter_bottom {
-  background: transparent image-url("template-sprite.png") no-repeat -800px -779px;
+  background: transparent image-url("template-sprite.png") no-repeat -550px -854px;
   height: 19px;
   margin-top: 0;
   width: 250px;
