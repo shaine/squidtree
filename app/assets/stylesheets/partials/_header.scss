@@ -9,27 +9,16 @@
   text-align: center;
 }
 
-#logo_outer {
-  position: relative;
-  width: 108px;
+#logo {
+  background: transparent image-url("template-sprite.png") no-repeat -85px -632px;
+  display: block;
   height: 147px;
   margin: 0 auto;
-}
+  width: 108px;
 
-#logo {
-  z-index: 5;
-  position: absolute;
-  display: block;
-}
-
-#logo_bg {
-  display: none;
-  height: 145px;
-  left: 1px;
-  position: absolute;
-  top: 1px;
-  width: 106px;
-  z-index: 1;
+  img {
+    display: none;
+  }
 }
 
 #s_nav {
@@ -57,7 +46,7 @@
     }
 
     &#nav_spacer {
-      margin-right: 160px;
+      margin-right: 100px;
     }
   }
 
