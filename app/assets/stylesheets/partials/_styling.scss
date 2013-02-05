@@ -253,13 +253,11 @@ article {
   }
 
   .previous_page, .next_page {
-    background: transparent image_url("template/pager_sprite.gif") no-repeat;
-    background-position: left top;
+    background: transparent image_url("template-sprite.png") no-repeat;
+    background-position: -85px -779px;
     display: inline-block;
-    zoom: 1;
-    *display: inline;
-    margin-bottom: -6px;
     height: 22px;
+    margin-bottom: -6px;
     width: 12px;
 
     &.disabled {
@@ -268,11 +266,11 @@ article {
   }
 
   .next_page {
-    background-position: right top;
+    background-position: -97px -779px;
     margin-left: 10px;
 
     &:active, &:hover {
-      background-position: right bottom;
+      background-position: -97px -801px;
     }
   }
 
@@ -280,7 +278,7 @@ article {
     margin-right: 10px;
 
     &:active, &:hover {
-      background-position: left bottom;
+      background-position: -85px -801px;
     }
   }
 }
