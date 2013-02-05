@@ -45,13 +45,13 @@
     padding-right: 19px;
 
     &:first-child {
-      background: transparent image-url("template/nav_dot.gif") no-repeat right center;
+      background: transparent image-url("template-sprite.png") no-repeat -733px -789px;
       margin-right: -3px;
       padding-right: 22px;
     }
 
     &:last-child {
-      background: transparent image-url("template/nav_dot.gif") no-repeat left center;
+      background: transparent image-url("template-sprite.png") no-repeat -797px -789px;
       margin-left: -3px;
       padding-left: 22px;
     }

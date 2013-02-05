@@ -26,13 +26,13 @@
   }
 
   .intro {
-    background: transparent image-url("template/pixel_mini.gif") no-repeat left center;
+    background: transparent image-url("template-sprite.png") no-repeat -776px -956px;
     padding-left: 38px;
   }
 }
 
 #lefter_inner {
-  background: #2b2c30 image-url("template/side_divider.gif") no-repeat right top;
+  background: #2b2c30 image-url("template-sprite.png") no-repeat 249px -632px;
   @include border-radius(0 0 0 20px);
   padding-bottom: 19px;
   padding-left: 20px;
@@ -40,7 +40,7 @@
 }
 
 #lefter_bottom {
-  background: transparent image-url("template/sw_frame.png") no-repeat center right;
+  background: transparent image-url("template-sprite.png") no-repeat -800px -779px;
   height: 19px;
   margin-top: 0;
   width: 250px;
