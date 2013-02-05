@@ -14,7 +14,9 @@
   display: block;
   height: 147px;
   margin: 0 auto;
+  position: relative;
   width: 108px;
+  z-index: 5;
 
   img {
     display: none;
