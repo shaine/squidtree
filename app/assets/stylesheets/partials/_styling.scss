@@ -50,8 +50,8 @@
 
   &.notice {
     background-color: #414245;
-    background-image: image-url("icon/warning.gif");
-    background-position-x: 20px;
+    background-image: image-url("template-sprite.png");
+    background-position-x: -770px;
     background-position-y: center;
     background-repeat: no-repeat;
     @include border-bottom-radius(4px);
@@ -71,41 +71,37 @@
 
   &.big {
     display: block;
-    margin: 0 auto;
-    padding: 0 0 30px 0;
+    margin: 30px auto;
+    padding: 0;
     width: 50px;
 
     &.hr1 {
-      background: transparent image-url("template/tentacle1.gif") no-repeat center 0;
+      background: transparent image-url("template-sprite.png") no-repeat center -486px;
       height: 29px;
     }
 
     &.hr2 {
-      background: transparent image-url("template/tentacle2.gif") no-repeat center 0;
+      background: transparent image-url("template-sprite.png") no-repeat center -515px;
       height: 33px;
     }
 
     &.hr3 {
-      background: transparent image-url("template/tentacle3.gif") no-repeat center 0;
+      background: transparent image-url("template-sprite.png") no-repeat center -548px;
       height: 26px;
-    }
-
-    &:last-child {
-      padding-bottom: 11px;
     }
   }
 
   &.small {
-    background: transparent image-url("template/hr1.gif") no-repeat top center;
+    background: transparent image-url("template-sprite.png") no-repeat center -425px;
     height: 18px;
     margin: 30px 0;
 
     &:nth-child(6n+4), &.hr2 {
-      background: transparent image-url("template/hr2.gif") no-repeat top center;
+      background: transparent image-url("template-sprite.png") no-repeat center -440px;
     }
 
     &:nth-child(6n), &.hr3 {
-      background: transparent image-url("template/hr3.gif") no-repeat top center;
+      background: transparent image-url("template-sprite.png") no-repeat center -457px;
     }
 
     &:last-child {
@@ -114,13 +110,13 @@
   }
 
   &.comment {
-    background: transparent image-url("template/hr_comment.gif") no-repeat top center;
+    background: transparent image-url("template-sprite.png") no-repeat center -476px;
     height: 5px;
     margin: 18px 0 15px 0;
   }
 
   &.tiny {
-    background: transparent image-url("template/hr_footer.gif") no-repeat top center;
+    background: transparent image-url("template-sprite.png") no-repeat center -481px;
     height: 5px;
     margin: 0 auto 13px auto;
 
@@ -182,7 +178,7 @@ article {
   //
   &.comment {
     section {
-      background: transparent image-url("template/quote.gif") no-repeat 0 1px;
+      background: transparent image-url("template-sprite.png") no-repeat -789px -1319px;
       color: #fff;
       margin-bottom: 0;
       text-indent: 13px;
