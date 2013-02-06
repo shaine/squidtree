@@ -1,40 +1,40 @@
 @mixin temporal-color($i) {
   $percent: percentage_from_day_of_year($i);
-  $primary_color: primary_color_from_day($i);
-  $secondary_color: invert($primary_color);
+  $primary-color: primary_color_from_day($i);
+  $secondary-color: invert($primary-color);
 
   $day: $i + 1;
 
-  .day_#{$day} {
+  .day-#{$day} {
     ::-moz-selection, ::selection {
-      background: $secondary_color;
+      background: $secondary-color;
     }
 
     h1 {
       a:link, a:visited {
-        color: $primary_color;
+        color: $primary-color;
       }
 
       a:hover, a:active {
-        color: $secondary_color !important;
+        color: $secondary-color !important;
       }
     }
 
     a:hover, a:active {
-      color: $primary_color !important;
+      color: $primary-color !important;
 
       time {
-        color: $primary_color !important;
+        color: $primary-color !important;
       }
     }
 
     blockquote {
-      border-left-color: $primary_color !important;
+      border-left-color: $primary-color !important;
     }
   }
 
-  a.day_#{$day}:hover, a.day_#{$day}:active {
-    color: $primary_color !important;
+  a.day-#{$day}:hover, a.day-#{$day}:active {
+    color: $primary-color !important;
   }
 }
 

@@ -7,7 +7,7 @@
     - for log in @comment_logs
       - comment = log.loggable
       %article.comment{class:comment.color_class}
-        %a.comment_link{href:"#{comment.url}#comments"}
+        %a.comment-link{href:"#{comment.url}#comments"}
           %time= comment.created_at_formatted
 
           %section
@@ -16,9 +16,9 @@
             - else
               Comment is private.
 
-          %footer.comment_meta
-            %span.comment_user #{log.user.name},
-            %span.comment_title
+          %footer.comment-meta
+            %span.comment-user #{log.user.name},
+            %span.comment-title
               = strip_tags comment.post.title
       .hr.tiny
 

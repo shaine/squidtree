@@ -28,7 +28,7 @@ $ ->
       per_page: ul.data("per_page"),
       (data) ->
         $(data).each (index, val) ->
-          link = $('<li class="link_line"><a href="'+val.url+'" target="_blank" class="discovery_link '+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
+          link = $('<li class="link-line"><a href="'+val.url+'" target="_blank" class="discovery-link '+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
           callout.parent().before link
           $("a", link).tipsy
             html: true
@@ -53,7 +53,7 @@ $ ->
     if title
       title.style.top = titleparallax + "px"
 
-  $(".post_tags [title]").tipsy
+  $(".post-tags [title]").tipsy
     html: true
     fade: true
     delayOut: 1500
@@ -63,7 +63,7 @@ $ ->
     fade: true
     gravity: "w"
 
-  $(".tag_list").width(500).tagsInput(
+  $(".tag-list").width(500).tagsInput(
     placeholderColor: "#808082"
     width: "100%"
   )

@@ -32,7 +32,7 @@ module Colorable
   def self.color_class(day=nil)
     day ||= Colorable.day_of_year
 
-    "day_#{day}"
+    "day-#{day}"
   end
 
   def self.format_date(date)

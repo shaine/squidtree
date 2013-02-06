@@ -9,65 +9,65 @@
   :sass
     $day: #{@color_date}
     $percent: percentage_from_day_of_year($day)
-    $primary_color: primary_color_from_day($day)
-    $secondary_color: invert($primary_color)
+    $primary-color: primary_color_from_day($day)
+    $secondary-color: invert($primary-color)
 
     body
-      background-color: $primary_color
+      background-color: $primary-color
 
     ::-moz-selection, ::selection
-      background: $secondary_color
+      background: $secondary-color
 
     #logo
-      background-color: $primary_color !important
+      background-color: $primary-color !important
 
       &:hover
-        background-color: saturate($primary_color, 15%) !important
+        background-color: saturate($primary-color, 15%) !important
 
-    .primary_color
-      color: $primary_color !important
+    .primary-color
+      color: $primary-color !important
 
     h1
-      color: $primary_color
+      color: $primary-color
 
-    .secondary_color, footer aside h1
-      color: $secondary_color !important
+    .secondary-color, footer aside h1
+      color: $secondary-color !important
 
     h2
-      color: $secondary_color !important
+      color: $secondary-color !important
 
     a:active, a:hover
-      color: $primary_color !important
+      color: $primary-color !important
 
       #s_nav &
-        color: $secondary_color !important
+        color: $secondary-color !important
 
     input[type=text]:focus, textarea:focus
-      border-color: $primary_color !important
+      border-color: $primary-color !important
 
     input[type=submit], button, a.button
       &:hover
-        border-color: $primary_color !important
+        border-color: $primary-color !important
 
     .message.notice
-      background-color: mix($secondary_color, #2B2C30, 20%)
-      border: 1px solid $secondary_color !important
+      background-color: mix($secondary-color, #2B2C30, 20%)
+      border: 1px solid $secondary-color !important
 
       legend
-        color: $secondary_color
+        color: $secondary-color
 
       ::-moz-selection, ::selection
-        background: $primary_color
+        background: $primary-color
 
-    .field_with_errors
+    .field-with-errors
       input, textarea
-        border-color: $primary_color
+        border-color: $primary-color
 
       label
-        color: $primary_color
+        color: $primary-color
 
     blockquote
-      border-left-color: $primary_color
+      border-left-color: $primary-color
 
     .tagsinput .tag
-      background-color: $primary_color !important
+      background-color: $primary-color !important
