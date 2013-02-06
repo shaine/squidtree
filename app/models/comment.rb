@@ -12,7 +12,7 @@ class Comment
   belongs_to :user
   embedded_in :post
 
-  many :site_activities, :as => :loggable
+  many :site_activities, as: :loggable
 
   # Validations.
   validates_presence_of :content, :user_id

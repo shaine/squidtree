@@ -1,4 +1,4 @@
-atom_feed :language => 'en-US' do |feed|
+atom_feed language: 'en-US' do |feed|
   feed.title @title
   feed.updated @updated
 
@@ -9,9 +9,9 @@ atom_feed :language => 'en-US' do |feed|
       # the strftime is needed to work with Google Reader.
       updated_at = item.is_old?? item.created_at : item.updated_at
 
-      feed.entry(item, :url => post_url(item), :updated=>updated_at) do |entry|
+      feed.entry(item, url: post_url(item), updated:updated_at) do |entry|
         entry.title strip_tags(item.title)
-        entry.content item.content, :type => 'html'
+        entry.content item.content, type: 'html'
 
         entry.updated(updated_at.strftime("%Y-%m-%dT%H:%M:%SZ"))
 

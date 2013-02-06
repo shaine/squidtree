@@ -1,4 +1,4 @@
-%aside.section{:itemprop => "description"}
+%aside.section{itemprop: "description"}
   %h1 Squidtree is
   %p.intro
     the personal blog and portfolio of <a href="http://squidtree.com/about/" rel="author" itemprop="author">Shaine Hatch</a>, web developer and designer.
@@ -7,21 +7,21 @@
 
 %aside.section
   %h1 Search
-  %form{:method=> "get", :action => posts_path}
+  %form{method: "get", action: posts_path}
     %p#sidebar_search
-      %a#search_button{:href => "#"}
+      %a#search_button{href: "#"}
         %i.icon-search
-      %input#site_search{"placeholder" => "Search the blog", :type => "text", :name=>"search", :value=>@search}>
+      %input#site_search{"placeholder" => "Search the blog", type: "text", name:"search", value:@search}>
 
 .hr.big.hr2
 
 - unless params[:controller] == "links"
   %aside.section
     %h1 Discoveries
-    %ul#links{:data => {:page => 1, :per_page => 20, :query=>@query, :action=>links_path(:format=>'json')}}
-      = render :partial => "links/link", :collection => @links
+    %ul#links{data: {page: 1, per_page: 20, query:@query, action: links_path(format:'json')}}
+      = render partial: "links/link", collection: @links
       %li#links_callout
-        %a.older{:href => "#", :rel => "discoveries_view_more"}Older »
+        %a.older{href: "#", rel: "discoveries_view_more"}Older »
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         = link_to "All »", links_path
 

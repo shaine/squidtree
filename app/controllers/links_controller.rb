@@ -6,9 +6,9 @@ class LinksController < ApplicationController
   def index
     per_page = params[:per_page] || 60
     options = {
-      :page => params[:page],
-      :per_page => per_page,
-      :order => 'created_at DESC'
+      page: params[:page],
+      per_page: per_page,
+      order: 'created_at DESC'
     }
 
     @links = Link.paginate(options)
@@ -16,11 +16,11 @@ class LinksController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @links,
-        :methods => :color_class,
-        :include => {
-          :user => {
-            :methods => :name,
-            :only => :name
+        methods: :color_class,
+        include: {
+          user: {
+            methods: :name,
+            only: :name
           }
         }
       }

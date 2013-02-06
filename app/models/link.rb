@@ -4,7 +4,7 @@ class Link
 
   key :url, String
   key :title, String
-  key :comment, String, :default => ""
+  key :comment, String, default: ""
   key :user_id, ObjectId
   timestamps!
 

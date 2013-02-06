@@ -66,13 +66,13 @@ class Date
 end
 
 module Sass::Script::Functions
-  WINTER_COLOR = Sass::Script::Color.new(:red=>0x3e, :green=>0x68, :blue=>0xb4)
-  SPRING_COLOR = Sass::Script::Color.new(:red=>0x11, :green=>0x9e, :blue=>0x62)
-  SUMMER_COLOR = Sass::Script::Color.new(:red=>0xe7, :green=>0x8f, :blue=>0x19)
+  WINTER_COLOR = Sass::Script::Color.new(red:0x3e, green:0x68, blue:0xb4)
+  SPRING_COLOR = Sass::Script::Color.new(red:0x11, green:0x9e, blue:0x62)
+  SUMMER_COLOR = Sass::Script::Color.new(red:0xe7, green:0x8f, blue:0x19)
 
-  WINTER_SECONDARY_COLOR = Sass::Script::Color.new(:red=>0xff, :green=>0xbe, :blue=>0x46)
-  SPRING_SECONDARY_COLOR = Sass::Script::Color.new(:red=>0xe6, :green=>0x53, :blue=>0x19)
-  SUMMER_SECONDARY_COLOR = Sass::Script::Color.new(:red=>0x19, :green=>0x5f, :blue=>0x95)
+  WINTER_SECONDARY_COLOR = Sass::Script::Color.new(red:0xff, green:0xbe, blue:0x46)
+  SPRING_SECONDARY_COLOR = Sass::Script::Color.new(red:0xe6, green:0x53, blue:0x19)
+  SUMMER_SECONDARY_COLOR = Sass::Script::Color.new(red:0x19, green:0x5f, blue:0x95)
 
   SUMMER_DAY = Sass::Script::Number.new(182)
   WINTER_DAY = Sass::Script::Number.new(366)
@@ -124,7 +124,7 @@ module Sass::Script::Functions
       mix(WINTER_COLOR, SUMMER_COLOR, $percent)
     end
   end
-  declare :primary_color_from_day, :args => [:number]
+  declare :primary_color_from_day, args: [:number]
 
   def secondary_color_from_day(day=nil)
     day = day_if_nil(day)
@@ -144,5 +144,5 @@ module Sass::Script::Functions
       mix(WINTER_SECONDARY_COLOR, SUMMER_SECONDARY_COLOR, $percent)
     end
   end
-  declare :secondary_color_from_day, :args => [:number]
+  declare :secondary_color_from_day, args: [:number]
 end

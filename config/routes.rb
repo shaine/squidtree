@@ -1,21 +1,21 @@
 Squidtree::Application.routes.draw do
-  resources :contact, :only => [:new, :create], :as => "contacts", :controller => "contacts"
+  resources :contact, only: [:new, :create], as: "contacts", controller: "contacts"
   match "contact/" => "contacts#new"
-  resources :comments, :except => [:index, :show]
-  resources :links, :except => [:show]
+  resources :comments, except: [:index, :show]
+  resources :links, except: [:show]
   resources :users
 
   match "/login" => redirect("/auth/facebook")
-  match "/auth/:provider/callback", :to => "sessions#create"
-  get "/auth/failure", :to => "sessions#failure"
-  get "/logout", :to => "sessions#destroy"
+  match "/auth/:provider/callback", to: "sessions#create"
+  get "/auth/failure", to: "sessions#failure"
+  get "/logout", to: "sessions#destroy"
 
-  resources :blog, :controller => :posts, :as => :posts
+  resources :blog, controller: :posts, as: :posts
   match "/feed" => "posts#index",
-      :as => :feed,
-      :defaults => { :format => "rss" }
+      as: :feed,
+      defaults: { format: "rss" }
 
-  resources :portfolio, :controller=>"portfolio"
+  resources :portfolio, controller:"portfolio"
 
   match "about/" => "pages#about"
   match "request_access" => "users#request_access"
@@ -28,8 +28,8 @@ Squidtree::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match "products/:id/purchase" => "catalog#purchase", :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  #   match "products/:id/purchase" => "catalog#purchase", as: :purchase
+  # This route can be invoked with purchase_url(id: product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -56,7 +56,7 @@ Squidtree::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get "recent", :on => :collection
+  #       get "recent", on: :collection
   #     end
   #   end
 
@@ -69,8 +69,8 @@ Squidtree::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
-  root :to=> "pages#index"
+  # root to: "welcome#index"
+  root to: "pages#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,11 +1,11 @@
 -# CSS: implied media="all"
-= stylesheet_link_tag 'application', :media => 'all'
-= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:300', :media => 'all'
+= stylesheet_link_tag 'application', media: 'all'
+= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:300', media: 'all'
 
 -# Append your own using content_for :stylesheets
 = yield :stylesheets
 
-%style{:type=>"text/css"}
+%style{type:"text/css"}
   :sass
     $day: #{@color_date}
     $percent: percentage_from_day_of_year($day)

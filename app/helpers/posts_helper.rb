@@ -8,10 +8,10 @@ module PostsHelper
         unless i == 0
           tag_string = "&nbsp; "
         end
-        tag_string += link_to(tag, posts_path(:tag=>tag))
+        tag_string += link_to(tag, posts_path(tag:tag))
         tag_list_string += tag_string
       else
-        tag_string = link_to(tag, posts_path(:tag=>tag)) + "<br>".html_safe
+        tag_string = link_to(tag, posts_path(tag:tag)) + "<br>".html_safe
         extra_tag_list_string += tag_string
       end
     end
@@ -52,18 +52,18 @@ module PostsHelper
       'argues',
       'protests',
       'swears'
-    ].sample(:random => Random.new(seed))
+    ].sample(random: Random.new(seed))
   end
 
   def format_post(post)
     # Parse MD if post isn't HTML
     unless post.is_html?
       rndr = Redcarpet::Render::HTML.new(
-        :filter_html => false,
-        :no_styles => false
+        filter_html: false,
+        no_styles: false
       )
       mkdn = Redcarpet::Markdown.new rndr, {
-        :autolink => true
+        autolink: true
       }
       mkdn.render(post.content).html_safe
     # Post is HTML

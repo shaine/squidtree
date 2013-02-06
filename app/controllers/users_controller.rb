@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource :except => :request_access
+  load_and_authorize_resource except: :request_access
 
   # GET /users
   # GET /users.json

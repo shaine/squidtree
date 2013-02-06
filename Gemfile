@@ -7,9 +7,9 @@ gem "cells"
 gem "bson_ext"
 gem "haml"
 gem "haml-rails"
-#gem "html5-boilerplate", :group => :production, :git => "git://github.com/sporkd/compass-html5-boilerplate.git"
+#gem "html5-boilerplate", group: :production, git: "git://github.com/sporkd/compass-html5-boilerplate.git"
 gem "jquery-rails"
-gem "mm-sluggable", :git => "git://github.com/shaine/mm-sluggable.git"
+gem "mm-sluggable", git: "git://github.com/shaine/mm-sluggable.git"
 gem "mongo_mapper"
 gem "omniauth-facebook"
 gem "redcarpet"
@@ -21,7 +21,7 @@ gem "will_paginate", "~> 3.0"
 group :assets do
   gem "coffee-rails"
   gem "compass-rails"
-  gem "sassy-buttons", :git => "git://github.com/shaine/Sassy-Buttons.git"
+  gem "sassy-buttons", git: "git://github.com/shaine/Sassy-Buttons.git"
   gem "sass-rails"
   gem "uglifier"
 end
@@ -40,9 +40,9 @@ group :test do
   gem "capybara"
   gem "database_cleaner"
   gem "launchy"
-  gem "simplecov", :require => false
+  gem "simplecov", require: false
 end
 
 group :cucumber do
-  gem 'cucumber_spinner'
+  gem "cucumber_spinner"
 end

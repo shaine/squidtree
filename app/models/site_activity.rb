@@ -7,7 +7,7 @@ class SiteActivity
   # Relationships.
   belongs_to :user
 
-  belongs_to :loggable, :polymorphic => true
+  belongs_to :loggable, polymorphic: true
 
   # Validations.
   validates_presence_of :user_id

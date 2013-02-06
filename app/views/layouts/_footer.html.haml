@@ -1,18 +1,18 @@
 #ribbon
-  %a#ribbon_link{:href=>"http://fadelight.com/?utm_source=squidtree&utm_medium=ad&utm_content=footer&utm_campaign=Squidtree"}
+  %a#ribbon_link{href:"http://fadelight.com/?utm_source=squidtree&utm_medium=ad&utm_content=footer&utm_campaign=Squidtree"}
 
 #footer_inner.cf
   %aside#footer_left
     %h1 Recent Comments
     - for log in @comment_logs
       - comment = log.loggable
-      %article.comment{:class=>comment.color_class}
-        %a.comment_link{:href=>"#{comment.url}#comments"}
+      %article.comment{class:comment.color_class}
+        %a.comment_link{href:"#{comment.url}#comments"}
           %time= comment.created_at_formatted
 
           %section
             - if can? :read, comment.post
-              = truncate(strip_tags(format_comment(comment)), :length => 70, :separator => ' ', :omission => ' [...]').html_safe
+              = truncate(strip_tags(format_comment(comment)), length: 70, separator: ' ', omission: ' [...]').html_safe
             - else
               Comment is private.
 
@@ -29,21 +29,21 @@
         - month_f = month.strftime("%B %Y")
         %li
           = link_to month_f,
-            posts_path(:month=>month_f.to_url),
-            :class => "#{month.color_class} white",
-            :id => month_f.to_url
+            posts_path(month:month_f.to_url),
+            class: "#{month.color_class} white",
+            id: month_f.to_url
       %li#months_callout
-        %a{:href=>"#"} Older &raquo;
+        %a{href:"#"} Older &raquo;
 
     %h1 Social Obligations
 
     %p.social
-      %a{:href=>"http://www.facebook.com/shaineh", :target=>"_blank", :title=>"Facebook"}><
+      %a{href:"http://www.facebook.com/shaineh", target:"_blank", title:"Facebook"}><
         %i.icon-facebook
-      %a{:href=>"https://twitter.com/ShaineHatch", :target=>"_blank", :title=>"Twitter"}><
+      %a{href:"https://twitter.com/ShaineHatch", target:"_blank", title:"Twitter"}><
         %i.icon-twitter
-      %a{:href=>"http://www.github.com/shaine", :target=>"_blank", :title=>"GitHub"}><
+      %a{href:"http://www.github.com/shaine", target:"_blank", title:"GitHub"}><
         %i.icon-github
-      %a{:href=>"/feed", :target=>"_blank", :title=>"RSS Feed"}><
+      %a{href:"/feed", target:"_blank", title:"RSS Feed"}><
         %i.icon-rss
 \</html>

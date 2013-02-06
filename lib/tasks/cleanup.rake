@@ -48,7 +48,7 @@ namespace :squidtree do
       else
         red "#{post.title} - Not Updated"
       end
-    end 
+    end
 
     post = Post.find("4eee94096c25de3a8000040a")
     post.content = post.content.gsub "<em>", "&lt;em&gt;"
