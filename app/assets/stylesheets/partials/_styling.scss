@@ -148,7 +148,7 @@ article {
       }
 
       div {
-        display: inline-block;
+        display: inline;
       }
     }
 
@@ -299,6 +299,7 @@ article {
 
 .admin-header {
   float: right;
+  margin-top: 5px;
 }
 
 .field label {
