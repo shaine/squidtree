@@ -10,8 +10,8 @@ class User
   key :facebook_url, String
   key :google_plus_url, String
   key :alias, String
-  key :role, String, :default => "reader"
-  key :old_post_whitelisted, Boolean, :default => false
+  key :role, String, default: "reader"
+  key :old_post_whitelisted, Boolean, default: false
   timestamps!
 
   # Relationships.
@@ -23,7 +23,7 @@ class User
   validates_presence_of :first_name, :last_name, :email, :slug, :facebook_url
   validates_uniqueness_of :uid, :slug, :email, :alias
 
-  sluggable :alias, :method => :to_url, :index => false
+  sluggable :alias, method: :to_url, index: false
 
   def name
     self.first_name + " " + self.last_name

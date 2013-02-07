@@ -11,13 +11,13 @@ module CommentsHelper
   def format_comment(comment)
     unless comment.is_old?
       rndr = MarkdownRenderer.new(
-        :filter_html => true,
-        :no_styles => true
+        filter_html: true,
+        no_styles: true
       )
       mkdn = Redcarpet::Markdown.new rndr, {
-        :autolink => true,
-        :link_attributes => {
-          :target => "_new"
+        autolink: true,
+        link_attributes: {
+          target: "_new"
         }
       }
       mkdn.render(comment.content.gsub("#", "\\#")).html_safe

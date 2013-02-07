@@ -1,16 +1,16 @@
 - title "Blog"
 - page_title "Blog"
 
-%div{:itemscope => true, :itemtype => "http://schema.org/Blog"}
+%div{itemscope: true, itemtype: "http://schema.org/Blog"}
   - if can? :create, Post
-    .admin_header
-      = link_to "New Post", new_post_path, :class => "button"
+    .admin-header
+      = link_to "New Post", new_post_path, class: "button"
 
   - if @posts.empty?
     %p Sorry, whatever you're looking for doesn't seem to be here.
   - else
-    .index_collection
-      = render :partial => "post", :collection => @posts, :spacer_template => "post_separator"
+    .index-collection
+      = render partial: "post", collection: @posts, spacer_template: "post_separator"
 
-  = will_paginate @posts, :inner_window => 3
+  = will_paginate @posts, inner_window: 3
 

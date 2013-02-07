@@ -1,25 +1,25 @@
-%a#logo{:href => "/"}
-  = image_tag("template/logo.png", :alt=>"Squidtree")
+%a#logo{href: "/"}
+  = image_tag("template/logo.png", alt:"Squidtree")
 
 #s_top_links
   - if @current_user
-    %a.login_link{:href => "/logout", :rel => "logout"}
+    %a.login-link{href: "/logout", rel: "logout"}
       %i.icon-facebook-sign
       =@current_user.name
       [ log out ]
   - else
-    %a.login_link{:href => "/login", :rel => "login"}
+    %a.login-link{href: "/login", rel: "login"}
       %i.icon-facebook-sign
       log in
 
-%nav#s_nav{:itemscope => true, :itemtype => "http://schema.org/SiteNavigationElement"}
+%nav#s_nav{itemscope: true, itemtype: "http://schema.org/SiteNavigationElement"}
   %ul
     %li.active
-      %a{:href => "/blog/"} Blog
+      %a{href: "/blog/"} Blog
     %li
-      %a{:href => "/portfolio/"} Portfolio
+      %a{href: "/portfolio/"} Portfolio
     %li#nav_spacer
     %li
-      %a{:href => "/about/"} About
+      %a{href: "/about/"} About
     %li
-      %a{:href => "/contact/"} Contact
+      %a{href: "/contact/"} Contact

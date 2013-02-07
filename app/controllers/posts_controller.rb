@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource :except => [:index, :show]
-  before_filter :convert_tags, :only => [:create, :update]
+  load_and_authorize_resource except: [:index, :show]
+  before_filter :convert_tags, only: [:create, :update]
 
   # GET /posts
   # GET /posts.json
   def index
     options = {
-      :page => params[:page],
-      :per_page => 10,
-      :order => 'created_at DESC'
+      page: params[:page],
+      per_page: 10,
+      order: 'created_at DESC'
     }
 
     if params[:month]
@@ -41,8 +41,8 @@ class PostsController < ApplicationController
 
       regex = Regexp.new(Regexp.escape(search), Regexp::IGNORECASE)
       options["$or"] = [
-        {:content => regex},
-        {:title => regex}
+        {content: regex},
+        {title: regex}
       ]
     end
 
@@ -75,15 +75,15 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.rss { render :layout => false }
-      format.atom { render :layout => false }
+      format.rss { render layout: false }
+      format.atom { render layout: false }
     end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.first(:slug=>params[:id])
+    @post = Post.first(slug:params[:id])
     @comment = Comment.new
 
     if @post.is_old? and

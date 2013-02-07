@@ -1,6 +1,6 @@
 @import "compass/css3/border-radius";
 
-.default_text {
+.default-text {
   background-color: #414245;
   color: #808082 !important;
 }
@@ -184,18 +184,18 @@ article {
       text-indent: 13px;
     }
 
-    .comment_user {
+    .comment-user {
       font-weight: bold;
     }
 
-    .comment_title {
+    .comment-title {
       font-style: italic;
     }
 
     #s_footer & {
       margin-bottom: 13px;
 
-      a.comment_link {
+      a.comment-link {
         display: block;
 
         &:active, &:hover {
@@ -211,22 +211,22 @@ article {
     font-size: 10px;
   }
 
-  footer.post_meta {
+  footer.post-meta {
     clear: both;
 
     a:link, a:visited {
       color: #9d9ea2;
     }
 
-    .post_user {
+    .post-user {
       margin-right: 10px;
     }
 
-    .post_comment_count {
+    .post-comment-count {
       margin-right: 10px;
     }
 
-    .post_tags {
+    .post-tags {
       margin-right: 10px;
     }
   }
@@ -295,7 +295,7 @@ article {
   }
 }
 
-.admin_header {
+.admin-header {
   float: right;
 }
 
@@ -303,7 +303,7 @@ article {
   display: block;
 }
 
-.index_collection {
+.index-collection {
   list-style: none;
   margin: 0 0 40px;
   padding: 0;

@@ -21,14 +21,14 @@ class Ability
     # The third argument is an optional hash of conditions to further filter the objects.
     # For example, here the user can only update published articles.
     #
-    #   can :update, Article, :published => true
+    #   can :update, Article, published: true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new
 
     can :read, Link
-    can :read, Post, :is_private? => false
+    can :read, Post, is_private?: false
     can :manage, Comment do |comment|
       comment.user == user &&
       comment.post.comments.last == comment &&
@@ -39,7 +39,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.editor? || user.old_post_whitelisted
-      can :read, Post, :is_published? => true
+      can :read, Post, is_published?: true
     elsif user.reader?
     else
       cannot :create, Comment

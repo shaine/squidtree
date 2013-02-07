@@ -1,11 +1,11 @@
 !!! 5
--ie_html :class => 'no-js', :lang => 'en' do
+-ie_html class: 'no-js', lang: 'en' do
   %head
     -# To render a different stylesheet partial inside the head (i.e. for admin layout)
     -# just copy _stylesheets.html.haml, and point to that partial instead.
-    = render "layouts/head", :stylesheet_partial => "layouts/stylesheets"
+    = render "layouts/head", stylesheet_partial: "layouts/stylesheets"
 
-  %body#s{:class => "#{controller.controller_name} #{controller.action_name}", :itemscope => true, :itemtype => content_for?(:page_type) ? content_for(:page_type) : "http://schema.org/WebPage", :itemref => "meta_title meta_page_type"}
+  %body#s{class: "#{controller.controller_name} #{controller.action_name}", itemscope: true, itemtype: content_for?(:page_type) ? content_for(:page_type) : "http://schema.org/WebPage", itemref: "meta_title meta_page_type"}
     #s_outer
       - unless @outer_title.nil?
         %h1#outer_title= @outer_title.titleize
@@ -14,7 +14,7 @@
         %header#s_header
           = render "layouts/header"
 
-        #s_inner{ :role => 'main' }
+        #s_inner{ role: 'main' }
           %h1#page_title
             %span= content_for(:page_title)
           #s_lefter

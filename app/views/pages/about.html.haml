@@ -3,12 +3,12 @@
 - page_type "http://schema.org/ProfilePage"
 
 %article
-  %section{:itemscope => true, :itemtype => "http://schema.org/Person"}
+  %section{itemscope: true, itemtype: "http://schema.org/Person"}
     %h1
       About
-      %span{:itemprop => "name"} Shaine Hatch
-    %p.portrait= image_tag "template/portrait@2x.png", :alt => "Shaine Hatch", :itemprop => "image"
-    %div{:itemprop => "description"}
+      %span{itemprop: "name"} Shaine Hatch
+    %p.portrait= image_tag "template/portrait@2x.png", alt: "Shaine Hatch", itemprop: "image"
+    %div{itemprop: "description"}
       %p
         Shaine is a web developer based in gorgeous <span itemscope itemprop="address" itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Salt Lake City</span>, <span itemprop="addressRegion">UT</span></span>. He fancies himself a designer of websites and brand identity (but is still questing to find solid evidence to support that claim). His love for good coffee, good tea, and good beer is dwarfed by his love of the annual <a href="http://www.burningman.com/" target="_blank"> Burning Man festival</a> (during which his hair usually turns orange). <span itemprop="memberOf" itemscope itemtype="http://schema.org/ProfessionalService">Shaine is one-half of the freelancing duo, <a href="http://fadelight.com/" target="_blank" itemprop="url"><span itemprop="name">Fadelight</span></a></span>. He is a <span itemprop="jobTitle">developer/tech specialist</span> for <span itemprop="worksFor" itemscope itemtype="http://schema.org/ProfessionalService"><a href="http://www.digitaltrike.com" target="_blank" itemprop="url"><span itemprop="name">Digital Trike</span></a></span>.
       %p
@@ -16,10 +16,10 @@
 
   .hr.small
 
-  %section{:itemscope => true, :itemtype => "http://schema.org/Organization"}
-    %meta{:content => "http://squidtree.com", :itemprop => "url"}
+  %section{itemscope: true, itemtype: "http://schema.org/Organization"}
+    %meta{content: "http://squidtree.com", itemprop: "url"}
     %h1 About <span itemprop="name">Squidtree</span>
-    %div{:itemprop => "description"}
+    %div{itemprop: "description"}
       %p Squidtree was developed to showcase design and technical prowess, but also to provide a proving ground for experimental ideas and new development techniques. Its current design features a dynamic color scheme based on the progress of time (inspired by <a href="http://si10.shauninman.com/" target="_blank">Shaun Inman</a>). Over time, the colors fade through seasonal colors&mdash;<a href="/blog/music/">a blog post made in spring</a> will keep its green shade, while a visitor in <a href="/blog/?month=october-2008">October</a> will find the site transitioning from <a href="/blog/?month=july-2008">summer's orange</a> to <a href="/blog/?month=january-2009">winter's blue</a>. It also employs a responsive design with retina graphics to benefit mobile users. It is openly developed and its source code can be found over at <a href="https://github.com/shaine/Squidtree" target="_blank">GitHub</a>.
       %p Under the hood, it's running <a href="http://rubyonrails.org/" target="_blank">Rails</a> with a <a href="http://www.mongodb.org/" target="_blank">MongoDB</a> database. <a class="inline-social-link rss" href="/feed"><span class="icon-rss"></span> Follow Squidtree's RSS feed here.</a>
 

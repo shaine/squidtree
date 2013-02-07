@@ -52,7 +52,7 @@ private
     classes.strip!
     classes = ' ' + classes if !classes.blank?
     classes = name + classes
-    attrs.merge(:class => classes)
+    attrs.merge(class: classes)
   end
 
   def google_config(key)
