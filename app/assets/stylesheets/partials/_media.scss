@@ -20,3 +20,39 @@
 //@media print {
 //  @include media-print;
 //}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  .pixel-heads,
+  #ribbon,
+  #logo,
+  #s_nav li:first-child,
+  #s_nav li:last-child,
+  #s_lefter .intro,
+  #lefter_inner,
+  #lefter_bottom,
+  h1#page_title,
+  .about h1#page_title,
+  .contacts h1#page_title,
+  .portfolio h1#page_title,
+  .posts h1#page_title,
+  .comments h1#page_title,
+  .links h1#page_title,
+  .message.notice,
+  .hr.big.hr1,
+  .hr.big.hr2,
+  .hr.big.hr3,
+  .hr.small,
+  .hr.small.hr2,
+  .hr.small:nth-child(6n+4),
+  .hr.small.hr3,
+  .hr.small:nth-child(6n),
+  .hr.comment,
+  .hr.tiny,
+  article.comment section,
+  .pagination .previous_page,
+  .pagination .next_page,
+  .posts #comments .content {
+    background-image: image-url("template-sprite@2x.png");
+    background-size: 800px 1331px;
+  }
+}

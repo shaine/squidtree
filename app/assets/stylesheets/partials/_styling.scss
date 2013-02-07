@@ -93,15 +93,17 @@
 
   &.small {
     background: transparent image-url("template-sprite.png") no-repeat center -425px;
-    height: 18px;
+    height: 15px;
     margin: 30px 0;
 
     &:nth-child(6n+4), &.hr2 {
       background: transparent image-url("template-sprite.png") no-repeat center -440px;
+      height: 17px;
     }
 
     &:nth-child(6n), &.hr3 {
       background: transparent image-url("template-sprite.png") no-repeat center -457px;
+      height: 18px;
     }
 
     &:last-child {
