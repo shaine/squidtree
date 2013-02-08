@@ -33,6 +33,15 @@
 
   #s_footer {
     padding-left: 0;
+    min-width: 0;
+
+    #footer_left {
+      float: none;
+    }
+
+    #footer_right {
+      float: none;
+    }
   }
 }/*/mediaquery*/
 
