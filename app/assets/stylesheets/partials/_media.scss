@@ -11,6 +11,7 @@
 
   #s_lefter {
     float: none;
+    margin-bottom: 10px;
     position: relative;
     width: auto;
 
@@ -20,6 +21,7 @@
 
     #lefter_inner {
       background-image: none !important;
+      @include border-radius(0);
     }
 
     #lefter_bottom {
@@ -106,7 +108,7 @@
 only screen and (min-device-pixel-ratio: 2) {
   .pixel-heads,
   #ribbon,
-  #ribbon_link,
+  #s_footer #ribbon #ribbon_link,
   #logo,
   #s_nav li:first-child,
   #s_nav li:last-child,
@@ -131,7 +133,6 @@ only screen and (min-device-pixel-ratio: 2) {
   .hr.small:nth-child(6n),
   .hr.comment,
   .hr.tiny,
-  article.comment section,
   .pagination .previous_page,
   .pagination .next_page,
   .posts #comments .content {
