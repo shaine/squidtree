@@ -1,19 +1,20 @@
-= form_for @contact do |f|
-  - if @contact.errors.any?
-    %fieldset#error_explanation.notice.message
-      %legend= "#{pluralize(@contact.errors.count, "error")} stopped your message from being sent:"
-      %ul
-        - @contact.errors.full_messages.each do |msg|
-          %li= msg
+%section.main-section
+  = form_for @contact do |f|
+    - if @contact.errors.any?
+      %fieldset#error_explanation.notice.message
+        %legend= "#{pluralize(@contact.errors.count, "error")} stopped your message from being sent:"
+        %ul
+          - @contact.errors.full_messages.each do |msg|
+            %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :message
-    = f.text_area :message
-  .actions
-    = f.submit 'Send'
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :email
+      = f.text_field :email
+    .field
+      = f.label :message
+      = f.text_area :message
+    .actions
+      = f.submit 'Send'
