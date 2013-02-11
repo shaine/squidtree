@@ -9,6 +9,29 @@
     min-width: 0;
   }
 
+  #s_inner {
+    background-color: $background-color;
+  }
+
+  #lefter_bottom {
+    display: none;
+  }
+
+  #s_footer {
+    padding-left: 0;
+    min-width: 0;
+
+    #ribbon {
+      left: 42%;
+    }
+  }
+}/*/mediaquery*/
+
+@media only screen and (max-width: 640px) {
+  #s_content_outer {
+    margin-left: 0;
+  }
+
   #s_lefter {
     float: none;
     margin-bottom: 10px;
@@ -23,27 +46,8 @@
       background-image: none !important;
       @include border-radius(0);
     }
-
-    #lefter_bottom {
-      display: none;
-    }
   }
 
-  #s_content_outer {
-    margin-left: 0;
-  }
-
-  #s_footer {
-    padding-left: 0;
-    min-width: 0;
-
-    #ribbon {
-      left: 42%;
-    }
-  }
-}/*/mediaquery*/
-
-@media only screen and (max-width: 505px) {
   #s_footer {
     padding-bottom: 96px;
     text-align: center;
@@ -93,6 +97,30 @@
         top: auto;
         width: 63px;
       }
+    }
+  }
+}/*/mediaquery*/
+
+@media only screen and (max-width: 410px) {
+  h1#page_title {
+    background-position: center -43px;
+    background-size: 400px 665px !important;
+    height: 41px;
+
+    .about & {
+      background-position: center -170px;
+    }
+
+    .contacts & {
+      background-position: center -128px;
+    }
+
+    .portfolio & {
+      background-position: center 0;
+    }
+
+    .posts &, .comments &, .links & {
+      background-position: center -85px;
     }
   }
 }/*/mediaquery*/

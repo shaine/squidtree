@@ -10,17 +10,18 @@
         %a.comment-link{href:"#{comment.url}#comments"}
           %time= comment.created_at_formatted
 
-          %section
-            - if can? :read, comment.post
+          - if can? :read, comment.post
+            %section
               %span.comment-icon.icon-quote-left.primary-color
               = truncate(strip_tags(format_comment(comment)), length: 70, separator: ' ', omission: ' [...]').html_safe
-
-              %footer.comment-meta
-                %span.comment-user #{log.user.name},
-                %span.comment-title
-                  = strip_tags comment.post.title
-            - else
+            %footer.comment-meta
+              %span.comment-user #{log.user.name},
+              %span.comment-title
+                = strip_tags comment.post.title
+          - else
+            %section
               Comment is private.
+
       .hr.tiny
 
   %aside#footer_right
