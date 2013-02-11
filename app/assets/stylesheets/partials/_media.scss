@@ -4,9 +4,45 @@
 // The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
 //
 
-@media only screen and (min-width: 480px) {
-  // Style adjustments for viewports 480px and over go here
+@media only screen and (max-width: 749px) {
+  #s_outer {
+    min-width: 0;
+  }
 
+  #s_lefter {
+    float: none;
+    position: relative;
+    width: auto;
+
+    .intro {
+      background-position: -776px -965px;
+    }
+
+    #lefter_inner {
+      background-image: none !important;
+    }
+
+    #lefter_bottom {
+      display: none;
+    }
+  }
+
+  #s_content_outer {
+    margin-left: 0;
+  }
+
+  #s_footer {
+    padding-left: 0;
+    min-width: 0;
+
+    #footer_left {
+      float: none;
+    }
+
+    #footer_right {
+      float: none;
+    }
+  }
 }/*/mediaquery*/
 
 @media only screen and (min-width: 768px) {
@@ -20,3 +56,40 @@
 //@media print {
 //  @include media-print;
 //}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+  .pixel-heads,
+  #ribbon,
+  #logo,
+  #s_nav li:first-child,
+  #s_nav li:last-child,
+  #s_lefter .intro,
+  #lefter_inner,
+  #lefter_bottom,
+  h1#page_title,
+  .about h1#page_title,
+  .contacts h1#page_title,
+  .portfolio h1#page_title,
+  .posts h1#page_title,
+  .comments h1#page_title,
+  .links h1#page_title,
+  .message.notice,
+  .hr.big.hr1,
+  .hr.big.hr2,
+  .hr.big.hr3,
+  .hr.small,
+  .hr.small.hr2,
+  .hr.small:nth-child(6n+4),
+  .hr.small.hr3,
+  .hr.small:nth-child(6n),
+  .hr.comment,
+  .hr.tiny,
+  article.comment section,
+  .pagination .previous_page,
+  .pagination .next_page,
+  .posts #comments .content {
+    background-image: image-url("template-sprite@2x.png");
+    background-size: 800px 1331px;
+  }
+}

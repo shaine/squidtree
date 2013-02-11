@@ -27,6 +27,7 @@
 
   .intro {
     background: transparent image-url("template-sprite.png") no-repeat -776px -956px;
+    min-height: 36px;
     padding-left: 38px;
   }
 }
@@ -50,6 +51,7 @@
 //
 #sidebar_search {
   height: 24px;
+  position: relative;
 }
 
 #search_button {
@@ -60,6 +62,7 @@
   line-height: 17px;
   position: relative;
   text-align: center;
+  vertical-align: top;
   width: 23px;
   z-index: 1;
 
@@ -70,8 +73,11 @@
 
 #site_search {
   float: right;
-  position: relative;
-  width: 179px;
+  left: 25px;
+  position: absolute;
+  right: 0;
+  vertical-align: top;
+  width: auto;
   z-index: 5;
 }
 

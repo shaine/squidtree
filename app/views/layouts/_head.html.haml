@@ -13,8 +13,8 @@
 %meta{ name: "description", content: "" }/
 %meta{ name: "author", content: "Shaine Hatch" }/
 
--# Mobile viewport optimized: j.mp/bplateviewport
-%meta{ name: "viewport", content: "width=device-width, target-densitydpi=160dpi, initial-scale=1.0, user-scalable=no" }/
+-# Initial scale 100%, maximum scale 100%, don't let the user scale
+%meta{ name: "viewport", content: "width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no" }/
 
 = auto_discovery_link_tag :rss, "/feed"
 
