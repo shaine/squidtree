@@ -5,6 +5,7 @@
     %a{href:"##{comment.anchor}", itemprop: "url"}
       %span{itemprop: "headline"} <span itemscope itemprop="author" itemtype="http://schema.org/Person"><span itemprop="name">#{name}</span></span> #{comment_verb comment.id.to_s.hex.to_i}
   .content{itemprop: "text"}
+    %span.comment-icon.icon-quote-left.primary-color
     = format_comment comment
   %footer
     %time{itemprop: "datePublished", datetime: comment.created_at.iso8601}= comment.created_at_formatted true

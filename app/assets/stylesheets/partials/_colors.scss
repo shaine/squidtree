@@ -6,6 +6,10 @@
   $day: $i + 1;
 
   .day-#{$day} {
+    .primary-color {
+      color: $primary-color !important;
+    }
+
     ::-moz-selection, ::selection {
       background: $secondary-color;
     }

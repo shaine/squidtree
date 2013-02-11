@@ -12,6 +12,7 @@
 
           %section
             - if can? :read, comment.post
+              %span.comment-icon.icon-quote-left.primary-color
               = truncate(strip_tags(format_comment(comment)), length: 70, separator: ' ', omission: ' [...]').html_safe
             - else
               Comment is private.

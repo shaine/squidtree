@@ -180,7 +180,6 @@ article {
   //
   &.comment {
     section {
-      background: transparent image-url("template-sprite.png") no-repeat -789px -1319px;
       color: #fff;
       margin-bottom: 0;
       text-indent: 13px;
@@ -203,7 +202,15 @@ article {
         &:active, &:hover {
           section {
             color: #9d9ea2;
+
+            .comment-icon {
+              color: #9d9ea2 !important;
+            }
           }
+        }
+
+        .comment-icon {
+          margin-left: -39px;
         }
       }
     }
