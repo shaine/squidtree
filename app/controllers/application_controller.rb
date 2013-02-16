@@ -41,6 +41,19 @@ class ApplicationController < ActionController::Base
       )
       count <= 0
     }
+
+    # Ability to disable responsive if
+    # requested by a mobile user
+    @classes = 'responsive'
+
+    if request.user_agent =~ /Mobile|webOS/
+      session[:is_mobile] = true
+    end
+
+    # if is_mobile cookie is set, but user agent isn't mobile
+    if session[:is_mobile] && request.user_agent !~ /Mobile|webOS/
+      @classes = ''
+    end
   end
 
   def remember_request
