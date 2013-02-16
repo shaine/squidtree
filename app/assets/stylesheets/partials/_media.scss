@@ -4,50 +4,278 @@
 // The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
 //
 
+.responsive {
+}
 @media only screen and (max-width: 749px) {
-  #s_outer {
-    min-width: 0;
-  }
-
-  #s_lefter {
-    float: none;
-    position: relative;
-    width: auto;
-
-    .intro {
-      background-position: -776px -965px;
+  .responsive {
+    #s_outer {
+      min-width: 0;
     }
 
-    #lefter_inner {
-      background-image: none !important;
+    #s_inner {
+      background-color: $background-color;
     }
 
     #lefter_bottom {
       display: none;
     }
-  }
 
-  #s_content_outer {
-    margin-left: 0;
-  }
+    #s_footer {
+      padding-left: 0;
+      min-width: 0;
 
-  #s_footer {
-    padding-left: 0;
-    min-width: 0;
-
-    #footer_left {
-      float: none;
-    }
-
-    #footer_right {
-      float: none;
+      #ribbon {
+        left: 42%;
+      }
     }
   }
 }/*/mediaquery*/
 
-@media only screen and (min-width: 768px) {
-  // Style adjustments for viewports 768px and over go here
+@media only screen and (max-width: 640px) {
+  .responsive {
+    #s_content_outer {
+      margin-left: 0;
 
+      #s_content {
+        min-height: 0;
+      }
+    }
+
+    #s_inner {
+      background-color: transparent;
+      padding-bottom: 508px;
+      position: relative;
+    }
+
+    #s_lefter {
+      bottom: 0;
+      float: none;
+      position: absolute;
+      width: 100%;
+
+      .intro {
+        background-position: -776px -965px;
+      }
+
+      #lefter_inner {
+        background-image: none !important;
+        @include border-radius(0);
+        min-height: 0;
+
+        .section {
+          clear: left;
+          float: left;
+          text-align: center;
+          width: 55%;
+        }
+
+        .hr.big {
+          clear: left;
+          float: left;
+          margin-top: 0;
+          width: 55%;
+
+          &:last-child {
+            display: none;
+          }
+        }
+
+        .section.discovery-list {
+          clear: none;
+          float: none;
+          margin-left: 57%;
+          width: 210px;
+        }
+      }
+    }
+
+    #s_footer {
+      padding-bottom: 96px;
+      text-align: center;
+      width: 100%;
+
+      #footer_inner {
+        @include border-radius(0);
+        padding-bottom: 10px;
+
+        #footer_left, #footer_right {
+          max-width: none;
+          width: 50%;
+        }
+      }
+
+      #ribbon {
+        background-color: $footer-color;
+        background-image: none;
+        @include border-radius(0 0 20px 20px);
+        bottom: 0;
+        height: 76px;
+        left: 0;
+        padding: 10px 0;
+        right: 0;
+        text-align: center;
+        top: auto;
+        width: auto;
+
+        #ribbon_link {
+          background-image: image-url("template-sprite.png");
+          background-position: -193px -632px;
+          display: inline-block;
+          height: 76px;
+          left: auto;
+          position: relative;
+          top: auto;
+          width: 63px;
+        }
+      }
+    }
+
+    .pixel-heads {
+      margin-top: 30px;
+    }
+  }
+}/*/mediaquery*/
+
+@media only screen and (max-width: 515px) {
+  .responsive {
+    #s_inner {
+      padding-bottom: 914px;
+    }
+
+    #s_lefter {
+      background-color: $background-color;
+
+      #lefter_inner {
+        margin: 0 auto;
+        text-align: center;
+        width: 250px;
+
+        .section {
+          clear: none;
+          float: none;
+          width: auto;
+        }
+
+        .hr.big {
+          clear: none;
+          float: none;
+          width: auto;
+
+          &:last-child {
+            display: block;
+          }
+        }
+
+        #sidebar_search {
+          text-align: left;
+        }
+
+        .section.discovery-list {
+          clear: none;
+          float: none;
+          margin-left: 0;
+          width: auto;
+        }
+      }
+    }
+
+    #s_footer {
+      #footer_inner {
+        #footer_left {
+          float: none;
+          max-width: none;
+          width: auto;
+        }
+
+        #footer_right {
+          float: none;
+          max-width: none;
+          width: auto;
+        }
+      }
+
+      #months_list {
+        margin: 0 auto 13px auto;
+        width: 150px;
+      }
+    }
+  }
+}/*/mediaquery*/
+
+@media only screen and (max-width: 470px) {
+  .responsive {
+    #s_nav {
+      top: 60px;
+
+      ul {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        width: 100%;
+
+        li {
+          background: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          position: absolute;
+          width: 35%;
+
+          #nav_spacer {
+            display: none;
+          }
+
+          &:first-child {
+            left: 0;
+          }
+
+          &:nth-child(2) {
+            left: 0;
+            top: 30px;
+          }
+
+          &:nth-child(4) {
+            right: 0;
+          }
+
+          &:last-child {
+            right: 0;
+            top: 30px;
+          }
+        }
+      }
+    }
+  }
+}/*/mediaquery*/
+
+@media only screen and (max-width: 410px) {
+  .responsive {
+    #s_outer {
+      min-width: 320px;
+      padding-bottom: 0;
+    }
+
+    h1#page_title {
+      background-position: center -43px;
+      background-size: 400px 665px !important;
+      height: 41px;
+
+      .about & {
+        background-position: center -170px;
+      }
+
+      .contacts & {
+        background-position: center -128px;
+      }
+
+      .portfolio & {
+        background-position: center 0;
+      }
+
+      .posts &, .comments &, .links & {
+        background-position: center -85px;
+      }
+    }
+  }
 }/*/mediaquery*/
 
 
@@ -61,6 +289,7 @@
 only screen and (min-device-pixel-ratio: 2) {
   .pixel-heads,
   #ribbon,
+  #s_footer #ribbon #ribbon_link,
   #logo,
   #s_nav li:first-child,
   #s_nav li:last-child,
@@ -85,7 +314,6 @@ only screen and (min-device-pixel-ratio: 2) {
   .hr.small:nth-child(6n),
   .hr.comment,
   .hr.tiny,
-  article.comment section,
   .pagination .previous_page,
   .pagination .next_page,
   .posts #comments .content {

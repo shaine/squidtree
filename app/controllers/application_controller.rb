@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       @links = Link.all(sort:"created_at desc", limit:20)
     end
     @search = params["search"]
-    @comment_logs = SiteActivity.all(conditions: {loggable_type: "Comment"}, limit:3, sort:"created_at DESC")
+    @comment_logs = SiteActivity.all(conditions: {loggable_type: "Comment"}, limit: 3, sort: "created_at DESC")
 
     if params[:page] && params[:page].to_i > 1
       @outer_title = "Page #{params[:page]}"
@@ -41,6 +41,19 @@ class ApplicationController < ActionController::Base
       )
       count <= 0
     }
+
+    # Ability to disable responsive if
+    # requested by a mobile user
+    @classes = 'responsive'
+
+    if request.user_agent =~ /Mobile|webOS/
+      session[:is_mobile] = true
+    end
+
+    # if is_mobile cookie is set, but user agent isn't mobile
+    if session[:is_mobile] && request.user_agent !~ /Mobile|webOS/
+      @classes = ''
+    end
   end
 
   def remember_request

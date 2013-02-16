@@ -30,7 +30,7 @@ $ ->
         $(data).each (index, val) ->
           link = $('<li class="link-line"><a href="'+val.url+'" target="_blank" class="discovery-link '+val.color_class+'" title="'+val.user.name+'<br>'+val.comment+'">'+val.title+'</a></li>')
           callout.parent().before link
-          $("a", link).tipsy
+          $("a", link).not(".touch a").tipsy
             html: true
             fade: true
             gravity: "w"
@@ -53,12 +53,12 @@ $ ->
     if title
       title.style.top = titleparallax + "px"
 
-  $(".post-tags [title]").tipsy
+  $(".post-tags [title]").not(".touch .post-tags").tipsy
     html: true
     fade: true
     delayOut: 1500
 
-  $("[title]").tipsy
+  $("[title]").not(".touch [title]").tipsy
     html: true
     fade: true
     gravity: "w"

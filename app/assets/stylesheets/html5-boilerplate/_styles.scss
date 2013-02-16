@@ -102,7 +102,7 @@ $list-left-margin: 1.8em !default;
 
 // j.mp/webkit-tap-highlight-color
 @mixin webkit-tap-highlight {
-  a:link { -webkit-tap-highlight-color: $selected-background-color; }
+  a:link { -webkit-tap-highlight-color: rgba($selected-background-color, .3); }
 }
 
 // 1) Always force a scrollbar in non-IE

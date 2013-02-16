@@ -16,7 +16,7 @@
 .hr.big.hr2
 
 - unless params[:controller] == "links"
-  %aside.section
+  %aside.section.discovery-list
     %h1 Discoveries
     %ul#links{data: {page: 1, per_page: 20, query:@query, action: links_path(format:'json')}}
       = render partial: "links/link", collection: @links
