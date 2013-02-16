@@ -1,7 +1,29 @@
 .pixel-heads {
-  background: transparent image-url("template-sprite.png") no-repeat center -1152px;
-  height: 150px;
   margin: 110px auto 10px;
+  text-align: center;
+
+  .pixel-head {
+    background: transparent image-url("template-sprite.png") no-repeat center -1152px;
+    display: inline-block;
+    height: 150px;
+
+    &.burner {
+      background-position: -184px -1152px;
+      float: left;
+      width: 81px;
+    }
+
+    &.developer {
+      background-position: -339px -1152px;
+      width: 120px;
+    }
+
+    &.designer {
+      background-position: -515px -1152px;
+      float: right;
+      width: 102px;
+    }
+  }
 }
 
 .portrait {

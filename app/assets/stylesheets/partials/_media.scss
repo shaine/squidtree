@@ -275,6 +275,15 @@
         background-position: center -85px;
       }
     }
+
+    .pixel-heads .pixel-head {
+      display: block;
+      margin: 0 auto;
+
+      &.burner, &.designer {
+        float: none;
+      }
+    }
   }
 }/*/mediaquery*/
 
@@ -317,7 +326,7 @@ only screen and (min-device-pixel-ratio: 2) {
   .pagination .previous_page,
   .pagination .next_page,
   .posts #comments .content {
-    background-image: image-url("template-sprite@2x.png");
+    background-image: image-url("template-sprite@2x.png") !important;
     background-size: 800px 1331px;
   }
 }
