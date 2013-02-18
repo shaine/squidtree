@@ -4,7 +4,9 @@
 // Outer Structure
 //
 body {
-  background: $background-color image-url("template/bg.png") fixed;
+  &.no-cssgradients {
+    background: $background-color image-url("template/bg.png") fixed;
+  }
 }
 
 #s_outer {

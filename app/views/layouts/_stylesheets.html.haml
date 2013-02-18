@@ -11,9 +11,12 @@
     $percent: percentage_from_day_of_year($day)
     $primary-color: primary_color_from_day($day)
     $secondary-color: invert($primary-color)
+    $bg-primary: mix(#353535, $primary-color, 77)
+    $bg-grey: darken(grayscale($bg-primary), 5)
 
     body
-      background-color: $primary-color
+      background: -webkit-linear-gradient(-45deg, $bg-primary 25%, $bg-grey 25%, $bg-grey 50%, $bg-primary 50%, $bg-primary 75%, $bg-grey 75%, $bg-grey)
+      background-size: 100px 100px
 
     ::-moz-selection, ::selection
       background: $secondary-color
