@@ -297,8 +297,6 @@
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2) {
   .pixel-head,
-  #ribbon,
-  #s_footer #ribbon #ribbon_link,
   #logo,
   #s_nav li:first-child,
   #s_nav li:last-child,
@@ -324,8 +322,7 @@ only screen and (min-device-pixel-ratio: 2) {
   .hr.comment,
   .hr.tiny,
   .pagination .previous_page,
-  .pagination .next_page,
-  .posts #comments .content {
+  .pagination .next_page {
     background-image: image-url("template-sprite@2x.png");
     background-size: 800px 1331px;
   }
