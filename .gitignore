@@ -8,3 +8,4 @@ tmp/
 coverage/*
 public/assets/*
 NERD*
+.htpasswd
