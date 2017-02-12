@@ -68,6 +68,8 @@ module PostsHelper
       mkdn.render(post.content).html_safe
     # Post is HTML
     else
+      post.content.gsub! 'hatch.fadelight.com/assets', 'bedlam.squidtree.com/assets'
+
       post.content
     end
   end
